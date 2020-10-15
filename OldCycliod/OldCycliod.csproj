@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ImputPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="background.jpg" />
+    <None Remove="background1.jpg" />
+    <None Remove="sprze.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="ImputPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="background.jpg" />
+    <Resource Include="background1.jpg" />
+    <Resource Include="sprze.png" />
+  </ItemGroup>
+
+</Project>
