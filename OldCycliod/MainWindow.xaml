@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="770">
+        Title="MainWindow" Height="550" Width="770" ResizeMode="CanMinimize"
+        WindowStartupLocation="Manual" Left="300" Top="100">
     <Window.Background>
         <ImageBrush ImageSource="/Background.jpg" />
     </Window.Background>

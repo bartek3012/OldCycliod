@@ -8,25 +8,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OldCycliod
 {
     /// <summary>
-    /// Interaction logic for InputPage.xaml
+    /// Interaction logic for MaterialWindow.xaml
     /// </summary>
-    public partial class InputPage : Page
+    public partial class MaterialWindow : Window
     {
-        public InputPage()
+        public MaterialWindow()
         {
             InitializeComponent();
-        }
-
-        private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
-        {
-           MaterialWindow secondWindow = new MaterialWindow();
-            secondWindow.Show();
         }
     }
 }

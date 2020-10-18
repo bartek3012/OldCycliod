@@ -64,7 +64,7 @@
             <CheckBox x:Name="checkBoxDelta" Margin="28 10 0 -10" Grid.Row ="8" Grid.ColumnSpan="3" Content="Podaj inną wartość niż maksymalny luz dla pasowania H7/h6"  VerticalAlignment="Bottom"/>
             <TextBlock Text="Luz między wkładką i wpustem Δ = " Grid.Row="9" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxDelta" Text=""  Grid.Column ="1" Grid.Row="9"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
-            <TextBlock Text="[mm]" FontSize="10" Grid.Column ="2" Grid.Row="9"  Margin="5 12 0 0"/>
+            <TextBlock Text="[𝜇𝑚]" FontSize="10" Grid.Column ="2" Grid.Row="9"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="1" x:Name="textBlockDeltaError" Grid.Row="10"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
             <!--h-->
@@ -78,7 +78,6 @@
             <CheckBox x:Name="checkBoxK" Margin="28 10 0 -10" Grid.Row ="14" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom"/>
             <TextBlock Text="Wsp sztywności kontaktowej k = " Grid.Row="15" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxK" Text=""  Grid.Column ="1" Grid.Row="15"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
-            <TextBlock Text="[mm]" FontSize="10" Grid.Column ="2" Grid.Row="15"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="1" x:Name="textBlockKError" Grid.Row="16"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Grid Margin="0 10 0 0">
@@ -93,7 +92,7 @@
             </Grid.RowDefinitions>
             <TextBlock Text="Materiał sprzęgła " Grid.Column="0" Grid.Row="0" Margin="30 5 0 5" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxMat" Text=""  Grid.Column ="1" Grid.Row="0"  Margin="5" Background="LightGray" IsReadOnly="True" />
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="130" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Wybierz materiał" FontWeight="Bold"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="130" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Wybierz materiał" Click="SetMaterialButtonClick"/>
             <TextBlock Grid.Column="1" Grid.ColumnSpan="2" x:Name="textBlockMatError" Grid.Row="1"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Grid Margin="25 10 0 0">
@@ -101,8 +100,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wyczyść" FontWeight="Bold"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Dalej" FontWeight="Bold"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wyczyść"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Dalej"/>
         </Grid>
     </StackPanel>
 
