@@ -13,19 +13,13 @@ using System.Windows.Shapes;
 namespace OldCycliod
 {
     /// <summary>
-    /// Interaction logic for MaterialWindow.xaml
+    /// Interaction logic for AddMaterialWindow.xaml
     /// </summary>
-    public partial class MaterialWindow : Window
+    public partial class AddMaterialWindow : Window
     {
-        public MaterialWindow()
+        public AddMaterialWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
-            addMaterialWindow.Show();
         }
     }
 }

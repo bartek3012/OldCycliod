@@ -40,7 +40,7 @@
                 <ListBoxItem>ListBox Item #3</ListBoxItem>
             </ListBox>
             <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Height="20" Width="100" Grid.Row="1" Grid.Column="0" FontSize="13"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13" Click="Button_Click"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Height="20" Width="215" Grid.Row="2" Grid.ColumnSpan="2" FontSize="13"/>
         </Grid>
     </Border>
