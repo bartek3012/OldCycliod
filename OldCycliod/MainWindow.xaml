@@ -16,6 +16,6 @@
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="1" Margin="-30,-80,-31,-36"  Source="/sprze.png" />
-        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="470" Width="420"/>
+        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="470" Width="420" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

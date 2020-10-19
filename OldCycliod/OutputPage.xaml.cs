@@ -14,24 +14,13 @@ using System.Windows.Shapes;
 namespace OldCycliod
 {
     /// <summary>
-    /// Interaction logic for InputPage.xaml
+    /// Interaction logic for OutputPage.xaml
     /// </summary>
-    public partial class InputPage : Page
+    public partial class OutputPage : Page
     {
-        public InputPage()
+        public OutputPage()
         {
             InitializeComponent();
-        }
-
-        private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
-        {
-           MaterialWindow secondWindow = new MaterialWindow();
-            secondWindow.Show();
-        }
-
-        private void nextButtonClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new OutputPage());
         }
     }
 }

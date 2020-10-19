@@ -1,0 +1,25 @@
+﻿<Page x:Class="OldCycliod.OutputPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OldCycliod"
+      mc:Ignorable="d" 
+      d:DesignHeight="490" d:DesignWidth="420"
+      Title="OutputPage">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"  FontWeight="Bold" FontSize="14" Text="Dane wejściowe:&#x0a;Średnica zewnętrzna : D = ...[mm]&#x0a;Średnica wewnętrzna: d = ...[mm]&#x0a;Mimośrodkowe przesunięcie: e = ...[mm]
+                   &#x0a;Prędkość kątowa: 𝜔 = ...[rad/s]&#x0a;Luzmiędzy wkładką i wpustem: Δ = ... [𝜇m]&#x0a;Głębokość rowka H = ... [mm]&#x0a;Współczynnik sztywności kontaktowej: k = ...&#x0a;Maksymalny nacisk powierzchniowy: p = ... [Mpa]
+                   &#x0a;Materiał sprzęgła: ...&#x0a;&#x0a;Obliczone wartości:&#x0a;Maksymalny moment obrotowy: M = ... [Nm]&#x0a;Straty mocy Ps = ... [W]&#x0a;Sprawność: 𝜂 = ... [%]"/>
+        <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="1" Content="Eksportuj wyniki"/>
+        <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="2" Content="Nowe obliczenia"/>
+        <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="3" Content="Wyjdź"/>
+    </Grid>
+</Page>
