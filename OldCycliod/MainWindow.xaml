@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="770" ResizeMode="CanMinimize"
+        Title="MainWindow" Height="520" Width="770" ResizeMode="CanMinimize"
         WindowStartupLocation="Manual" Left="300" Top="100">
     <Window.Background>
         <ImageBrush ImageSource="/Background.jpg" />
@@ -15,7 +15,7 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="1" Margin="-30,-80,-31,-36"  Source="/sprze.png" />
-        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="470" Width="420" NavigationUIVisibility="Hidden"/>
+        <Image Grid.Column="1" Margin="-30,-80,-31,-45"  Source="/sprze.png" />
+        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
