@@ -7,24 +7,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AddMaterialWindow.xaml.cs" />
     <Compile Remove="ImputPage.xaml.cs" />
+    <Compile Remove="InputMaterialPage.xaml.cs" />
+    <Compile Remove="InputPage.xaml.cs" />
+    <Compile Remove="MaterialWindow.xaml.cs" />
+    <Compile Remove="OutputPage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="background.jpg" />
     <None Remove="background1.jpg" />
     <None Remove="BackgroundMaterianWin.jpg" />
+    <None Remove="Images\Background.jpg" />
+    <None Remove="Images\BackgroundMaterianWin.jpg" />
+    <None Remove="Images\sprze.png" />
     <None Remove="sprze.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="AddMaterialWindow.xaml" />
     <Page Remove="ImputPage.xaml" />
+    <Page Remove="InputMaterialPage.xaml" />
+    <Page Remove="InputPage.xaml" />
+    <Page Remove="MaterialWindow.xaml" />
+    <Page Remove="OutputPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="background.jpg" />
-    <Resource Include="BackgroundMaterianWin.jpg" />
-    <Resource Include="sprze.png" />
+    <Resource Include="Images\Background.jpg" />
+    <Resource Include="Images\BackgroundMaterianWin.jpg" />
+    <Resource Include="Images\sprze.png" />
   </ItemGroup>
 
 </Project>

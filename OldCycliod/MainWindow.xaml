@@ -8,7 +8,7 @@
         Title="MainWindow" Height="520" Width="770" ResizeMode="CanMinimize"
         WindowStartupLocation="Manual" Left="300" Top="100">
     <Window.Background>
-        <ImageBrush ImageSource="/Background.jpg" />
+        <ImageBrush ImageSource="/Images/Background.jpg" />
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>

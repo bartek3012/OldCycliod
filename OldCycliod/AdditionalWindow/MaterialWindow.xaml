@@ -8,7 +8,7 @@
         Title="Wybierz materiał" Height="300" Width="250" ResizeMode="NoResize"
         WindowStartupLocation="Manual" Left="500" Top="200">
     <Window.Background>
-        <ImageBrush ImageSource="/BackgroundMaterianWin.jpg" />
+        <ImageBrush ImageSource="/Images/BackgroundMaterianWin.jpg" />
     </Window.Background>
     <Border Padding="10">
     <Grid>
