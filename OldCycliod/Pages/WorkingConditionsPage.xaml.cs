@@ -16,22 +16,22 @@ namespace OldCycliod
     /// <summary>
     /// Interaction logic for InputPage.xaml
     /// </summary>
-    public partial class InputPage : Page
+    public partial class WorkingConditionsPage : Page
     {
-        public InputPage()
+        public WorkingConditionsPage()
         {
             InitializeComponent();
         }
 
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
-           MaterialWindow secondWindow = new MaterialWindow();
+           ListMaterialWindow secondWindow = new ListMaterialWindow();
             secondWindow.Show();
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new OutputPage());
+            NavigationService.Navigate(new ResultPage());
         }
     }
 }

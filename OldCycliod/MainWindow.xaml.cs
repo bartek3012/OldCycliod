@@ -23,7 +23,7 @@ namespace OldCycliod
         public MainWindow()
         {
             InitializeComponent();
-            InputOutputPages.NavigationService.Navigate(new InputMaterialPage());
+            InputOutputPages.NavigationService.Navigate(new DemensionPage());
         }
     }
 }

@@ -16,9 +16,9 @@ namespace OldCycliod
     /// <summary>
     /// Interaction logic for OutputPage.xaml
     /// </summary>
-    public partial class OutputPage : Page
+    public partial class ResultPage : Page
     {
-        public OutputPage()
+        public ResultPage()
         {
             InitializeComponent();
         }

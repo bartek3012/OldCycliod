@@ -8,24 +8,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OldCycliod
 {
     /// <summary>
-    /// Interaction logic for InputMaterialPage.xaml
+    /// Interaction logic for MaterialWindow.xaml
     /// </summary>
-    public partial class InputMaterialPage : Page
+    public partial class ListMaterialWindow : Window
     {
-        public InputMaterialPage()
+        public ListMaterialWindow()
         {
             InitializeComponent();
         }
 
-        private void nextButtonClick(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new InputPage());
+            AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
+            addMaterialWindow.Show();
         }
     }
 }
