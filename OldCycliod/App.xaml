@@ -30,5 +30,20 @@
             </Style.Triggers>
         </Style>
 
+        <Style x:Key="ToolTipStyle" TargetType="ToolTip">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType= "ToolTip">
+                        <Border x:Name="Root" CornerRadius="8" BorderThickness="1" BorderBrush="Black" Background="LightGray">
+                            <ContentPresenter Margin="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

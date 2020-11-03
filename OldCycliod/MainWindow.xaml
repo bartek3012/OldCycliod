@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="770" ResizeMode="CanMinimize"
-        WindowStartupLocation="Manual" Left="300" Top="100">
+        Title="OldCycliod" Height="490" Width="770" ResizeMode="CanMinimize"
+        WindowStartupLocation="Manual" Left="300" Top="100" 
+        Icon="/icon.png">
     <Window.Background>
         <ImageBrush ImageSource="/Images/Background.jpg" />
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="383*"/>
+            <ColumnDefinition Width="317*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="1" Margin="-30,-80,-31,-45"  Source="/Images/sprze.png" />
-        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden"/>
+        <Image Grid.Column="2" Margin="-10 -20 -20 -20"  Source="/Images/sprze.png"  />
+        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="0"/>
     </Grid>
 </Window>

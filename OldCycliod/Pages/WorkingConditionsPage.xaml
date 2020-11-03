@@ -33,7 +33,7 @@
             <TextBlock Grid.Column="1" x:Name="textBlockMError" Grid.Row="2"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
             <!--w-->
-            <TextBlock Text="Prędkość obrotowa  f = " Grid.Row="3" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="Prędkość obrotowa  n = " Grid.Row="3" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxW" Text=""  Grid.Column ="1" Grid.Row="3"  Margin="10 10 0 0"/>
             <TextBlock Text="[1/s]" FontSize="10" Grid.Column ="2" Grid.Row="3"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="1" x:Name="textBlockWError" Grid.Row="4"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
@@ -52,9 +52,21 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Warunki pracy:" Grid.Column="0" Grid.Row="0" Margin="30 5 0 5" FontWeight="Bold" FontSize="14"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="1" HorizontalAlignment="Center" FontSize="12" Content="Lekkie"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Średnie"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="4" HorizontalAlignment="Center" FontSize="12" Content="Ciężkie"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="1" HorizontalAlignment="Center" FontSize="12" Content="Lekkie">
+                <Button.ToolTip>
+                    <ToolTip Content="Obciążenia jednokierunkowe, dobre smarowanie, dokładna obróbka i mała chropowatość" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Średnie">
+                <Button.ToolTip>
+                    <ToolTip Content="Obciążenia zmienne, minimalne drgania, przeciętne smarowanie, przeciętna obróbka powierzchni" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="4" HorizontalAlignment="Center" FontSize="12" Content="Ciężkie">
+                <Button.ToolTip>
+                    <ToolTip Content="Obciążenia zmienne o cyklu wahadłowym, uderzenie, drgania o dużej częstotliwości i amplitudzie" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
+            </Button>
             <TextBlock Grid.Column="1" Grid.ColumnSpan="3" x:Name="textBlockWorkCaseError" Grid.Row="1"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Separator Background="Black" Height="10"/>
