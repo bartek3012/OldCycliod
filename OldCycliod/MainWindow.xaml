@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="OldCycliod" Height="490" Width="770" ResizeMode="CanMinimize"
+        Title="OldCycliod" Height="490" Width="870" ResizeMode="CanMinimize"
         WindowStartupLocation="Manual" Left="300" Top="100" 
         Icon="/icon.png">
     <Window.Background>
@@ -14,10 +14,11 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="383*"/>
-            <ColumnDefinition Width="317*"/>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="420*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="2" Margin="-10 -20 -20 -20"  Source="/Images/sprze.png"  />
+        <Image Grid.Column="2" Margin="-20 -30 -30 -30"  Source="/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" />
+                                       
         <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="0"/>
     </Grid>
 </Window>
