@@ -24,6 +24,8 @@
     <None Remove="icon.png" />
     <None Remove="Images\Background.jpg" />
     <None Remove="Images\BackgroundMaterianWin.jpg" />
+    <None Remove="Images\GearDraw.jpg" />
+    <None Remove="Images\GearDraw.png" />
     <None Remove="Images\GearDrwa.jpg" />
     <None Remove="Images\sprze.png" />
     <None Remove="sprze.png" />
@@ -39,8 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="GearDraw.png" />
-    <Resource Include="GearDrwa.jpg" />
+    <Resource Include="Images\GearDraw.png" />
     <Resource Include="icon.png" />
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\BackgroundMaterianWin.jpg" />
