@@ -17,7 +17,7 @@
             <ColumnDefinition Width="400*"/>
             <ColumnDefinition Width="420*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="2" Margin="-20 -30 -30 -30"  Source="/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" />
+        <Image Grid.Column="2" Margin="-20 -30 -30 -30"  Source="/Images/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" />
                                        
         <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="0"/>
     </Grid>
