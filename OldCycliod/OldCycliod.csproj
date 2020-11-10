@@ -41,6 +41,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\GearDraw.png" />
     <Resource Include="icon.png" />
     <Resource Include="Images\Background.jpg" />
