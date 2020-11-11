@@ -83,7 +83,7 @@
             <CheckBox x:Name="checkBoxDelta" Margin="28 10 0 -10" Grid.Row ="13" Grid.ColumnSpan="3" Content="Podaj inną wartość niż maksymalny luz dla wybranego pasowania"  VerticalAlignment="Bottom"/>
             <TextBlock Text="Luz pasowania Δ = " Grid.Row="14" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxDelta" Text=""  Grid.Column ="1" Grid.Row="14"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
-            <TextBlock Text="[mm]" FontSize="10" Grid.Column ="2" Grid.Row="14"  Margin="5 12 0 0"/>
+            <TextBlock Text="[μm]" FontSize="10" Grid.Column ="2" Grid.Row="14"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="1" x:Name="textBlockDeltaError" Grid.Row="15"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
         </Grid>

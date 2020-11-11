@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Frontend.Entity
 {
-    class DataValue : BaseEntity
+   public class DataValue : BaseEntity
     {
         public DataValue(string content, EnumName nameId, string unit, string type) : base(0, content, type)
         {
