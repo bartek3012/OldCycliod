@@ -45,6 +45,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="CheckValue">
+      <HintPath>Library\CheckValue.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\GearDraw.png" />
     <Resource Include="icon.png" />
     <Resource Include="Images\Background.jpg" />

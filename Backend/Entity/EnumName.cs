@@ -6,7 +6,7 @@ namespace Frontend.Entity
 {
     public enum EnumName
     {
-        D = 1,
+        D,
         d,
         e,
         h,
@@ -17,6 +17,7 @@ namespace Frontend.Entity
         k,
         Mmax,
         P,
-        mi
+        mi,
+        SizeOfElements
     }
 }
