@@ -18,6 +18,6 @@ namespace Frontend.Entity
         Mmax,
         P,
         mi,
-        SizeOfElements
+        SizeOfElemets
     }
 }

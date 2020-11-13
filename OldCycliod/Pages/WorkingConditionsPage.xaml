@@ -34,9 +34,9 @@
 
             <!--w-->
             <TextBlock Text="Prędkość obrotowa  n = " Grid.Row="3" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxW" Text=""  Grid.Column ="1" Grid.Row="3"  Margin="10 10 0 0"/>
-            <TextBlock Text="[1/s]" FontSize="10" Grid.Column ="2" Grid.Row="3"  Margin="5 12 0 0"/>
-            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockWError" Grid.Row="4"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+            <TextBox x:Name="textBoxN" Text=""  Grid.Column ="1" Grid.Row="3"  Margin="10 10 0 0"/>
+            <TextBlock Text="[obr/min]" FontSize="10" Grid.Column ="2" Grid.Row="3"  Margin="5 12 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockNError" Grid.Row="4"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
         </Grid>
 
@@ -52,17 +52,17 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Warunki pracy:" Grid.Column="0" Grid.Row="0" Margin="30 5 0 5" FontWeight="Bold" FontSize="14"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="1" HorizontalAlignment="Center" FontSize="12" Content="Lekkie">
+            <Button x:Name="LekkieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="1" HorizontalAlignment="Center" FontSize="12" Content="Lekkie" Click="conditionsButton_Click">
                 <Button.ToolTip>
                     <ToolTip Content="Obciążenia jednokierunkowe, dobre smarowanie, dokładna obróbka i mała chropowatość" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
             </Button>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Średnie">
+            <Button x:Name="SrednieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Średnie" Click="conditionsButton_Click">
                 <Button.ToolTip>
                     <ToolTip Content="Obciążenia zmienne, minimalne drgania, przeciętne smarowanie, przeciętna obróbka powierzchni" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
             </Button>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="4" HorizontalAlignment="Center" FontSize="12" Content="Ciężkie">
+            <Button x:Name="CiezkieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="4" HorizontalAlignment="Center" FontSize="12" Content="Ciężkie" Click="conditionsButton_Click">
                 <Button.ToolTip>
                     <ToolTip Content="Obciążenia zmienne o cyklu wahadłowym, uderzenie, drgania o dużej częstotliwości i amplitudzie" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
@@ -84,9 +84,10 @@
         </Grid.RowDefinitions>
             <TextBlock Text="Materiał" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 10 0 10" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
             <!--k-->
-            <CheckBox x:Name="checkBoxK" Margin="28 10 0 -10" Grid.Row ="1" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="checkBoxK" Margin="28 10 0 -10" Grid.Row ="1" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom" Checked="checkBoxK_Checked"/>
             <TextBlock Text="Wsp sztywności kontaktowej k = " Grid.Row="2" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxK" Text=""  Grid.Column ="1" Grid.Row="2"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
+            <TextBox x:Name="textBoxK" Text="3"  Grid.Column ="1" Grid.Row="2"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
+            <TextBlock Text="[MPa/𝜇m]" FontSize="10" Grid.Column ="2" Grid.Row="2"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockKError" Grid.Row="3"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Grid Margin="0 10 0 0">

@@ -24,17 +24,17 @@ namespace OldCycliod
         public DemensionPage()
         {
             InitializeComponent();
-            checkValueElements = new CheckValue[(int)EnumName.SizeOfElements];
+            checkValueElements = new CheckValue[(int)EnumName.Mmax]; //Mmax is first user input element 
             Initialize();
         }
 
-        private CheckValue[] checkValueElements;
+        public CheckValue[] checkValueElements { get; set; }
         private CheckBoxService checkBoxServiceH;
         private CheckBoxService checkBoxServiceB;
         private CheckBoxService checkBoxServiceDelta;
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new WorkingConditionsPage());
+            NavigationService.Navigate(new WorkingConditionsPage(checkValueElements));
         }
 
         private void Initialize()
