@@ -1,5 +1,6 @@
 ﻿using CheckValues;
 using Frontend.Entity;
+using OldCycliod.Pages.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +29,9 @@ namespace OldCycliod
         }
 
         private CheckValue[] checkValueElements;
+        private CheckBoxService checkBoxServiceH;
+        private CheckBoxService checkBoxServiceB;
+        private CheckBoxService checkBoxServiceDelta;
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new WorkingConditionsPage());
@@ -41,35 +45,35 @@ namespace OldCycliod
             checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 100000);
             checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 100000);
             checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 100000);
+
+            checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
+            checkBoxServiceB = new CheckBoxService(checkBoxB, textBoxB);
+            checkBoxServiceDelta = new CheckBoxService(checkBoxDelta, textBoxDelta);
         }
 
         private void checkBoxH_Checked(object sender, RoutedEventArgs e)
         {
-            textBoxH.Background = Brushes.White;
-            textBoxH.IsReadOnly = false;
-            checkBoxH.IsEnabled = false;
+            checkBoxServiceH.Checked();
+        }
+        private void checkBoxB_Checked(object sender, RoutedEventArgs e)
+        {
+            checkBoxServiceB.Checked();
         }
 
-        private void setCheckBoxEnabled()
-        {
-            textBoxH.Background = Brushes.LightGray;
-            textBoxH.IsReadOnly = true;
-            checkBoxH.IsEnabled = true;
-            checkBoxH.IsChecked = false;
-            textBoxB.Background = Brushes.LightGray;
-            textBoxB.IsReadOnly = true;
-            checkBoxB.IsEnabled = true;
-            checkBoxB.IsChecked = false;
-        }
 
         private void textBoxDOut_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double D = checkValueElements[(int)EnumName.D].Cheack();
             double H = (D / 3.5)*0.6;
             double B = (D / 3.5) * 0.5;
-            textBoxH.Text = H.ToString();
-            textBoxB.Text = B.ToString();
-            setCheckBoxEnabled();
+            checkBoxServiceH.SetValue(H);
+            checkBoxServiceB.SetValue(B);
+            checkBoxServiceDelta.SetValue(1); //Do uzupełnienia
+        }
+
+        private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
+        {
+            checkBoxServiceDelta.Checked();
         }
     }
 }

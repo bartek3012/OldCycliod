@@ -6,9 +6,7 @@ namespace Frontend
 {
     public class BaseEntity
     {
-        public BaseEntity() { }
-
-        public BaseEntity(double value, string content, string type)
+        public BaseEntity(string content, string type, double value = 0)
         {
             Value = value;
             Content = content;
