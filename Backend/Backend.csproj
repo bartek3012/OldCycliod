@@ -5,4 +5,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entity\Material.cs" />
+  </ItemGroup>
+
 </Project>

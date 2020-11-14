@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Frontend;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,11 +22,12 @@ namespace OldCycliod
         {
             InitializeComponent();
         }
-
+        public MaterialsMenager<BaseEntity> Materials;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
             addMaterialWindow.Show();
+            Materials = new MaterialsMenager();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Frontend.Menager
     public class DataValueMenager : BaseMenager<DataValue>
     {
         //public Enum MyProperty { get; set; }
-        public override void Initialize()
+        protected override void Initialize()
         {
             Add(new DataValue("Średnica zewnętrzna D", EnumName.D, "[mm]", "input"));
             Add(new DataValue("Średnica wewnętrzna d", EnumName.d, "[mm]", "input"));

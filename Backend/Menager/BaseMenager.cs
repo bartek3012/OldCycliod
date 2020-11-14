@@ -15,7 +15,7 @@ namespace Frontend.Menager
             Initialize();
         }
 
-        public abstract void Initialize();
+        protected abstract void Initialize();
         public void Add(BaseEntity entity)
         {
             Elements.Add(entity as T);

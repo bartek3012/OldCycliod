@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="Wybierz materiał" Height="300" Width="250" ResizeMode="NoResize"
+        Title="Wybierz materiał" Height="300" Width="551" ResizeMode="NoResize"
         WindowStartupLocation="Manual" Left="500" Top="200">
     <Window.Background>
         <ImageBrush ImageSource="/Images/BackgroundMaterianWin.jpg" />
