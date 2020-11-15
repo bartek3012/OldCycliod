@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace Frontend.Menager
+namespace Backend.Menager
 {
     public abstract class BaseMenager<T> where T : BaseEntity
     {

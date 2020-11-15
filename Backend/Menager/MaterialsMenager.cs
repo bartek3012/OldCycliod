@@ -1,12 +1,12 @@
-﻿using Frontend;
-using Frontend.Menager;
+﻿using Backend;
+using Backend.Menager;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Backend.Menager
 {
-    class MaterialsMenager : BaseMenager<BaseEntity>
+    public class MaterialsMenager : BaseMenager<BaseEntity>
     {
         protected override void Initialize()
         {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Frontend
+namespace Backend
 {
     public class BaseEntity
     {

@@ -5,43 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="Wybierz materiał" Height="300" Width="551" ResizeMode="NoResize"
+        Title="Wybierz materiał" Height="300" Width="485" ResizeMode="NoResize"
         WindowStartupLocation="Manual" Left="500" Top="200">
     <Window.Background>
         <ImageBrush ImageSource="/Images/BackgroundMaterianWin.jpg" />
     </Window.Background>
-    <Border Padding="10">
     <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="7*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5 0 5 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-            <ListBox Background="Transparent" Grid.Row="0" Grid.ColumnSpan="2">
-                <ListBoxItem>NazwaMateriału 10 [MPa]</ListBoxItem>
-                <ListBoxItem>Materiał#1</ListBoxItem>
-                <ListBoxItem>Materiał#2</ListBoxItem>
-                <ListBoxItem>Materiał#3</ListBoxItem>
-                <ListBoxItem>ListBox Item #1</ListBoxItem>
-                <ListBoxItem>ListBox Item #2</ListBoxItem>
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-                <ListBoxItem>ListBox Item #1</ListBoxItem>
-                <ListBoxItem>ListBox Item #2</ListBoxItem>
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-
-
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-                <ListBoxItem>ListBox Item #3</ListBoxItem>
-            </ListBox>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Height="20" Width="100" Grid.Row="1" Grid.Column="0" FontSize="13"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13" Click="Button_Click"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Height="20" Width="215" Grid.Row="2" Grid.ColumnSpan="2" FontSize="13"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Rodzaj" Grid.Row="0" Grid.Column ="0" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="Oznaczenie" Grid.Row="0" Grid.Column ="1" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="kc" Grid.Row="0" Grid.Column ="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">
+                <TextBlock.ToolTip>
+                    <ToolTip Content="kc - dopuszczalne naprężenia ściskające" Style="{StaticResource ToolTipStyle}"/>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBlock Text="Jednostka" Grid.Row="0" Grid.Column ="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
         </Grid>
-    </Border>
+        <Border Padding="10" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="155*"/>
+                    <ColumnDefinition Width="155*"/>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="119*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="MaterialListBox" Background="Transparent" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,26" Grid.RowSpan="2">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Type}" Grid.Column="0"/>
+                                <TextBlock Text="{Binding Content}" Grid.Column="1"/>
+                                <TextBlock Text="{Binding Value}" Grid.Column="2"/>
+                                <TextBlock Text="{Binding Unit}" Grid.Column="3"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Height="20" Width="100" Grid.Row="1" Grid.Column="0" FontSize="13"/>
+                <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13" Click="Button_Click"/>
+                <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Height="20" Width="100" Grid.Row="1" Grid.Column="2" FontSize="13" Grid.ColumnSpan="2"/>
+            </Grid>
+        </Border>
+    </Grid>
 </Window>

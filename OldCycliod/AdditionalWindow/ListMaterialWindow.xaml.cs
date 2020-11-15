@@ -1,4 +1,5 @@
-﻿using Frontend;
+﻿using Backend;
+using Backend.Menager;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,13 +22,15 @@ namespace OldCycliod
         public ListMaterialWindow()
         {
             InitializeComponent();
+            Materials = new MaterialsMenager();
+            //Materials.Elements.ItemSource = new List<BaseEntity>();
+            MaterialListBox.ItemsSource = Materials.Elements;
         }
-        public MaterialsMenager<BaseEntity> Materials;
+        public MaterialsMenager Materials;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
             addMaterialWindow.Show();
-            Materials = new MaterialsMenager();
         }
     }
 }

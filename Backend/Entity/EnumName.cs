@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Frontend.Entity
+namespace Backend.Entity
 {
     public enum EnumName
     {

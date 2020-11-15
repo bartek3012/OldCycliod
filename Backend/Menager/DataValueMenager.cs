@@ -1,9 +1,9 @@
-﻿using Frontend.Entity;
+﻿using Backend.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Frontend.Menager
+namespace Backend.Menager
 {
     public class DataValueMenager : BaseMenager<DataValue>
     {
