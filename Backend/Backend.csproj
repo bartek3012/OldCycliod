@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entity\EnumName.cs" />
+    <Compile Remove="Entity\EnumWorkCondition.cs" />
     <Compile Remove="Entity\Material.cs" />
+    <Compile Remove="Menager\BaseMenager.cs" />
   </ItemGroup>
 
 </Project>

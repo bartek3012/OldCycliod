@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using Backend;
 
 namespace OldCycliod.Tests
 {
@@ -35,6 +36,21 @@ namespace OldCycliod.Tests
 
             //Assert
             Assert.Equal(0.03, workConditionService.Value);
+        }
+
+        [Fact]
+        public void GetEntityByType()
+        {
+            //Arrange
+            DataValueMenager dataValueMenager = new DataValueMenager();
+
+            //Act
+            BaseEntity baseEntity = dataValueMenager.GetByType("wrongType");
+            BaseEntity baseEntity2 = dataValueMenager.GetByType("output");
+
+            //Assert
+            Assert.Null(baseEntity);
+            Assert.Equal(dataValueMenager.Elements[(int)EnumName.Mmax], baseEntity2);
         }
     }
 }

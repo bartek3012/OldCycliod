@@ -8,7 +8,7 @@ namespace Backend.Menager
 {
     public abstract class BaseMenager<T> where T : BaseEntity
     {
-        public List<T> Elements { get; set; } //zobacz czy nie będzie git z protected
+        public List<T> Elements { get; set; }
         public BaseMenager()
         {
             Elements = new List<T>();
@@ -26,7 +26,7 @@ namespace Backend.Menager
             {
                 return Elements.First(p => p.Type == type);
             }
-            catch (FormatException)
+            catch (InvalidOperationException)
             {
                 MessageBox.Show("Błąd wyszukiwania atrybutu z listy o nazwie!");
                 return null;
