@@ -7,18 +7,19 @@
         mc:Ignorable="d"
         Title="OldCycliod" Height="490" Width="870" ResizeMode="CanMinimize"
         WindowStartupLocation="Manual" Left="300" Top="100" 
-        Icon="/icon.png">
+        Icon="/Icon1.ico">
     <Window.Background>
         <ImageBrush ImageSource="/Images/Background.jpg" />
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="239*"/>
             <ColumnDefinition Width="420*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Column="2" Margin="-20 -30 -30 -30"  Source="/Images/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" />
-                                       
-        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" Margin="0"/>
+        <Image Grid.Column="2" Margin="228,-30,-30,-30"  Source="/Images/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" Grid.ColumnSpan="2" />
+
+        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="435" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
