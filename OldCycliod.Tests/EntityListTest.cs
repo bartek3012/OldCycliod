@@ -52,5 +52,15 @@ namespace OldCycliod.Tests
             Assert.Null(baseEntity);
             Assert.Equal(dataValueMenager.Elements[(int)EnumName.Mmax], baseEntity2);
         }
+
+        [Fact]
+        public void FitEntity()
+        {
+            //Arrange+Act
+            FitMenager dataValueMenager = new FitMenager();
+            string result = dataValueMenager.FitElemets[0].Name;
+            //Assert
+            Assert.Equal("H7/e8", result);
+        }
     }
 }

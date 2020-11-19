@@ -74,10 +74,12 @@
           
             <!--Δ-->
             <TextBlock Text="Wybierz pasowanie:" Grid.Row="12" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <ComboBox  Margin="10 10 0 0" Grid.Row="12" Grid.Column="1" Background="Transparent">
-                <ComboBoxItem Content="H7/h6" IsSelected="True"/>
-                <ComboBoxItem Content="P7/h6"/>
-                <ComboBoxItem Content="G7/h6"/>
+            <ComboBox  Margin="10 10 0 0" Grid.Row="12" Grid.Column="1" Background="Transparent" x:Name="ComboBoxFit" SelectionChanged="ComboBoxFit_SelectionChanged">
+                   <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
             </ComboBox>
             <TextBlock Text="zalecane H7/h6" FontSize="10" Grid.Column ="2" Grid.Row="12"  Margin="5 12 0 0"/>
             <CheckBox x:Name="checkBoxDelta" Margin="28 10 0 -10" Grid.Row ="13" Grid.ColumnSpan="3" Content="Podaj inną wartość niż maksymalny luz dla wybranego pasowania"  VerticalAlignment="Bottom" Checked="checkBoxDelta_Checked"/>

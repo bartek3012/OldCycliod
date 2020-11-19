@@ -8,7 +8,11 @@ namespace Backend.Entity
     {
         public DataValue(string content, EnumName nameId, string unit, string type) : base(content, type, unit)
         {
-            Content = content;
+            NameId = nameId;
+        }
+
+        public DataValue(EnumName nameId, string unit, string type) : base("", type, unit)
+        {
             NameId = nameId;
         }
 

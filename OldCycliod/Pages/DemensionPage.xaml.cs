@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Backend.Menager;
 
 namespace OldCycliod
 {
@@ -27,14 +28,15 @@ namespace OldCycliod
             checkValueElements = new CheckValue[(int)EnumName.Mmax]; //Mmax is first user input element 
             Initialize();
         }
-
+        private WorkingConditionsPage workingCondPage;
         public CheckValue[] checkValueElements { get; set; }
         private CheckBoxService checkBoxServiceH;
         private CheckBoxService checkBoxServiceB;
         private CheckBoxService checkBoxServiceDelta;
+        private FitMenager fitMenager;
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new WorkingConditionsPage(checkValueElements));
+            NavigationService.Navigate(workingCondPage);
         }
 
         private void Initialize()
@@ -49,6 +51,11 @@ namespace OldCycliod
             checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
             checkBoxServiceB = new CheckBoxService(checkBoxB, textBoxB);
             checkBoxServiceDelta = new CheckBoxService(checkBoxDelta, textBoxDelta);
+
+            fitMenager = new FitMenager();
+            ComboBoxFit.ItemsSource = fitMenager.FitElemets;
+
+            workingCondPage = new WorkingConditionsPage(this);
         }
 
         private void checkBoxH_Checked(object sender, RoutedEventArgs e)
@@ -74,6 +81,11 @@ namespace OldCycliod
         private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
         {
             checkBoxServiceDelta.Checked();
+        }
+
+        private void ComboBoxFit_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int f = ComboBoxFit.SelectedIndex;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using OldCycliod.Pages;
 
 namespace OldCycliod
 {
@@ -19,18 +20,31 @@ namespace OldCycliod
     /// </summary>
     public partial class ListMaterialWindow : Window
     {
-        public ListMaterialWindow()
+        public ListMaterialWindow(TextBox textBoxMaterial)
         {
             InitializeComponent();
-            Materials = new MaterialsMenager();
+            materials = new MaterialsMenager();
             //Materials.Elements.ItemSource = new List<BaseEntity>();
-            MaterialListBox.ItemsSource = Materials.Elements;
+            MaterialListBox.ItemsSource = materials.Elements;
+            textBoxMat = textBoxMaterial;
         }
-        public MaterialsMenager Materials;
+        private MaterialsMenager materials;
+        private TextBox textBoxMat;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
             addMaterialWindow.Show();
+        }
+
+        private void Button_Click_Select(object sender, RoutedEventArgs e)
+        {
+            selectMaterial();
+        }
+
+        private void selectMaterial()
+        {
+            BaseEntity Material = (MaterialListBox.SelectedItem as BaseEntity);
+            textBoxMat.Text = Material.Content;
         }
     }
 }

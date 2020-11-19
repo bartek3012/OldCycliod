@@ -21,15 +21,17 @@ namespace OldCycliod
     /// </summary>
     public partial class WorkingConditionsPage : Page
     {
-        public WorkingConditionsPage(CheckValue[] checkValue)
+        public WorkingConditionsPage(DemensionPage _demensionPage)
         {
             InitializeComponent();
-            checkValueElements = checkValue;
+            demensionPage = _demensionPage;
+            checkValueElements = demensionPage.checkValueElements;
             Inicjalize();
         }
-        private CheckValue[] checkValueElements;
+        private DemensionPage demensionPage;
         private CheckBoxService checkBoxService;
         private WorkConditionService conditionService;
+        private CheckValue[] checkValueElements;
         private void Inicjalize()
         {
             checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000);
@@ -40,9 +42,15 @@ namespace OldCycliod
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
         }
+
+        public TextBox TextBoxMaterial
+        {
+            set { textBoxMat = value; }
+        }
+
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
-           ListMaterialWindow secondWindow = new ListMaterialWindow();
+           ListMaterialWindow secondWindow = new ListMaterialWindow(textBoxMat);
             secondWindow.Show();
         }
 
