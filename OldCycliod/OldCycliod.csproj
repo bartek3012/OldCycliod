@@ -20,6 +20,7 @@
     <None Remove="background.jpg" />
     <None Remove="background1.jpg" />
     <None Remove="BackgroundMaterianWin.jpg" />
+    <None Remove="DataXmlFit\H7_f8.xml" />
     <None Remove="GearDraw.png" />
     <None Remove="GearDrwa.jpg" />
     <None Remove="icon.ico" />
@@ -32,6 +33,7 @@
     <None Remove="Images\GearDrwa.jpg" />
     <None Remove="Images\sprze.png" />
     <None Remove="sprze.png" />
+    <None Remove="test1.xml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +43,12 @@
     <Page Remove="InputPage.xaml" />
     <Page Remove="MaterialWindow.xaml" />
     <Page Remove="OutputPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DataXmlFit\H7_f8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -59,6 +67,42 @@
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\BackgroundMaterianWin.jpg" />
     <Resource Include="Images\sprze.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="H11_d11.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H11_h11.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H7_e8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H7_f8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H7_g8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H7_h8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H8_d9.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H8_e8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H8_h7.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H8_h8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="H9_d9.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -62,5 +62,13 @@ namespace OldCycliod.Tests
             //Assert
             Assert.Equal("H7/e8", result);
         }
+
+        [Fact]
+        public void FitMenager()
+        {
+            //Arrange+Act
+            FitMenager dataValueMenager = new FitMenager();
+            dataValueMenager.CheckFitValue();
+        }
     }
 }
