@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Backend.Menager;
+using Backend.Enum;
 
 namespace OldCycliod
 {
@@ -85,7 +86,9 @@ namespace OldCycliod
 
         private void ComboBoxFit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int f = ComboBoxFit.SelectedIndex;
+            EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+            int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
+            checkBoxServiceDelta.SetValue(delta);
         }
     }
 }

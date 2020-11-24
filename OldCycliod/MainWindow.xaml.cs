@@ -1,4 +1,5 @@
-﻿using Backend.Menager;
+﻿using Backend.Enum;
+using Backend.Menager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace OldCycliod
         public MainWindow()
         {
             InitializeComponent();
-            FitMenager fitMenager = new FitMenager();
-            fitMenager.CheckFitValue();
+            //FitMenager fitMenager = new FitMenager();
+            //fitMenager.CheckFitValue(EnumFit.H11_h11, 9);
             InputOutputPages.NavigationService.Navigate(new DemensionPage());
         }
     }

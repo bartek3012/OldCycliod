@@ -68,7 +68,7 @@ namespace OldCycliod.Tests
         {
             //Arrange+Act
             FitMenager dataValueMenager = new FitMenager();
-            dataValueMenager.CheckFitValue();
+            //dataValueMenager.CheckFitValue();
         }
     }
 }

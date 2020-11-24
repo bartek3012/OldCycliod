@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Backend.Menager
@@ -35,40 +37,76 @@ namespace Backend.Menager
         }
 
         public List<Fit> FitElemets;
-        public void CheckFitValue()
+        public int CheckFitValue(EnumFit enumFit, double widthB)
         {
-            List<ValueFit> values = new List<ValueFit>();
-            values.Add(new ValueFit(1, 28));
-            values.Add(new ValueFit(2, 38));
-            values.Add(new ValueFit(3, 47));
-            values.Add(new ValueFit(4, 59));
-            values.Add(new ValueFit(5, 73));
-            values.Add(new ValueFit(6, 89));
-            values.Add(new ValueFit(7, 106));
-            values.Add(new ValueFit(8, 126));
-            values.Add(new ValueFit(9, 148));
-            values.Add(new ValueFit(10, 172));
-            values.Add(new ValueFit(11, 191));
-            values.Add(new ValueFit(12, 214));
-            values.Add(new ValueFit(13, 232));
+            string secondPartPath = enumFit.ToString() + ".xml";
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, secondPartPath);
+            XmlRootAttribute root = new XmlRootAttribute();
+            root.ElementName = "ValueFit";
+            root.IsNullable = true;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ValueFit>), root);
+            string xml = File.ReadAllText(path);
+            StringReader stringReader = new StringReader(xml);
+            var values = (List<ValueFit>)xmlSerializer.Deserialize(stringReader);
 
-            XmlDocument xmlDoc = new XmlDocument();
-            string secondPartPath = EnumFit.H7_f7.ToString() + ".xml";
-            string path1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "H7_f8.xml");
-            string xml = File.ReadAllText(path1);
-            xmlDoc.Load(path1);
+            if(widthB>1 && widthB<=3)
+            {
+                return values.Where(p => p.Id == 1).Select(p => p.Value).First();
+            }
+            else if (widthB <= 6)
+            {
+                return values.Where(p => p.Id == 2).Select(p => p.Value).First();
+            }
+            else if (widthB <= 10)
+            {
+                return values.Where(p => p.Id == 3).Select(p => p.Value).First();
+            }
+            else if (widthB <= 18)
+            {
+                return values.Where(p => p.Id == 4).Select(p => p.Value).First();
+            }
+            else if (widthB <= 30)
+            {
+                return values.Where(p => p.Id == 5).Select(p => p.Value).First();
+            }
+            else if (widthB <= 50)
+            {
+                return values.Where(p => p.Id == 6).Select(p => p.Value).First();
+            }
+            else if (widthB <= 80)
+            {
+                return values.Where(p => p.Id == 7).Select(p => p.Value).First();
+            }
+            else if (widthB <= 120)
+            {
+                return values.Where(p => p.Id == 8).Select(p => p.Value).First();
+            }
+            else if (widthB <= 180)
+            {
+                return values.Where(p => p.Id == 9).Select(p => p.Value).First();
+            }
+            else if (widthB <= 250)
+            {
+                return values.Where(p => p.Id == 10).Select(p => p.Value).First();
+            }
+            else if (widthB <= 315)
+            {
+                return values.Where(p => p.Id == 11).Select(p => p.Value).First();
+            }
+            else if (widthB <= 400)
+            {
+                return values.Where(p => p.Id == 12).Select(p => p.Value).First();
+            }
+            else if (widthB <= 500)
+            {
+                return  values.Where(p => p.Id == 13).Select(p => p.Value).First();
+            }
+            else
+            {
+                MessageBox.Show("Błędna wartość wpustu");
+                return -1;
+            }
 
-            string path = @"FitDataBase\" + EnumFit.H8_e8.ToString() + ".xml";
-
-            //XmlRootAttribute root = new XmlRootAttribute();
-            //root.ElementName = "ValueFit";
-            //root.IsNullable = true;
-            //XmlSerializer xml = new XmlSerializer(typeof(List<ValueFit>), root);
-
-            //using (StreamWriter sw = new StreamWriter(@"C:\Users\user\source\repos\OldCycliod\Backend\FitDataBase\XmlFiles\H8_e8.xml"))
-            //{
-            //    xml.Serialize(sw, values);
-            //}
 
         }
     }
