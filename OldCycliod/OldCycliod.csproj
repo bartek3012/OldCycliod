@@ -23,6 +23,9 @@
     <None Remove="DataXmlFit\H7_f8.xml" />
     <None Remove="GearDraw.png" />
     <None Remove="GearDrwa.jpg" />
+    <None Remove="H7_f8.xml" />
+    <None Remove="H7_g8.xml" />
+    <None Remove="H7_h8.xml" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
     <None Remove="Icon1.ico" />
@@ -79,13 +82,13 @@
     <None Update="H7_e8.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="H7_f8.xml">
+    <None Update="H7_f7.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="H7_g8.xml">
+    <None Update="H7_g6.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="H7_h8.xml">
+    <None Update="H7_h6.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="H8_d9.xml">

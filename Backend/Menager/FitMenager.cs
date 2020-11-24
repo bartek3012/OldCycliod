@@ -22,9 +22,9 @@ namespace Backend.Menager
         private void Initialize()
         {
             FitElemets.Add(new Fit(EnumFit.H7_e8));
-            FitElemets.Add(new Fit(EnumFit.H7_f8));
-            FitElemets.Add(new Fit(EnumFit.H7_g8));
-            FitElemets.Add(new Fit(EnumFit.H7_h8));
+            FitElemets.Add(new Fit(EnumFit.H7_f7));
+            FitElemets.Add(new Fit(EnumFit.H7_g6));
+            FitElemets.Add(new Fit(EnumFit.H7_h6));
             FitElemets.Add(new Fit(EnumFit.H8_d9));
             FitElemets.Add(new Fit(EnumFit.H8_e8));
             FitElemets.Add(new Fit(EnumFit.H8_h7));
@@ -53,7 +53,7 @@ namespace Backend.Menager
             values.Add(new ValueFit(13, 232));
 
             XmlDocument xmlDoc = new XmlDocument();
-            string secondPartPath = EnumFit.H7_f8.ToString() + ".xml";
+            string secondPartPath = EnumFit.H7_f7.ToString() + ".xml";
             string path1 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "H7_f8.xml");
             string xml = File.ReadAllText(path1);
             xmlDoc.Load(path1);
