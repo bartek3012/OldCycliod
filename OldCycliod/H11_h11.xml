@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ValueFit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ValueFit Id="1">
+		<Value>60</Value>
+	</ValueFit>
+	<ValueFit Id="2">
+		<Value>75</Value>
+	</ValueFit>
+	<ValueFit Id="3">
+		<Value>90</Value>
+	</ValueFit>
+	<ValueFit Id="4">
+		<Value>110</Value>
+	</ValueFit>
+	<ValueFit Id="5">
+		<Value>130</Value>
+	</ValueFit>
+	<ValueFit Id="6">
+		<Value>160</Value>
+	</ValueFit>
+	<ValueFit Id="7">
+		<Value>190</Value>
+	</ValueFit>
+	<ValueFit Id="8">
+		<Value>220</Value>
+	</ValueFit>
+	<ValueFit Id="9">
+		<Value>250</Value>
+	</ValueFit>
+	<ValueFit Id="10">
+		<Value>290</Value>
+	</ValueFit>
+	<ValueFit Id="11">
+		<Value>320</Value>
+	</ValueFit>
+	<ValueFit Id="12">
+		<Value>360</Value>
+	</ValueFit>
+	<ValueFit Id="13">
+		<Value>400</Value>
+	</ValueFit>
+</ValueFit>
+
+
+

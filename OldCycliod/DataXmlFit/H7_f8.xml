@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ValueFit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ValueFit Id="1">
+		<Value>28</Value>
+	</ValueFit>
+	<ValueFit Id="2">
+		<Value>38</Value>
+	</ValueFit>
+	<ValueFit Id="3">
+		<Value>47</Value>
+	</ValueFit>
+	<ValueFit Id="4">
+		<Value>59</Value>
+	</ValueFit>
+	<ValueFit Id="5">
+		<Value>73</Value>
+	</ValueFit>
+	<ValueFit Id="6">
+		<Value>89</Value>
+	</ValueFit>
+	<ValueFit Id="7">
+		<Value>106</Value>
+	</ValueFit>
+	<ValueFit Id="8">
+		<Value>126</Value>
+	</ValueFit>
+	<ValueFit Id="9">
+		<Value>148</Value>
+	</ValueFit>
+	<ValueFit Id="10">
+		<Value>172</Value>
+	</ValueFit>
+	<ValueFit Id="11">
+		<Value>191</Value>
+	</ValueFit>
+	<ValueFit Id="12">
+		<Value>214</Value>
+	</ValueFit>
+	<ValueFit Id="13">
+		<Value>232</Value>
+	</ValueFit>
+</ValueFit>

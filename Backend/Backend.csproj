@@ -12,4 +12,17 @@
     <Compile Remove="Menager\BaseMenager.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="FitDataBase\H8_e8.xml" />
+    <None Remove="FitDataBase\XmlFiles\H8_e8.xml" />
+    <None Remove="test2.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FitDataBase\XmlFiles\H8_e8.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test2.xml" />
+  </ItemGroup>
+
 </Project>
