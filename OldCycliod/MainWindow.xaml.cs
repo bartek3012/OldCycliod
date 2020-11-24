@@ -25,9 +25,8 @@ namespace OldCycliod
         public MainWindow()
         {
             InitializeComponent();
-            //FitMenager fitMenager = new FitMenager();
-            //fitMenager.CheckFitValue(EnumFit.H11_h11, 9);
             InputOutputPages.NavigationService.Navigate(new DemensionPage());
         }
+        
     }
 }

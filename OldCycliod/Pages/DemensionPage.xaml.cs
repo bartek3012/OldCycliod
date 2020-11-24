@@ -30,24 +30,20 @@ namespace OldCycliod
             Initialize();
         }
         private WorkingConditionsPage workingCondPage;
-        public CheckValue[] checkValueElements { get; set; }
+        public CheckValue[] checkValueElements { get; set; } //czy nie priv?
         private CheckBoxService checkBoxServiceH;
         private CheckBoxService checkBoxServiceB;
         private CheckBoxService checkBoxServiceDelta;
         private FitMenager fitMenager;
-        private void nextButtonClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(workingCondPage);
-        }
-
+        public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
-            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 100000);
-            checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 100000);
-            checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 100000);
-            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 100000);
-            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 100000);
-            checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 100000);
+            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 500, 1.1);
+            checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
+            checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
+            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500);
+            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500);
+            checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 5000);
 
             checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
             checkBoxServiceB = new CheckBoxService(checkBoxB, textBoxB);
@@ -57,6 +53,7 @@ namespace OldCycliod
             ComboBoxFit.ItemsSource = fitMenager.FitElemets;
 
             workingCondPage = new WorkingConditionsPage(this);
+            AllDataValue = new DataValueMenager();
         }
 
         private void checkBoxH_Checked(object sender, RoutedEventArgs e)
@@ -76,7 +73,6 @@ namespace OldCycliod
             double B = (D / 3.5) * 0.5;
             checkBoxServiceH.SetValue(H);
             checkBoxServiceB.SetValue(B);
-            checkBoxServiceDelta.SetValue(1); //Do uzupełnienia
         }
 
         private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
@@ -89,6 +85,24 @@ namespace OldCycliod
             EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
             int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
             checkBoxServiceDelta.SetValue(delta);
+        }
+
+        private void nextButtonClick(object sender, RoutedEventArgs e)
+        {
+            bool error = false;
+            for (int i = 0; i <= (int)EnumName.delta; i++)
+            {
+                checkValueElements[i].ClearError();
+                AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
+                if(checkValueElements[i].Error == true)
+                {
+                    error = true;
+                }
+            }
+            if(error == false)
+            {
+                NavigationService.Navigate(workingCondPage);
+            }
         }
     }
 }
