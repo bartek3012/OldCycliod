@@ -35,6 +35,7 @@ namespace OldCycliod
         private CheckBoxService checkBoxServiceB;
         private CheckBoxService checkBoxServiceDelta;
         private FitMenager fitMenager;
+        private bool setComboBox = false;
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
@@ -73,6 +74,12 @@ namespace OldCycliod
             double B = (D / 3.5) * 0.5;
             checkBoxServiceH.SetValue(H);
             checkBoxServiceB.SetValue(B);
+            if(setComboBox == true)
+            {
+                EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+                int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
+                checkBoxServiceDelta.SetValue(delta);
+            }
         }
 
         private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
@@ -85,6 +92,7 @@ namespace OldCycliod
             EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
             int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
             checkBoxServiceDelta.SetValue(delta);
+            setComboBox = true;
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
@@ -94,7 +102,7 @@ namespace OldCycliod
             if(checkValueElements[(int)EnumName.D].Error == false)
             {
                 checkValueElements[(int)EnumName.d].Max = AllDataValue.Elements[(int)EnumName.D].Value - 1;
-                checkValueElements[(int)EnumName.e].Max = AllDataValue.Elements[(int)EnumName.D].Value * 0.1;
+                checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1,1);
 
                 AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
                 if (checkValueElements[(int)EnumName.d].Error == false)
@@ -108,17 +116,28 @@ namespace OldCycliod
             for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
             {
                 checkValueElements[i].ClearError();
-                
                 AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
-                if(checkValueElements[i].Error == true)
+            }
+            for (int i = 0; i <= (int)EnumName.delta; i++)
+            {
+                if (checkValueElements[i].Error == true)
                 {
                     error = true;
                 }
             }
-            if(error == false)
+            if (error == false)
             {
                 NavigationService.Navigate(workingCondPage);
             }
+        }
+
+        private void clearButtonClick(object sender, RoutedEventArgs e)
+        {
+            for(int i = 0; i<=(int)EnumName.delta; i++)
+            {
+                checkValueElements[i].Clear();
+            }
+
         }
     }
 }
