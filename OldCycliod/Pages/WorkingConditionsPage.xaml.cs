@@ -28,21 +28,27 @@ namespace OldCycliod
             demensionPage = _demensionPage;
             checkValueElements = demensionPage.checkValueElements;
             Inicjalize();
+            selectedMaterial = new BaseEntity();
+            secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);//
+            int i = 0;
         }
         private DemensionPage demensionPage;
         private CheckBoxService checkBoxService;
         private WorkConditionService conditionService;
         private CheckValue[] checkValueElements;
-        private BaseEntity selectedMaterial;
+        public BaseEntity selectedMaterial { get; set; }
+
+       private ListMaterialWindow secondWindow;//
         private void Inicjalize()
         {
             checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000);
             checkValueElements[(int)EnumName.n] = new CheckValue(textBlockNError, textBoxN, 100000);
-            checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 100000);
+            checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 100);
             checkBoxService = new CheckBoxService(checkBoxK, textBoxK);
 
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
+
         }
 
         //public TextBox TextBoxMaterial
@@ -52,16 +58,31 @@ namespace OldCycliod
 
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
-           ListMaterialWindow secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);
+          // ListMaterialWindow secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);
             secondWindow.Show();
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
+            string s = selectedMaterial.Content;
             bool error = false;
+            for(int i = (int)EnumName.Mz; i<= (int)EnumName.k; i++)
+            {
+                demensionPage.AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
+                if(checkValueElements[i].Error == true)
+                {
+                    error = true;
+                }
+            }
             if(conditionService.ErrorCheck() == true)
             {
                 error = true;
+            }
+            if(textBoxMat.Text == "")
+            {
+                error = true;
+                textBlockMatError.Text = "Nie wybrano materiału";
+                textBoxMat.Background = Brushes.LightPink;
             }
             if(error == false)
             {

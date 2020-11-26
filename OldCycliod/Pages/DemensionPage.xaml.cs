@@ -99,10 +99,10 @@ namespace OldCycliod
         {
             //bool error = false;
             //AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
-            //if(checkValueElements[(int)EnumName.D].Error == false)
+            //if (checkValueElements[(int)EnumName.D].Error == false)
             //{
             //    checkValueElements[(int)EnumName.d].Max = AllDataValue.Elements[(int)EnumName.D].Value - 1;
-            //    checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1,1);
+            //    checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
 
             //    AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
             //    if (checkValueElements[(int)EnumName.d].Error == false)

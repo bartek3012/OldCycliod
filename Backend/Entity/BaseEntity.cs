@@ -22,6 +22,11 @@ namespace Backend
             Unit = "MPa";
         }
 
+        public BaseEntity()
+        {
+
+        }
+
         public double Value { get; set; }
         public string Content { get; set; }
         public string Type { get; set; }

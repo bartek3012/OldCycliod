@@ -28,6 +28,9 @@ namespace OldCycliod
             MaterialListBox.ItemsSource = materials.Elements;
             selectedMat = selectedMaterial;
             textBoxMat = textBoxMaterial;
+
+            selectedMat = materials.Elements[0];
+            textBoxMat.Text = selectedMat.Content;
         }
         private MaterialsMenager materials;
         private BaseEntity selectedMat;
