@@ -20,15 +20,17 @@ namespace OldCycliod
     /// </summary>
     public partial class ListMaterialWindow : Window
     {
-        public ListMaterialWindow(TextBox textBoxMaterial)
+        public ListMaterialWindow(BaseEntity selectedMaterial, TextBox textBoxMaterial)
         {
             InitializeComponent();
             materials = new MaterialsMenager();
             //Materials.Elements.ItemSource = new List<BaseEntity>();
             MaterialListBox.ItemsSource = materials.Elements;
+            selectedMat = selectedMaterial;
             textBoxMat = textBoxMaterial;
         }
         private MaterialsMenager materials;
+        private BaseEntity selectedMat;
         private TextBox textBoxMat;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -38,13 +40,19 @@ namespace OldCycliod
 
         private void Button_Click_Select(object sender, RoutedEventArgs e)
         {
-            selectMaterial();
+            select();
         }
 
-        private void selectMaterial()
+        private void MaterialListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            BaseEntity Material = (MaterialListBox.SelectedItem as BaseEntity);
-            textBoxMat.Text = Material.Content;
+            select();
+        }
+
+        private void select()
+        {
+            selectedMat = (MaterialListBox.SelectedItem as BaseEntity);
+            textBoxMat.Text = selectedMat.Content;
+            this.Close();
         }
     }
 }

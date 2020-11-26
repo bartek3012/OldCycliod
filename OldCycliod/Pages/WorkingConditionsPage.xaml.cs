@@ -1,4 +1,5 @@
-﻿using Backend.Entity;
+﻿using Backend;
+using Backend.Entity;
 using CheckValues;
 using OldCycliod.Pages.Service;
 using System;
@@ -32,6 +33,7 @@ namespace OldCycliod
         private CheckBoxService checkBoxService;
         private WorkConditionService conditionService;
         private CheckValue[] checkValueElements;
+        private BaseEntity selectedMaterial;
         private void Inicjalize()
         {
             checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000);
@@ -43,20 +45,29 @@ namespace OldCycliod
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
         }
 
-        public TextBox TextBoxMaterial
-        {
-            set { textBoxMat = value; }
-        }
+        //public TextBox TextBoxMaterial
+        //{
+        //    set { textBoxMat = value; }
+        //}
 
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
-           ListMaterialWindow secondWindow = new ListMaterialWindow(textBoxMat);
+           ListMaterialWindow secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);
             secondWindow.Show();
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ResultPage());
+            bool error = false;
+            if(conditionService.ErrorCheck() == true)
+            {
+                error = true;
+            }
+            if(error == false)
+            {
+                NavigationService.Navigate(new ResultPage());
+            }
+            
         }
 
         private void checkBoxK_Checked(object sender, RoutedEventArgs e)

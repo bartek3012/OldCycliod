@@ -54,17 +54,17 @@
             <TextBlock Text="Warunki pracy:" Grid.Column="0" Grid.Row="0" Margin="30 5 0 5" FontWeight="Bold" FontSize="14"/>
             <Button x:Name="LekkieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="1" HorizontalAlignment="Center" FontSize="12" Content="Lekkie" Click="conditionsButton_Click">
                 <Button.ToolTip>
-                    <ToolTip Content="Obciążenia jednokierunkowe, dobre smarowanie, dokładna obróbka i mała chropowatość" Style="{StaticResource ToolTipStyle}"/>
+                    <ToolTip Content="Obciążenia jednokierunkowe, dobre smarowanie, dokładna obróbka i mała chropowatość (z = 0,10)" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
             </Button>
             <Button x:Name="SrednieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Średnie" Click="conditionsButton_Click">
                 <Button.ToolTip>
-                    <ToolTip Content="Obciążenia zmienne, minimalne drgania, przeciętne smarowanie, przeciętna obróbka powierzchni" Style="{StaticResource ToolTipStyle}"/>
+                    <ToolTip Content="Obciążenia zmienne, minimalne drgania, przeciętne smarowanie, przeciętna obróbka powierzchni (z = 0,06)" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
             </Button>
             <Button x:Name="CiezkieButton" Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="70" Grid.Column="4" HorizontalAlignment="Center" FontSize="12" Content="Ciężkie" Click="conditionsButton_Click">
                 <Button.ToolTip>
-                    <ToolTip Content="Obciążenia zmienne o cyklu wahadłowym, uderzenie, drgania o dużej częstotliwości i amplitudzie" Style="{StaticResource ToolTipStyle}"/>
+                    <ToolTip Content="Obciążenia zmienne o cyklu wahadłowym, uderzenie, drgania o dużej częstotliwości i amplitudzie (z = 0,03)" Style="{StaticResource ToolTipStyle}"/>
                 </Button.ToolTip>
             </Button>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockWorkCaseError" Grid.Row="1"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>

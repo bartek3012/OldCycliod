@@ -97,38 +97,38 @@ namespace OldCycliod
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            bool error = false;
-            AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
-            if(checkValueElements[(int)EnumName.D].Error == false)
-            {
-                checkValueElements[(int)EnumName.d].Max = AllDataValue.Elements[(int)EnumName.D].Value - 1;
-                checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1,1);
+            //bool error = false;
+            //AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
+            //if(checkValueElements[(int)EnumName.D].Error == false)
+            //{
+            //    checkValueElements[(int)EnumName.d].Max = AllDataValue.Elements[(int)EnumName.D].Value - 1;
+            //    checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1,1);
 
-                AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
-                if (checkValueElements[(int)EnumName.d].Error == false)
-                {
-                    checkValueElements[(int)EnumName.b].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
-                    checkValueElements[(int)EnumName.h].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
-                }
-            }
+            //    AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
+            //    if (checkValueElements[(int)EnumName.d].Error == false)
+            //    {
+            //        checkValueElements[(int)EnumName.b].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
+            //        checkValueElements[(int)EnumName.h].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
+            //    }
+            //}
 
-            
-            for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
-            {
-                checkValueElements[i].ClearError();
-                AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
-            }
-            for (int i = 0; i <= (int)EnumName.delta; i++)
-            {
-                if (checkValueElements[i].Error == true)
-                {
-                    error = true;
-                }
-            }
-            if (error == false)
-            {
-                NavigationService.Navigate(workingCondPage);
-            }
+            //for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
+            //{
+            //    checkValueElements[i].ClearError();
+            //    AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
+            //}
+            //for (int i = 0; i <= (int)EnumName.delta; i++)
+            //{
+            //    if (checkValueElements[i].Error == true)
+            //    {
+            //        error = true;
+            //    }
+            //}
+            //if (error == false)
+            //{
+            //    NavigationService.Navigate(workingCondPage);
+            //}
+            NavigationService.Navigate(workingCondPage);
         }
 
         private void clearButtonClick(object sender, RoutedEventArgs e)
