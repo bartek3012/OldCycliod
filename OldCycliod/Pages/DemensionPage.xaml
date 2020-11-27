@@ -66,7 +66,7 @@
             <!--b-->
             <CheckBox x:Name="checkBoxB" Margin="28 10 0 -10" Grid.Row ="9" Grid.ColumnSpan="3" Content="Podaj inną niż typowy stosunek wymiarowy w sprzęgle Oldhama"  VerticalAlignment="Bottom" Checked="checkBoxB_Checked"/>
             <TextBlock Text="Szerokość rowka wpustu b = " Grid.Row="10" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxB" Text=""  Grid.Column ="1" Grid.Row="10"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
+            <TextBox x:Name="textBoxB" Text=""  Grid.Column ="1" Grid.Row="10"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True" LostFocus="textBoxB_LostFocus"/>
             <TextBlock Text="[mm]" FontSize="10" Grid.Column ="2" Grid.Row="10"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockBError" Grid.Row="11"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
             

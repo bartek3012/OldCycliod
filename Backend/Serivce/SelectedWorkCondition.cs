@@ -6,10 +6,9 @@ using System.Windows;
 
 namespace Backend.Serivce
 {
-   public class WorkConditionService : WorkCondition
+   public class SelectedWorkCondition : WorkCondition
     {
-        public WorkConditionService() { }
-        public void SetValue(EnumWorkCondition enumWorkCondition)
+        public SelectedWorkCondition(EnumWorkCondition enumWorkCondition) 
         {
             EnWorkCondition = enumWorkCondition;
 
@@ -20,7 +19,7 @@ namespace Backend.Serivce
                 (int)EnumWorkCondition.Ciężkie => 0.03,
                 _ => 0,
             };
-            if(Value == 0)
+            if (Value == 0)
             {
                 MessageBox.Show("Błąd ustawienia warunków pracy", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }

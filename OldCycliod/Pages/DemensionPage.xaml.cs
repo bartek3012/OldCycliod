@@ -39,11 +39,11 @@ namespace OldCycliod
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
-            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 500, 1.1);
+            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 500, 2);
             checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
             checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
-            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 0.1);
-            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500, 0.1);
+            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 1.1);
+            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500, 1.1);
             checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 5000);
 
             checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
@@ -70,8 +70,8 @@ namespace OldCycliod
         private void textBoxDOut_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double D = checkValueElements[(int)EnumName.D].Cheack();
-            double H = (D / 3.5)*0.6;
-            double B = (D / 3.5) * 0.5;
+            double H = Math.Round((D / 3.5)*0.3, 0);
+            double B = Math.Round((D / 3.5) * 0.5, 0);
             checkBoxServiceH.SetValue(H);
             checkBoxServiceB.SetValue(B);
             if(setComboBox == true)
@@ -90,8 +90,12 @@ namespace OldCycliod
         private void ComboBoxFit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
-            int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
+            double B = checkValueElements[(int)EnumName.b].Cheack();
+            if(B>1)
+            {
+            int delta = fitMenager.CheckFitValue(id, B);
             checkBoxServiceDelta.SetValue(delta);
+            }
             setComboBox = true;
         }
 
@@ -137,6 +141,16 @@ namespace OldCycliod
                 checkValueElements[i].Clear();
             }
 
+        }
+
+        private void textBoxB_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(setComboBox == true)
+            {
+            EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+            int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.b].Cheack());
+            checkBoxServiceDelta.SetValue(delta);
+            }
         }
     }
 }

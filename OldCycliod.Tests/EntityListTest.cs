@@ -25,18 +25,6 @@ namespace OldCycliod.Tests
             Assert.Equal(34.9, result, 2);
         }
 
-        [Fact]
-        public void WorkConditionTest()
-        {
-            //Arrange
-            WorkConditionService workConditionService = new WorkConditionService();
-
-            //Act
-            workConditionService.SetValue(Backend.Entity.EnumWorkCondition.Ciężkie);
-
-            //Assert
-            Assert.Equal(0.03, workConditionService.Value);
-        }
 
         [Fact]
         public void GetEntityByType()
