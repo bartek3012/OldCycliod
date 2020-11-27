@@ -31,6 +31,10 @@ namespace Backend.Results
         private double x;
         private double xPrim;
         private double M;
+        private double Plost;
+        private double v;
+        private double Pin;
+        private double mi;
 
         public void Calculate()
         {
@@ -44,6 +48,10 @@ namespace Backend.Results
             SetX();
             SetXPrim();
             SetM();
+            SetV();
+            SetPlost();
+            SetPin();
+            SetMi();
         }
         private void SetP()
         {
@@ -88,6 +96,22 @@ namespace Backend.Results
         private void SetM()
         {
             M = 2000 * (F * x - FPrim * xPrim); //Nm
+        }
+        private void SetV()
+        {
+            v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.n))/60000;
+        }
+        private void SetPlost()
+        {
+            Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
+        }
+        private void SetPin()
+        {
+            Pin = (M * 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.n)/60);
+        }
+        private void SetMi()
+        {
+            mi = 1 - (Plost / Pin);
         }
     }
 }

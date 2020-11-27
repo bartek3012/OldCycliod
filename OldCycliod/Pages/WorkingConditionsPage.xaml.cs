@@ -33,7 +33,8 @@ namespace OldCycliod
             selectedMaterial = new BaseEntity();
         }
         private DemensionPage demensionPage;
-        private CheckBoxService checkBoxService;
+        private CheckBoxService checkBoxKService;
+        private CheckBoxService checkBoxFrictionService;
         private WorkConditionService conditionService;
         private CheckValue[] checkValueElements;
         private BaseEntity selectedMaterial;
@@ -42,8 +43,10 @@ namespace OldCycliod
         {
             checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000, 0.1);
             checkValueElements[(int)EnumName.n] = new CheckValue(textBlockNError, textBoxN, 100000, 0.1);
+            checkValueElements[(int)EnumName.friction] = new CheckValue(textBlockFrictionError, textBoxFriction, 0.99, 0.001);///
             checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 1000, 0.001);
-            checkBoxService = new CheckBoxService(checkBoxK, textBoxK);
+            checkBoxKService = new CheckBoxService(checkBoxK, textBoxK);
+            checkBoxFrictionService = new CheckBoxService(checkBoxFriction, textBoxFriction);
 
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
@@ -99,7 +102,12 @@ namespace OldCycliod
 
         private void checkBoxK_Checked(object sender, RoutedEventArgs e)
         {
-            checkBoxService.Checked();
+            checkBoxKService.Checked();
+        }
+
+        private void checkBoxFriction_Checked(object sender, RoutedEventArgs e)
+        {
+            checkBoxFrictionService.Checked();
         }
 
         private void conditionsButton_Click(object sender, RoutedEventArgs e)

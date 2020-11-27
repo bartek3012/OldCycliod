@@ -14,6 +14,7 @@ namespace Backend.Entity
         delta,
         Mz,
         n,
+        friction,
         k,
         Mmax,
         P,
