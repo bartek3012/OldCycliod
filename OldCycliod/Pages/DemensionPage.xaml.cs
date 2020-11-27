@@ -42,8 +42,8 @@ namespace OldCycliod
             checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 500, 1.1);
             checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
             checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
-            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500);
-            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500);
+            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 0.1);
+            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500, 0.1);
             checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 5000);
 
             checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
@@ -97,38 +97,37 @@ namespace OldCycliod
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            //bool error = false;
-            //AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
-            //if (checkValueElements[(int)EnumName.D].Error == false)
-            //{
-            //    checkValueElements[(int)EnumName.d].Max = AllDataValue.Elements[(int)EnumName.D].Value - 1;
-            //    checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
+            bool error = false;
+            AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
+            if (checkValueElements[(int)EnumName.D].Error == false)
+            {
+                checkValueElements[(int)EnumName.d].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 1, 3);
+                checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
 
-            //    AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
-            //    if (checkValueElements[(int)EnumName.d].Error == false)
-            //    {
-            //        checkValueElements[(int)EnumName.b].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
-            //        checkValueElements[(int)EnumName.h].Max = AllDataValue.Elements[(int)EnumName.d].Value - 1;
-            //    }
-            //}
+                AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
+                if (checkValueElements[(int)EnumName.d].Error == false)
+                {
+                    checkValueElements[(int)EnumName.b].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
+                    checkValueElements[(int)EnumName.h].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
+                }
+            }
 
-            //for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
-            //{
-            //    checkValueElements[i].ClearError();
-            //    AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
-            //}
-            //for (int i = 0; i <= (int)EnumName.delta; i++)
-            //{
-            //    if (checkValueElements[i].Error == true)
-            //    {
-            //        error = true;
-            //    }
-            //}
-            //if (error == false)
-            //{
-            //    NavigationService.Navigate(workingCondPage);
-            //}
-            NavigationService.Navigate(workingCondPage);
+            for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
+            {
+                checkValueElements[i].ClearError();
+                AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
+            }
+            for (int i = 0; i <= (int)EnumName.delta; i++)
+            {
+                if (checkValueElements[i].Error == true)
+                {
+                    error = true;
+                }
+            }
+            if (error == false)
+            {
+                NavigationService.Navigate(workingCondPage);
+            }
         }
 
         private void clearButtonClick(object sender, RoutedEventArgs e)

@@ -29,21 +29,18 @@ namespace OldCycliod
             checkValueElements = demensionPage.checkValueElements;
             Inicjalize();
             selectedMaterial = new BaseEntity();
-            secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);//
-            int i = 0;
         }
         private DemensionPage demensionPage;
         private CheckBoxService checkBoxService;
         private WorkConditionService conditionService;
         private CheckValue[] checkValueElements;
-        public BaseEntity selectedMaterial { get; set; }
-
-       private ListMaterialWindow secondWindow;//
+        private BaseEntity selectedMaterial;
+        private ListMaterialWindow secondWindow;//
         private void Inicjalize()
         {
-            checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000);
-            checkValueElements[(int)EnumName.n] = new CheckValue(textBlockNError, textBoxN, 100000);
-            checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 100);
+            checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000, 0.1);
+            checkValueElements[(int)EnumName.n] = new CheckValue(textBlockNError, textBoxN, 100000, 0.1);
+            checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 1000, 0.001);
             checkBoxService = new CheckBoxService(checkBoxK, textBoxK);
 
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
@@ -58,13 +55,16 @@ namespace OldCycliod
 
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
-          // ListMaterialWindow secondWindow = new ListMaterialWindow(selectedMaterial, textBoxMat);
+            secondWindow = new ListMaterialWindow(textBoxMat);
             secondWindow.Show();
+            selectedMaterial = secondWindow.selectedMat;
+            textBlockMatError.Text = "";
+            textBoxMat.Background = Brushes.LightGray;
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
-            string s = selectedMaterial.Content;
+            
             bool error = false;
             for(int i = (int)EnumName.Mz; i<= (int)EnumName.k; i++)
             {
@@ -83,6 +83,10 @@ namespace OldCycliod
                 error = true;
                 textBlockMatError.Text = "Nie wybrano materiału";
                 textBoxMat.Background = Brushes.LightPink;
+            }
+            else
+            {
+                selectedMaterial = secondWindow.selectedMat;
             }
             if(error == false)
             {
