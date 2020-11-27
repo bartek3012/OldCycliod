@@ -39,7 +39,7 @@ namespace OldCycliod
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
-            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 500, 2);
+            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 3000, 2);
             checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
             checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
             checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 1.1);

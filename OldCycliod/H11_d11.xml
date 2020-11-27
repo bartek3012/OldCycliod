@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ValueFit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<ValueFit Id="1">
-		<Value>80</Value>
+		<Value>140</Value>
 	</ValueFit>
 	<ValueFit Id="2">
-		<Value>105</Value>
+		<Value>180</Value>
 	</ValueFit>
 	<ValueFit Id="3">
-		<Value>130</Value>
+		<Value>220</Value>
 	</ValueFit>
 	<ValueFit Id="4">
-		<Value>160</Value>
+		<Value>270</Value>
 	</ValueFit>
 	<ValueFit Id="5">
-		<Value>195</Value>
+		<Value>325</Value>
 	</ValueFit>
 	<ValueFit Id="6">
-		<Value>240</Value>
+		<Value>400</Value>
 	</ValueFit>
 	<ValueFit Id="7">
-		<Value>290</Value>
+		<Value>480</Value>
 	</ValueFit>
 	<ValueFit Id="8">
-		<Value>340</Value>
+		<Value>560</Value>
 	</ValueFit>
 	<ValueFit Id="9">
-		<Value>395</Value>
+		<Value>645</Value>
 	</ValueFit>
 	<ValueFit Id="10">
-		<Value>460</Value>
+		<Value>750</Value>
 	</ValueFit>
 	<ValueFit Id="11">
-		<Value>510</Value>
+		<Value>830</Value>
 	</ValueFit>
 	<ValueFit Id="12">
-		<Value>570</Value>
+		<Value>930</Value>
 	</ValueFit>
 	<ValueFit Id="13">
-		<Value>630</Value>
+		<Value>1030</Value>
 	</ValueFit>
 </ValueFit>
 

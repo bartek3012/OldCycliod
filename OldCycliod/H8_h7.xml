@@ -1,43 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ValueFit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<ValueFit Id="1">
-		<Value>10</Value>
+		<Value>24</Value>
 	</ValueFit>
 	<ValueFit Id="2">
-		<Value>12</Value>
-	</ValueFit>
-	<ValueFit Id="3">
-		<Value>15</Value>
-	</ValueFit>
-	<ValueFit Id="4">
-		<Value>18</Value>
-	</ValueFit>
-	<ValueFit Id="5">
-		<Value>21</Value>
-	</ValueFit>
-	<ValueFit Id="6">
-		<Value>25</Value>
-	</ValueFit>
-	<ValueFit Id="7">
 		<Value>30</Value>
 	</ValueFit>
+	<ValueFit Id="3">
+		<Value>37</Value>
+	</ValueFit>
+	<ValueFit Id="4">
+		<Value>45</Value>
+	</ValueFit>
+	<ValueFit Id="5">
+		<Value>54</Value>
+	</ValueFit>
+	<ValueFit Id="6">
+		<Value>64</Value>
+	</ValueFit>
+	<ValueFit Id="7">
+		<Value>73</Value>
+	</ValueFit>
 	<ValueFit Id="8">
-		<Value>35</Value>
+		<Value>89</Value>
 	</ValueFit>
 	<ValueFit Id="9">
-		<Value>40</Value>
+		<Value>103</Value>
 	</ValueFit>
 	<ValueFit Id="10">
-		<Value>46</Value>
+		<Value>118</Value>
 	</ValueFit>
 	<ValueFit Id="11">
-		<Value>52</Value>
+		<Value>133</Value>
 	</ValueFit>
 	<ValueFit Id="12">
-		<Value>57</Value>
+		<Value>146</Value>
 	</ValueFit>
 	<ValueFit Id="13">
-		<Value>63</Value>
+		<Value>160</Value>
 	</ValueFit>
 </ValueFit>
 
