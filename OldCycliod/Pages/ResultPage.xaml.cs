@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend.Results;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,11 @@ namespace OldCycliod
     /// </summary>
     public partial class ResultPage : Page
     {
-        public ResultPage()
+        public ResultPage(Calculations calculations)
         {
             InitializeComponent();
+            allData = calculations;
         }
+        private Calculations allData;
     }
 }

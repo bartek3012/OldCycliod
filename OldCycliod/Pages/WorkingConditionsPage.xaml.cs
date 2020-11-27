@@ -1,5 +1,6 @@
 ﻿using Backend;
 using Backend.Entity;
+using Backend.Results;
 using CheckValues;
 using OldCycliod.Pages.Service;
 using System;
@@ -90,7 +91,7 @@ namespace OldCycliod
             }
             if(error == false)
             {
-                NavigationService.Navigate(new ResultPage());
+               // NavigationService.Navigate(new ResultPage(new Calculations(demensionPage.AllDataValue, selectedMaterial, conditionService)));
             }
             
         }
