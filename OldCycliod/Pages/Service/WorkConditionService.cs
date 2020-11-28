@@ -25,6 +25,7 @@ namespace OldCycliod.Pages.Service
             {
                 button.Background = Brushes.LightGray;
             }
+            EnumWork = enumWork;
             buttons[(int)enumWork].Background = Brushes.Gray;
             clearError();
             error = false;

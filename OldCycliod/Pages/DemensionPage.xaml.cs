@@ -39,7 +39,7 @@ namespace OldCycliod
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
-            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 3000, 2);
+            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 3000, 15);
             checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
             checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
             checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 1.1);
@@ -70,6 +70,8 @@ namespace OldCycliod
         private void textBoxDOut_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             double D = checkValueElements[(int)EnumName.D].Cheack();
+            if(checkValueElements[(int)EnumName.D].Error == false)
+            {
             double H = Math.Round((D / 3.5)*0.3, 0);
             double B = Math.Round((D / 3.5) * 0.5, 0);
             checkBoxServiceH.SetValue(H);
@@ -80,6 +82,8 @@ namespace OldCycliod
                 int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
                 checkBoxServiceDelta.SetValue(delta);
             }
+            }
+
         }
 
         private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
@@ -105,7 +109,7 @@ namespace OldCycliod
             AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
             if (checkValueElements[(int)EnumName.D].Error == false)
             {
-                checkValueElements[(int)EnumName.d].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 1, 3);
+                checkValueElements[(int)EnumName.d].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.75, 2);
                 checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
 
                 AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
