@@ -17,13 +17,13 @@ namespace Backend.Menager
             Add(new DataValue("Szerokość rowka wpustu b", EnumName.b, "[mm]", "input"));
             Add(new DataValue("Luz pasowania Δ", EnumName.delta, "[μm]", "input"));
             Add(new DataValue("Moment zadany M", EnumName.Mz, "[Nm]", "input"));
-            Add(new DataValue("Prędkość obrotowa n", EnumName.n, "1/s", "input"));
+            Add(new DataValue("Prędkość obrotowa n", EnumName.n, "[1/s]", "input"));
             Add(new DataValue("Wsp tarcia kinametycznego", EnumName.friction, "", "input"));
-            Add(new DataValue("Wsp sztywności kontaktowej", EnumName.k, "MPa/𝜇m", "input"));
+            Add(new DataValue("Wsp sztywności kontaktowej", EnumName.k, "[MPa/𝜇m]", "input"));
 
             Add(new DataValue("Moment maksymalny Mmax", EnumName.Mmax, "[Nm]", "output"));
-            Add(new DataValue("Straty mocy P", EnumName.P, "W", "output"));
-            Add(new DataValue("Sprawność μ", EnumName.mi, "%", "output"));
+            Add(new DataValue("Straty mocy P", EnumName.P, "[W]", "output"));
+            Add(new DataValue("Sprawność μ", EnumName.mi, "[%]", "output"));
         }
 
         public void SetValueByEnumName(EnumName enumName, double value)
@@ -35,6 +35,18 @@ namespace Backend.Menager
         {
             DataValue dataValue = Elements.Find(p => p.NameId == enumName);
             return dataValue.Value;
+        }
+        public List<DataValue> GetValuesByType(string type)
+        {
+            List <DataValue> result = new List<DataValue>();
+            foreach(DataValue element in Elements)
+            {
+                if(element.Type == type)
+                {
+                    result.Add(element);
+                }
+            }
+            return result;
         }
     }
 }

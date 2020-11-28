@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OldCycliod"
       mc:Ignorable="d" 
-      d:DesignHeight="435" d:DesignWidth="420"
+      d:DesignHeight="445" d:DesignWidth="420"
       Title="OutputPage">
 
-    <Grid Margin="20">
+    <!--<Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="*"/>
@@ -21,5 +21,43 @@
         <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="1" Content="Eksportuj wyniki"/>
         <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="2" Content="Nowe obliczenia"/>
         <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="3" Content="Wyjdź"/>
-    </Grid>
+    </Grid>-->
+    <StackPanel>
+        <TextBlock Margin="5 0 0 0" Text="Dane wejściowe" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <Grid Margin="10 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1.2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="" x:Name="NameIn" FontSize="13" Grid.Column="0" />
+            <TextBlock Text="" x:Name="ValueIn" FontSize="13" Grid.Column="1" HorizontalAlignment="Center"/>
+            <TextBlock Text="" x:Name="UnitIn" FontSize="13" Grid.Column="2"/>
+        </Grid>
+
+            <TextBlock Margin="5 0 0 0" Text="Dane obliczone" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+            <Grid Margin="10 0 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.2*"/>
+                </Grid.ColumnDefinitions>
+            <TextBlock Text="" x:Name="NameOut" FontSize="13" Grid.Column="0"/>
+            <TextBlock Text="" x:Name="ValueOut" FontSize="13" FontWeight="Bold"  Grid.Column="1" HorizontalAlignment="Center"/>
+            <TextBlock Text="" x:Name="UnitOut" FontSize="13" Grid.Column="2"/>
+            </Grid>
+        <TextBlock Text="" Margin="0 0 0 15" x:Name="TextBlockCheckTorque" HorizontalAlignment="Center" FontSize="13" FontWeight="Bold"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+        <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="0"  Content="Eksportuj wyniki"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="1" Content="Nowe obliczenia"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="2" Content="Wyjdź"/>
+        </Grid>
+    </StackPanel>
+    
 </Page>

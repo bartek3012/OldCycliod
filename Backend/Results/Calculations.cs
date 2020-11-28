@@ -96,6 +96,7 @@ namespace Backend.Results
         private void SetM()
         {
             M = 2000 * (F * x - FPrim * xPrim); //Nm
+            allDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
         }
         private void SetV()
         {
@@ -104,6 +105,7 @@ namespace Backend.Results
         private void SetPlost()
         {
             Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
+            allDataValue.SetValueByEnumName(EnumName.P, Math.Round(Plost,2));
         }
         private void SetPin()
         {
@@ -111,7 +113,16 @@ namespace Backend.Results
         }
         private void SetMi()
         {
-            mi = 1 - (Plost / Pin);
+            mi = (1 - (Plost / Pin))*100; //%
+            allDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
+        }
+        public List<DataValue> GetInputElements()
+        {
+            return allDataValue.GetValuesByType("input");
+        }
+        public List<DataValue> GetOutputElements()
+        {
+            return allDataValue.GetValuesByType("output");
         }
     }
 }
