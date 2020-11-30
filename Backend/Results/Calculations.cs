@@ -4,6 +4,7 @@ using Backend.Serivce;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace Backend.Results
 {
@@ -38,6 +39,7 @@ namespace Backend.Results
 
         public void Calculate()
         {
+            //allDataValue.SetValueByEnumName(EnumName.delta, 0);
             SetP();
             SetDeformation();
             SetL();
@@ -72,6 +74,10 @@ namespace Backend.Results
             double secondPart = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.d)) / 2000;
             double thirdPart = allDataValue.GetValueByEnumName(EnumName.e)/ 1000;
             lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
+            if (lPrim <= 0)
+            {
+                MessageBox.Show("L(prim) jest mniejsze lub równe zero");
+            }
         }
         private void SetPPrim()
         {

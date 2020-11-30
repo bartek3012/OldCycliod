@@ -117,5 +117,10 @@ namespace OldCycliod
             Enum.TryParse(name, out enumWork);
             conditionService.Click(enumWork);
         }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(demensionPage);
+        }
     }
 }

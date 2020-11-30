@@ -73,5 +73,15 @@ namespace OldCycliod
         {
 
         }
+
+        private void newCalculationButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DemensionPage());
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

@@ -55,8 +55,8 @@
             </Grid.ColumnDefinitions>
         
         <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="0"  Content="Eksportuj wyniki"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="1" Content="Nowe obliczenia"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="2" Content="Wyjdź"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="1" Content="Nowe obliczenia" Click="newCalculationButton_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="2" Content="Wyjdź" Click="ExitButton_Click"/>
         </Grid>
     </StackPanel>
     

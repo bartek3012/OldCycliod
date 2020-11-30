@@ -130,7 +130,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wyczyść"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wróć" Click="backButton_Click"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Dalej" Height="Auto" Margin="6,0,6,0" Click="nextButtonClick"/>
         </Grid>
     </StackPanel>
