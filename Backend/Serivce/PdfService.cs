@@ -6,7 +6,9 @@ using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Windows;
 
 namespace Backend.Serivce
 {
@@ -25,38 +27,52 @@ namespace Backend.Serivce
             PdfPage page = document.AddPage(); //stworzenie strony domumentu
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             XGraphics gfx = XGraphics.FromPdfPage(page); //narzędzie do pisania
-            string pathGrfphic = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GearDraw.png");
+            string pathGrfphic = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GearPdf.jpg");
 
             XFont fontMainTitle = new XFont("Verdana", 20, XFontStyle.Bold);
-            XFont fontMainUnderTitle = new XFont("Verdana", 15, XFontStyle.Bold);
+            XFont fontMainUnderTitle = new XFont("Verdana", 13, XFontStyle.Bold);
             XFont fontValue = new XFont("Verdana", 11);
             XFont fontValueBold = new XFont("Verdana", 10, XFontStyle.Bold);
 
-            gfx.DrawImage(XImage.FromFile(pathGrfphic), 150, 60, 297.9, 329.9);
+            gfx.DrawImage(XImage.FromFile(pathGrfphic), 140, 60, 297.9, 329.9);
             gfx.DrawString("Raport z programu OldCyclodi", fontMainTitle, XBrushes.Black, new XRect(0, -380, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane wejściowe", fontMainUnderTitle, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 230, page.Width, page.Height), XStringFormats.Center);
-            gfx.DrawString("Przekładnia jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
+
+            if(calculations.allDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.allDataValue.GetValueByEnumName(EnumName.Mz))
+            {
+                gfx.DrawString("Moment maksymalny jest mniejszy niż zadany", fontMainUnderTitle, XBrushes.DarkRed, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
+
+            }
+            else
+            {
+                gfx.DrawString("Przekładnia jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
+            }
             gfx.DrawString("Raport wygenerowany przez program OldCycloid", fontValue, XBrushes.Gray, new XRect(0, -10, page.Width, page.Height), XStringFormats.BottomCenter);
 
             string namesInput = GetName("input");
+            namesInput += $"Naprężenia dop na ściskanie kc\n{calculations.selectedMaterial.Type}\nWarunki pracy";
+
             string valuesInput = GetValue("input");
+            valuesInput += $"{calculations.selectedMaterial.Value}\n{calculations.selectedMaterial.Value}\n{calculations.selectedWorkCondition.EnWorkCondition.ToString()} ({calculations.selectedWorkCondition.Value})";
+
             string unitsInput = GetUnit("input");
+            unitsInput += $"{calculations.selectedMaterial.Unit}\n(materiał)";
 
             string namesOutput = GetName("output");
             string valuesOutput = GetValue("output");
             string unitsOutput = GetUnit("output");
 
             XTextFormatter tf = new XTextFormatter(gfx);
-            XRect rect1 = new XRect(100, 440, 230, 185);
+            XRect rect1 = new XRect(100, 440, 230, 180);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesInput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            XRect rect = new XRect(330, 440, 90, 185);
+            XRect rect = new XRect(330, 440, 90, 180);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 440, 70, 185);
+            rect = new XRect(420, 440, 70, 180);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
@@ -76,10 +92,18 @@ namespace Backend.Serivce
             fileDialog.Title = "Wybierz lokalizacje zapisu raportu";
             fileDialog.DefaultExt = "pdf";
             fileDialog.Filter = "Pdf files(*.pdf)|*.pdf";
+            try
+            {
             if (fileDialog.ShowDialog() == true)
             {
                 document.Save(fileDialog.FileName);
             }
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show("Plik nie może być nadpisany, ponieważ jest teraz otwarty.\nZamknij plik i powtórz operacje", "Zamknij nadpisywany plik", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
 
         private string GetName(string type)

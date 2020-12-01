@@ -21,6 +21,7 @@
     <None Remove="background1.jpg" />
     <None Remove="BackgroundMaterianWin.jpg" />
     <None Remove="DataXmlFit\H7_f8.xml" />
+    <None Remove="GearDraw.png" />
     <None Remove="GearDrwa.jpg" />
     <None Remove="H7_f8.xml" />
     <None Remove="H7_g8.xml" />
@@ -74,7 +75,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="GearDraw.png">
+    <None Update="GearPdf.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="H11_d11.xml">
