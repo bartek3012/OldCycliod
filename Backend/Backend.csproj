@@ -25,4 +25,9 @@
     <EmbeddedResource Include="test2.xml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+  </ItemGroup>
+
 </Project>

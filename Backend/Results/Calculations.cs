@@ -36,10 +36,25 @@ namespace Backend.Results
         private double v;
         private double Pin;
         private double mi;
-
+        private bool isMinus;
         public void Calculate()
         {
-            //allDataValue.SetValueByEnumName(EnumName.delta, 0);
+            
+            MakeClaclultion();
+            if(isMinus==true)
+            {
+                var answer = MessageBox.Show("Dla podanego pasowania długość działania siły l' ma wartość ulemną." +
+                    "\nCzy pominąć wartość pasowania w obliczeniach?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if(answer == MessageBoxResult.Yes)
+                {
+                allDataValue.SetValueByEnumName(EnumName.delta, 0);
+                MakeClaclultion();
+                }
+            }
+        }
+        private void MakeClaclultion()
+        {
+            isMinus = false;
             SetP();
             SetDeformation();
             SetL();
@@ -76,7 +91,7 @@ namespace Backend.Results
             lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
             if (lPrim <= 0)
             {
-                MessageBox.Show("L(prim) jest mniejsze lub równe zero");
+                isMinus = true;
             }
         }
         private void SetPPrim()

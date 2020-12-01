@@ -26,7 +26,7 @@
             <TextBlock Text="Oznaczenie" Grid.Row="0" Grid.Column ="1" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
             <TextBlock Text="kc" Grid.Row="0" Grid.Column ="2" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14">
                 <TextBlock.ToolTip>
-                    <ToolTip Content="kc - dopuszczalne naprężenia ściskające" Style="{StaticResource ToolTipStyle}"/>
+                    <ToolTip Content="kc - dopuszczalne naprężenia ściskające [MPa]" Style="{StaticResource ToolTipStyle}"/>
                 </TextBlock.ToolTip>
             </TextBlock>
             <TextBlock Text="Jednostka" Grid.Row="0" Grid.Column ="3" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>

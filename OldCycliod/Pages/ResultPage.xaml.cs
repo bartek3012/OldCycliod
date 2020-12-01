@@ -83,5 +83,10 @@ namespace OldCycliod
         {
             Application.Current.Shutdown();
         }
+
+        private void pdfButton_Click(object sender, RoutedEventArgs e)
+        {
+            new Backend.Serivce.PdfService(allData);
+        }
     }
 }

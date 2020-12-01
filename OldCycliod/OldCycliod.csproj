@@ -21,7 +21,6 @@
     <None Remove="background1.jpg" />
     <None Remove="BackgroundMaterianWin.jpg" />
     <None Remove="DataXmlFit\H7_f8.xml" />
-    <None Remove="GearDraw.png" />
     <None Remove="GearDrwa.jpg" />
     <None Remove="H7_f8.xml" />
     <None Remove="H7_g8.xml" />
@@ -66,13 +65,18 @@
 
   <ItemGroup>
     <Resource Include="Icon1.ico" />
-    <Resource Include="Images\GearDraw.png" />
+    <Resource Include="Images\GearDraw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\BackgroundMaterianWin.jpg" />
     <Resource Include="Images\sprze.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="GearDraw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="H11_d11.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
