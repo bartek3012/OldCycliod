@@ -51,12 +51,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-        
-        <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="0"  Content="Eksportuj wyniki" Height="30" Margin="5,0,5,0" VerticalAlignment="Top" Click="pdfButton_Click"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="1" Content="Nowe obliczenia" Click="newCalculationButton_Click"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Width="130" Grid.Column="2" Content="Wyjdź" Click="ExitButton_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="40" Margin="6,0,6,0" >
+                <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="40" Margin="6,0,6,0" >
+                <Image Source="/Pages/IconExportPdf.png" Width="30" Height="30"/>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="90" Grid.Column="2"  Content="Wróc" Height="30" Margin="5,0,5,0" VerticalAlignment="Top" Click="pdfButton_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="90" Grid.Column="3" Content="Nowy" Click="newCalculationButton_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Width="90" Grid.Column="4" Content="Wyjdź" Click="ExitButton_Click"/>
         </Grid>
     </StackPanel>
     

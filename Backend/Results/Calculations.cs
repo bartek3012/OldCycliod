@@ -80,7 +80,7 @@ namespace Backend.Results
         }
         private void SetL()
         {
-            double numerator = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
+            double numerator = (allDataValue.GetValueByEnumName(EnumName.D)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
             double denumerator = deformation + (allDataValue.GetValueByEnumName(EnumName.delta) / 2); //mianownik
             l = numerator / denumerator;  // [m]
         }

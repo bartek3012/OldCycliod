@@ -127,11 +127,16 @@
 
         <Grid Margin="25 5 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wróć" Click="backButton_Click"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Dalej" Height="Auto" Margin="6,0,6,0" Click="nextButtonClick"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Wróć" Click="backButton_Click"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Dalej" Height="Auto" Margin="6,0,6,0" Click="nextButtonClick"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="60" Margin="6,0,6,0" >
+                <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+            </Button>
+
         </Grid>
     </StackPanel>
 

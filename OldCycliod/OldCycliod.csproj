@@ -35,6 +35,9 @@
     <None Remove="Images\GearDraw.png" />
     <None Remove="Images\GearDrwa.jpg" />
     <None Remove="Images\sprze.png" />
+    <None Remove="Pages\IconExportPdf.png" />
+    <None Remove="Pages\IconSave.png" />
+    <None Remove="Pages\OpenIcon.png" />
     <None Remove="sprze.png" />
     <None Remove="test1.xml" />
   </ItemGroup>
@@ -72,6 +75,9 @@
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\BackgroundMaterianWin.jpg" />
     <Resource Include="Images\sprze.png" />
+    <Resource Include="Pages\IconExportPdf.png" />
+    <Resource Include="Pages\IconSave.png" />
+    <Resource Include="Pages\OpenIcon.png" />
   </ItemGroup>
 
   <ItemGroup>

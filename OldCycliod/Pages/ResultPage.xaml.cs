@@ -20,17 +20,19 @@ namespace OldCycliod
     /// </summary>
     public partial class ResultPage : Page
     {
-        public ResultPage(Calculations calculations)
+        public ResultPage(Calculations calculations, Page page)
         {
             InitializeComponent();
             allData = calculations;
             input = calculations.GetInputElements();
             output = calculations.GetOutputElements();
+            earlierPage = page;
             SetAllText();
         }
         private Calculations allData;
         private List<DataValue> input;
         private List<DataValue> output;
+        private Page earlierPage;
 
         private void SetAllText()
         {

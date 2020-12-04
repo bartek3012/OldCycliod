@@ -105,9 +105,17 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Content="Wyczyść" Click="clearButtonClick"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Dalej" Height="Auto" Margin="0,0,0,0" Click="nextButtonClick"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Wyczyść" Click="clearButtonClick" Width="120"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="3" Content="Dalej" Height="Auto" Margin="0,0,0,0" Width="120" Click="nextButtonClick"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="50" Margin="6,0,6,0" >
+                <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+            </Button>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="50" Margin="6,0,6,0" >
+                <Image Source="/Pages/OpenIcon.png" Width="30" Height="30"/>
+            </Button>
         </Grid>
     </StackPanel>
 </Page>

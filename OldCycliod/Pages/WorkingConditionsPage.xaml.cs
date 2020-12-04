@@ -95,7 +95,7 @@ namespace OldCycliod
             }
             if(error == false)
             {
-               NavigationService.Navigate(new ResultPage(new Calculations(demensionPage.AllDataValue, selectedMaterial, new SelectedWorkCondition(conditionService.EnumWork))));
+               NavigationService.Navigate(new ResultPage(new Calculations(demensionPage.AllDataValue, selectedMaterial, new SelectedWorkCondition(conditionService.EnumWork)), this));
             }
             
         }
