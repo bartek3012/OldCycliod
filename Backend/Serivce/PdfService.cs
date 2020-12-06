@@ -54,7 +54,7 @@ namespace Backend.Serivce
             namesInput += $"Naprężenia dop na ściskanie kc\n{calculations.selectedMaterial.Type}\nWarunki pracy";
 
             string valuesInput = GetValue("input");
-            valuesInput += $"{calculations.selectedMaterial.Value}\n{calculations.selectedMaterial.Value}\n{calculations.selectedWorkCondition.EnWorkCondition.ToString()} ({calculations.selectedWorkCondition.Value})";
+            valuesInput += $"{calculations.selectedMaterial.Value}\n{calculations.selectedMaterial.Content}\n{calculations.selectedWorkCondition.EnWorkCondition.ToString()} ({calculations.selectedWorkCondition.Value})";
 
             string unitsInput = GetUnit("input");
             unitsInput += $"{calculations.selectedMaterial.Unit}\n(materiał)";

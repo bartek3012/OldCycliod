@@ -90,5 +90,10 @@ namespace OldCycliod
         {
             new Backend.Serivce.PdfService(allData);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

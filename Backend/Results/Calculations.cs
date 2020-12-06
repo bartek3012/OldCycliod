@@ -80,15 +80,16 @@ namespace Backend.Results
         }
         private void SetL()
         {
-            double numerator = (allDataValue.GetValueByEnumName(EnumName.D)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
+            double numerator = (allDataValue.GetValueByEnumName(EnumName.D)- allDataValue.GetValueByEnumName(EnumName.e)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
             double denumerator = deformation + (allDataValue.GetValueByEnumName(EnumName.delta) / 2); //mianownik
             l = numerator / denumerator;  // [m]
         }
         private void SetLPrim()
         {
-            double secondPart = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.d)) / 2000;
-            double thirdPart = allDataValue.GetValueByEnumName(EnumName.e)/ 1000;
-            lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
+            //double secondPart = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.d)) / 2000;
+            //double thirdPart = allDataValue.GetValueByEnumName(EnumName.e)/ 1000;
+            //lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
+            lPrim = l*(allDataValue.GetValueByEnumName(EnumName.d)+ allDataValue.GetValueByEnumName(EnumName.e))/(allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e));
             if (lPrim <= 0)
             {
                 isMinus = true;
