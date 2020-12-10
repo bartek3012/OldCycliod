@@ -37,16 +37,16 @@ namespace Backend.Serivce
             gfx.DrawImage(XImage.FromFile(pathGrfphic), 140, 60, 297.9, 329.9);
             gfx.DrawString("Raport z programu OldCyclodi", fontMainTitle, XBrushes.Black, new XRect(0, -380, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane wejściowe", fontMainUnderTitle, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
-            gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 230, page.Width, page.Height), XStringFormats.Center);
+            gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 250, page.Width, page.Height), XStringFormats.Center);
 
             if(calculations.allDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.allDataValue.GetValueByEnumName(EnumName.Mout))
             {
-                gfx.DrawString("Moment maksymalny jest mniejszy niż zadany", fontMainUnderTitle, XBrushes.DarkRed, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
+                gfx.DrawString("Moment maksymalny jest mniejszy niż zadany", fontMainUnderTitle, XBrushes.DarkRed, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
 
             }
             else
             {
-                gfx.DrawString("Przekładnia jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
+                gfx.DrawString("Przekładnia jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
             }
             gfx.DrawString("Raport wygenerowany przez program OldCycloid", fontValue, XBrushes.Gray, new XRect(0, -10, page.Width, page.Height), XStringFormats.BottomCenter);
 
@@ -64,27 +64,27 @@ namespace Backend.Serivce
             string unitsOutput = GetUnit("output");
 
             XTextFormatter tf = new XTextFormatter(gfx);
-            XRect rect1 = new XRect(100, 440, 230, 180);
+            XRect rect1 = new XRect(100, 440, 230, 205);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesInput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            XRect rect = new XRect(330, 440, 90, 180);
+            XRect rect = new XRect(330, 440, 90, 205);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 440, 70, 180);
+            rect = new XRect(420, 440, 70, 205);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect1 = new XRect(100, 670, 230, 46);
+            rect1 = new XRect(100, 690, 230, 85);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesOutput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            rect = new XRect(330, 670, 90, 46);
+            rect = new XRect(330, 690, 90, 85);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesOutput, fontValueBold, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 670, 70, 46);
+            rect = new XRect(420, 690, 70, 85);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsOutput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 

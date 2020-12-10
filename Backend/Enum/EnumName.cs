@@ -19,7 +19,10 @@ namespace Backend.Entity
         friction,
         k,
         Mmax,
-        P,
+        pmin,
+        pmax,
+        PAll,
+        PLost,
         mi,
         SizeOfElemets
     }

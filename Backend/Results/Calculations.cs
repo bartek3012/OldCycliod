@@ -33,7 +33,6 @@ namespace Backend.Results
         private double xPrim;
         private double M;
         private double Plost;
-        private double v;
         private double Pin;
         private double mi;
         private bool isMinus;
@@ -65,10 +64,10 @@ namespace Backend.Results
             SetX();
             SetXPrim();
             SetM();
-            SetV();
             SetPlost();
             SetPin();
             SetMi();
+            SetpminANDpmax();
         }
         private void SetP()
         {
@@ -120,23 +119,38 @@ namespace Backend.Results
             M = 2000 * (F * x - FPrim * xPrim); //Nm
             allDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
         }
-        private void SetV()
-        {
-            v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.nIn))/60000;
-        }
+        //private void SetV()
+        //{
+        //    v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.nOut))/60000;
+        //}
         private void SetPlost()
         {
-            Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
-            allDataValue.SetValueByEnumName(EnumName.P, Math.Round(Plost,2));
+            double wk = 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nOut)/60;
+            Plost = 8 * wk * F * allDataValue.GetValueByEnumName(EnumName.friction) * allDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/Math.PI;
+            //Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
+            allDataValue.SetValueByEnumName(EnumName.PLost, Math.Round(Plost,2));
         }
         private void SetPin()
         {
-            Pin = (M * 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nIn)/60);
+            double w0 = 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nIn) / 60;
+            Pin = allDataValue.GetValueByEnumName(EnumName.Min) * w0;
+            allDataValue.SetValueByEnumName(EnumName.PAll, Math.Round(Pin,2));
         }
         private void SetMi()
         {
             mi = (1 - (Plost / Pin))*100; //%
             allDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
+        }
+
+        private void SetpminANDpmax()
+        {
+            double secondPartDeminator = (allDataValue.GetValueByEnumName(EnumName.d) + allDataValue.GetValueByEnumName(EnumName.e)) / (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e)) * allDataValue.GetValueByEnumName(EnumName.d) / 2;
+            double pmin = allDataValue.GetValueByEnumName(EnumName.Mout) / (allDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
+            allDataValue.SetValueByEnumName(EnumName.pmin, Math.Round(pmin, 2));
+
+            secondPartDeminator = (allDataValue.GetValueByEnumName(EnumName.D)/2000)+(allDataValue.GetValueByEnumName(EnumName.d) + allDataValue.GetValueByEnumName(EnumName.e)) / (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e));
+            double pmax = allDataValue.GetValueByEnumName(EnumName.Mout) / (allDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
+            allDataValue.SetValueByEnumName(EnumName.pmax, Math.Round(pmax, 2));
         }
         public List<DataValue> GetInputElements()
         {
