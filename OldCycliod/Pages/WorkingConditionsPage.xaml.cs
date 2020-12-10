@@ -41,8 +41,8 @@ namespace OldCycliod
         private ListMaterialWindow secondWindow;//
         private void Inicjalize()
         {
-            checkValueElements[(int)EnumName.Mz] = new CheckValue(textBlockMError, textBoxM, 100000, 0.1);
-            checkValueElements[(int)EnumName.n] = new CheckValue(textBlockNError, textBoxN, 100000, 0.1);
+            checkValueElements[(int)EnumName.Mout] = new CheckValue(textBlockMError, textBoxM, 100000, 0.1);
+            checkValueElements[(int)EnumName.nIn] = new CheckValue(textBlockNinError, textBoxNin, 100000, 0.1);
             checkValueElements[(int)EnumName.friction] = new CheckValue(textBlockFrictionError, textBoxFriction, 0.99, 0.001);///
             checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 1000, 0.001);
             checkBoxKService = new CheckBoxService(checkBoxK, textBoxK);
@@ -71,7 +71,7 @@ namespace OldCycliod
         {
             
             bool error = false;
-            for(int i = (int)EnumName.Mz; i<= (int)EnumName.k; i++)
+            for(int i = (int)EnumName.Mout; i<= (int)EnumName.k; i++)
             {
                 demensionPage.AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
                 if(checkValueElements[i].Error == true)

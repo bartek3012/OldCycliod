@@ -16,8 +16,8 @@ namespace Backend.Menager
             Add(new DataValue("Głębokość rowka wpustu h", EnumName.h, "[mm]", "input"));
             Add(new DataValue("Szerokość rowka wpustu b", EnumName.b, "[mm]", "input"));
             Add(new DataValue("Luz pasowania Δ", EnumName.delta, "[μm]", "input"));
-            Add(new DataValue("Moment zadany M", EnumName.Mz, "[Nm]", "input"));
-            Add(new DataValue("Prędkość obrotowa n", EnumName.n, "[1/s]", "input"));
+            Add(new DataValue("Moment zadany M", EnumName.Mout, "[Nm]", "input"));
+            Add(new DataValue("Prędkość obrotowa n", EnumName.nIn, "[1/s]", "input"));
             Add(new DataValue("Wsp tarcia kinametycznego", EnumName.friction, "", "input"));
             Add(new DataValue("Wsp sztywności kontaktowej", EnumName.k, "[MPa/μm]", "input"));
 

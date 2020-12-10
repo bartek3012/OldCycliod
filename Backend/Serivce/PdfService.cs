@@ -39,7 +39,7 @@ namespace Backend.Serivce
             gfx.DrawString("Dane wejściowe", fontMainUnderTitle, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 230, page.Width, page.Height), XStringFormats.Center);
 
-            if(calculations.allDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.allDataValue.GetValueByEnumName(EnumName.Mz))
+            if(calculations.allDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.allDataValue.GetValueByEnumName(EnumName.Mout))
             {
                 gfx.DrawString("Moment maksymalny jest mniejszy niż zadany", fontMainUnderTitle, XBrushes.DarkRed, new XRect(0, 340, page.Width, page.Height), XStringFormats.Center);
 

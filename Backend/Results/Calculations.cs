@@ -122,7 +122,7 @@ namespace Backend.Results
         }
         private void SetV()
         {
-            v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.n))/60000;
+            v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.nIn))/60000;
         }
         private void SetPlost()
         {
@@ -131,7 +131,7 @@ namespace Backend.Results
         }
         private void SetPin()
         {
-            Pin = (M * 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.n)/60);
+            Pin = (M * 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nIn)/60);
         }
         private void SetMi()
         {

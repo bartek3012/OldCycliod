@@ -59,7 +59,7 @@ namespace OldCycliod
                 ValueOut.Text += element.Value.ToString() + "\r\n";
                 UnitOut.Text += element.Unit + "\r\n";
             }
-            if(allData.allDataValue.GetValueByEnumName(EnumName.Mz)> allData.allDataValue.GetValueByEnumName(EnumName.Mmax))
+            if(allData.allDataValue.GetValueByEnumName(EnumName.Mout)> allData.allDataValue.GetValueByEnumName(EnumName.Mmax))
             {
                 TextBlockCheckTorque.Text = "Wartość zadanego momentu jest większa od wartości maksymalnej!";
                 TextBlockCheckTorque.Foreground = Brushes.DarkRed;
