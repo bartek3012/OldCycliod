@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OldCycliod"
         mc:Ignorable="d"
-        Title="OldCycliod" Height="580" Width="870" ResizeMode="CanMinimize"
+        Title="Mechanizm wyjściowy przekładni cykloidalnej" Height="580" Width="870" ResizeMode="CanMinimize"
         WindowStartupLocation="Manual" Left="300" Top="100" 
         Icon="/Icon1.ico">
     <Window.Background>

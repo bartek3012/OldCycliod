@@ -20,7 +20,7 @@ namespace Backend.Menager
             Add(new DataValue("Moment wyjściowy", EnumName.Mout, "[Nm]", "input"));
             Add(new DataValue("Prędkość obrotowa wejściowa", EnumName.nIn, "[1/s]", "input"));
             Add(new DataValue("Prędkość obrotowa wyjściowa", EnumName.nOut, "[1/s]", "input"));
-            Add(new DataValue("Wsp tarcia kinametycznego", EnumName.friction, "", "input"));
+            Add(new DataValue("Wsp tarcia kinetycznego", EnumName.friction, "", "input"));
             Add(new DataValue("Wsp sztywności kontaktowej", EnumName.k, "[MPa/μm]", "input"));
 
             Add(new DataValue("Moment maksymalny Mmax", EnumName.Mmax, "[Nm]", "output"));

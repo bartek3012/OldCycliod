@@ -97,8 +97,8 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <!--k-->
-            <CheckBox x:Name="checkBoxFriction" Margin="28 10 0 -10" Grid.Row ="0" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali pokryrtych olejem"  VerticalAlignment="Bottom" Checked="checkBoxFriction_Checked"/>
-            <TextBlock Text="Wsp tarci kinematycznego 𝜂 = " Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
+            <CheckBox x:Name="checkBoxFriction" Margin="28 10 0 -10" Grid.Row ="0" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali pokrytych olejem"  VerticalAlignment="Bottom" Checked="checkBoxFriction_Checked"/>
+            <TextBlock Text="Wsp. tarcia kinetycznego μ = " Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxFriction" Text="0,17"  Grid.Column ="1" Grid.Row="1"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockFrictionError" Grid.Row="2"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
