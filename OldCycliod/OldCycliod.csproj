@@ -35,6 +35,7 @@
     <None Remove="Images\GearDraw.png" />
     <None Remove="Images\GearDrwa.jpg" />
     <None Remove="Images\sprze.png" />
+    <None Remove="Materials.xml" />
     <None Remove="Pages\IconExportPdf.png" />
     <None Remove="Pages\IconSave.png" />
     <None Remove="Pages\OpenIcon.png" />
@@ -116,6 +117,9 @@
     </None>
     <None Update="H9_d9.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MaterialsBase.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

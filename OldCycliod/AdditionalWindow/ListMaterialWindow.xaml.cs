@@ -25,16 +25,16 @@ namespace OldCycliod
             InitializeComponent();
             materials = new MaterialsMenager();
             //Materials.Elements.ItemSource = new List<BaseEntity>();
-            MaterialListBox.ItemsSource = materials.Elements;
+            materialListBox.ItemsSource = materials.Elements;
             textBoxMat = textBoxMaterial;
             selectedMat = new BaseEntity();
         }
         private MaterialsMenager materials;
         public BaseEntity selectedMat { get; set; }
         private TextBox textBoxMat;
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void selectButton_Click(object sender, RoutedEventArgs e)
         {
-            AddMaterialWindow addMaterialWindow = new AddMaterialWindow();
+            AddMaterialWindow addMaterialWindow = new AddMaterialWindow(this);
             addMaterialWindow.Show();
         }
 
@@ -50,12 +50,30 @@ namespace OldCycliod
 
         private void select()
         {
-            selectedMat = (MaterialListBox.SelectedItem as BaseEntity);
+            selectedMat = (materialListBox.SelectedItem as BaseEntity);
             if(selectedMat != null)
             {
                 textBoxMat.Text = selectedMat.Content;
             }
             this.Close();
+        }
+        public void AddMaterialWindow(string type, string name, double presure)
+        {
+            BaseEntity newMaterial = new BaseEntity(name, type, presure);
+            materials.AddNewMaterial(newMaterial);
+            materialListBox.Items.Refresh();
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            BaseEntity selectedMaterial = (materialListBox.SelectedItem as BaseEntity);
+            if (selectedMaterial != null)
+            {
+                materials.DeleteMaterial(selectedMaterial);
+                materialListBox.Items.Refresh();
+
+            }
         }
     }
 }

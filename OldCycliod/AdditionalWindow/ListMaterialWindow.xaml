@@ -43,7 +43,7 @@
                     <ColumnDefinition Width="36*"/>
                     <ColumnDefinition Width="119*"/>
                 </Grid.ColumnDefinitions>
-                <ListBox x:Name="MaterialListBox" Background="Transparent" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,26" Grid.RowSpan="2" MouseDoubleClick="MaterialListBox_MouseDoubleClick">
+                <ListBox x:Name="materialListBox" Background="Transparent" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,26" Grid.RowSpan="2" MouseDoubleClick="MaterialListBox_MouseDoubleClick">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -61,8 +61,8 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Height="20" Width="100" Grid.Row="1" Grid.Column="0" FontSize="13"/>
-                <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13" Click="Button_Click"/>
+                <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Height="20" Width="100" Grid.Row="1" Grid.Column="0" FontSize="13" Margin="28,5,27,0" VerticalAlignment="Top" Click="deleteButton_Click"/>
+                <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj"  Height="20" Width="100" Grid.Row="1" Grid.Column="1" FontSize="13" Click="selectButton_Click" Margin="27,5,28,0" VerticalAlignment="Top"/>
                 <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Height="20" Width="100" Grid.Row="1" Grid.Column="2" FontSize="13" Grid.ColumnSpan="2" Click="Button_Click_Select"/>
             </Grid>
         </Border>

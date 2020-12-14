@@ -17,9 +17,29 @@ namespace OldCycliod
     /// </summary>
     public partial class AddMaterialWindow : Window
     {
-        public AddMaterialWindow()
+        private ListMaterialWindow listWindow;
+        public AddMaterialWindow(ListMaterialWindow listMaterialWindow)
         {
             InitializeComponent();
+            listWindow = listMaterialWindow;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string type = textBoxNewType.Text;
+            string name = textBoxNewName.Text;
+            string presureString = textBoxPresure.Text;
+            double presure;
+            if(Double.TryParse(presureString, out presure) == false)
+            {
+                textBlockPresureError.Background = Brushes.LightPink;
+                textBlockPresureError.Text = "Nie podano poprawnie liczby";
+            }
+            else
+            {
+                listWindow.AddMaterialWindow(type, name, presure);
+                this.Close();
+            }
         }
     }
 }
