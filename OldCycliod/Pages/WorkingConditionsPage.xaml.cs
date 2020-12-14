@@ -158,7 +158,7 @@ namespace OldCycliod
         {
             NavigationService.Navigate(demensionPage);
         }
-        private string GetTextToSave()
+        public string GetTextToSave()
         {
             string dataToSave = "";
             for (int i = 0; i <= (int)EnumName.delta; i++)

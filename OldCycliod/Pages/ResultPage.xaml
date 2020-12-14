@@ -55,7 +55,7 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="40" Margin="6,0,6,0" >
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="40" Margin="6,0,6,0" Click="saveButton_Click_1" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
             </Button>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="40" Margin="6,0,6,0" Click="pdfButton_Click">
