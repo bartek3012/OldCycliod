@@ -95,7 +95,7 @@
         
         <!--Fit-->
             <TextBlock Text="Wybierz pasowanie:" Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <ComboBox  Margin="10 10 0 0" Grid.Row="1" Grid.Column="1" Background="Transparent" x:Name="ComboBoxFit" SelectionChanged="ComboBoxFit_SelectionChanged">
+            <ComboBox  Margin="10 10 0 0" Grid.Row="1" Grid.Column="1" Background="Transparent" x:Name="comboBoxFit" SelectionChanged="ComboBoxFit_SelectionChanged">
                    <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>

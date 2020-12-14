@@ -46,5 +46,11 @@ namespace Backend.Menager
             Elements.Add(new BaseEntity("EN-GJL-350", "Żeliwo szare", 340));
 
         }
+
+        public BaseEntity GetMaterialByName(string name)
+        {
+            BaseEntity selectedMaterial = Elements.Find(p => p.Content == name);
+            return selectedMaterial;
+        }
     }
 }

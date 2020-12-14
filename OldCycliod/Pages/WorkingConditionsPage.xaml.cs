@@ -1,5 +1,6 @@
 ﻿using Backend;
 using Backend.Entity;
+using Backend.Menager;
 using Backend.Results;
 using Backend.Serivce;
 using CheckValues;
@@ -39,6 +40,8 @@ namespace OldCycliod
         private CheckValue[] checkValueElements;
         private BaseEntity selectedMaterial;
         private ListMaterialWindow secondWindow;//
+        private TextBox[] allTextBox;
+        private bool isMaterialFromFile = false;
         private void Inicjalize()
         {
             checkValueElements[(int)EnumName.Min] = new CheckValue(textBlockMinError, textBoxMin, 100000, 0.1);
@@ -53,6 +56,31 @@ namespace OldCycliod
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
 
+            allTextBox = new TextBox[] { textBoxMin, textBoxMout, textBoxNin, textBoxNout, textBoxFriction, textBoxK, textBoxMat };
+
+        }
+
+        private void SetDataFromFile()
+        {
+            int i = (int)EnumName.Min + 1;
+            foreach (TextBox textBox in allTextBox)
+            {
+                textBox.Text = demensionPage.dataFromFile[i];
+                i++;
+            }
+            int lastElement = demensionPage.dataFromFile.Length - 1;
+            EnumWorkCondition workCondition;
+            if(Enum.TryParse(demensionPage.dataFromFile[lastElement], out workCondition) == true)
+            {
+                conditionService.Click(workCondition);
+            }
+            string materialName = demensionPage.dataFromFile[lastElement - 1];
+            if(materialName != null && materialName != "")
+            {
+                MaterialsMenager materialsMenager = new MaterialsMenager();
+                selectedMaterial = materialsMenager.GetMaterialByName(materialName);
+                isMaterialFromFile = true;
+            }
         }
 
         //public TextBox TextBoxMaterial
@@ -67,6 +95,7 @@ namespace OldCycliod
             selectedMaterial = secondWindow.selectedMat;
             textBlockMatError.Text = "";
             textBoxMat.Background = Brushes.LightGray;
+            isMaterialFromFile = false;
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
@@ -91,11 +120,11 @@ namespace OldCycliod
                 textBlockMatError.Text = "Nie wybrano materiału";
                 textBoxMat.Background = Brushes.LightPink;
             }
-            else
+            else if(isMaterialFromFile == false)
             {
                 selectedMaterial = secondWindow.selectedMat;
             }
-            if(error == false)
+            if (error == false)
             {
                 if(demensionPage.AllDataValue.GetValueByEnumName(EnumName.Min)*demensionPage.AllDataValue.GetValueByEnumName(EnumName.nIn)<= demensionPage.AllDataValue.GetValueByEnumName(EnumName.Mout) * demensionPage.AllDataValue.GetValueByEnumName(EnumName.nOut))
                 {
@@ -128,6 +157,42 @@ namespace OldCycliod
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(demensionPage);
+        }
+        private string GetTextToSave()
+        {
+            string dataToSave = "";
+            for (int i = 0; i <= (int)EnumName.delta; i++)
+            {
+                dataToSave += $"{demensionPage.AllDataValue.Elements[i].Value}\n";
+            }
+            dataToSave += $"{demensionPage.GetSelectedFit()}\n";
+
+            foreach(TextBox textBox in allTextBox)
+            {
+                dataToSave += $"{textBox.Text}\n";
+            }
+            if (conditionService.ErrorCheck() == false)
+            {
+                dataToSave += $"{conditionService.EnumWork}\n";
+            }
+            else
+            {
+                dataToSave += "\n";
+            }
+            return dataToSave;
+        }
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            FileService.SaveFile(GetTextToSave());
+        }
+
+        private void Grid_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (demensionPage.dataFromFile != null)
+            {
+                SetDataFromFile();
+            }
+
         }
     }
 }

@@ -10,7 +10,7 @@
 
 
     <StackPanel>
-        <Grid Margin="0 0 0 0">
+        <Grid Margin="0 0 0 0" IsVisibleChanged="Grid_IsVisibleChanged">
 
 
             <Grid.ColumnDefinitions>
@@ -148,7 +148,7 @@
             </Grid.ColumnDefinitions>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Content="Wróć" Click="backButton_Click"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Dalej" Height="Auto" Margin="6,0,6,0" Click="nextButtonClick"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="60" Margin="6,0,6,0" >
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="60" Margin="6,0,6,0" Click="saveButton_Click" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
             </Button>
 

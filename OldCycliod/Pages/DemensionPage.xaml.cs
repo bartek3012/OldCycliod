@@ -38,6 +38,7 @@ namespace OldCycliod
         private FitMenager fitMenager;
         private bool setComboBox = false;
         private TextBox[] allTextBox;
+        public string []dataFromFile { get; private set; }
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
@@ -53,11 +54,12 @@ namespace OldCycliod
             checkBoxServiceDelta = new CheckBoxService(checkBoxDelta, textBoxDelta);
 
             fitMenager = new FitMenager();
-            ComboBoxFit.ItemsSource = fitMenager.FitElemets;
+            comboBoxFit.ItemsSource = fitMenager.FitElemets;
 
             workingCondPage = new WorkingConditionsPage(this);
             AllDataValue = new DataValueMenager();
             allTextBox = new TextBox[] { textBoxDOut, textBoxDIn, textBoxE, textBoxH, textBoxB, textBoxDelta};
+            dataFromFile = null;
         }
 
         private void checkBoxH_Checked(object sender, RoutedEventArgs e)
@@ -81,7 +83,7 @@ namespace OldCycliod
             checkBoxServiceB.SetValue(B);
             if(setComboBox == true)
             {
-                EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+                EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
                 int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
                 checkBoxServiceDelta.SetValue(delta);
             }
@@ -96,7 +98,7 @@ namespace OldCycliod
 
         private void ComboBoxFit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+            EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
             double B = checkValueElements[(int)EnumName.b].Cheack();
             if(B>1)
             {
@@ -105,7 +107,10 @@ namespace OldCycliod
             }
             setComboBox = true;
         }
-
+        public int GetSelectedFit()
+        {
+            return comboBoxFit.SelectedIndex;
+        }
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
             bool error = false;
@@ -154,7 +159,7 @@ namespace OldCycliod
         {
             if(setComboBox == true)
             {
-            EnumFit id = (EnumFit)ComboBoxFit.SelectedIndex;
+            EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
             int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.b].Cheack());
             checkBoxServiceDelta.SetValue(delta);
             }
@@ -167,7 +172,7 @@ namespace OldCycliod
             {
                 result += $"{textBox.Text}\n";
             }
-            result += ComboBoxFit.SelectedIndex.ToString();
+            result += comboBoxFit.SelectedIndex.ToString();
             FileService.SaveFile(result);
         }
 
@@ -178,13 +183,17 @@ namespace OldCycliod
             {
                 return;
             }
-            ComboBoxFit.SelectedIndex = Int32.Parse(data[6]);
             int i = 0;
             foreach (TextBox item in allTextBox)
             {
                 item.Text = data[i];
                 i++;
             }
+            if(data.Length>(int)EnumName.delta+1)
+            {
+                dataFromFile = data;
+            }
+            comboBoxFit.SelectedIndex = Int32.Parse(data[(int)EnumName.delta+1]);
         }
     }
 }
