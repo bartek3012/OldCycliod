@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Backend.Menager;
 using Backend.Enum;
+using Backend.Serivce;
 
 namespace OldCycliod
 {
@@ -36,6 +37,7 @@ namespace OldCycliod
         private CheckBoxService checkBoxServiceDelta;
         private FitMenager fitMenager;
         private bool setComboBox = false;
+        private TextBox[] allTextBox;
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
@@ -55,6 +57,7 @@ namespace OldCycliod
 
             workingCondPage = new WorkingConditionsPage(this);
             AllDataValue = new DataValueMenager();
+            allTextBox = new TextBox[] { textBoxDOut, textBoxDIn, textBoxE, textBoxH, textBoxB, textBoxDelta};
         }
 
         private void checkBoxH_Checked(object sender, RoutedEventArgs e)
@@ -160,9 +163,28 @@ namespace OldCycliod
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             string result ="";
-            result += $"{textBoxDOut.Text}\n";
-            result += $"{textBoxDOut.Text}\n";
+            foreach (TextBox textBox in allTextBox)
+            {
+                result += $"{textBox.Text}\n";
+            }
+            result += ComboBoxFit.SelectedIndex.ToString();
+            FileService.SaveFile(result);
+        }
 
+        private void openButton_Click(object sender, RoutedEventArgs e)
+        {
+            string[] data  = FileService.OpenFile();
+            if(data==null)
+            {
+                return;
+            }
+            ComboBoxFit.SelectedIndex = Int32.Parse(data[6]);
+            int i = 0;
+            foreach (TextBox item in allTextBox)
+            {
+                item.Text = data[i];
+                i++;
+            }
         }
     }
 }
