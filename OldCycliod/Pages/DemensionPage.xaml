@@ -95,7 +95,7 @@
         
         <!--Fit-->
             <TextBlock Text="Wybierz pasowanie:" Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <ComboBox  Margin="10 10 0 0" Grid.Row="1" Grid.Column="1" Background="Transparent" x:Name="ComboBoxFit" SelectionChanged="ComboBoxFit_SelectionChanged">
+            <ComboBox  Margin="10 10 0 0" Grid.Row="1" Grid.Column="1" Background="Transparent" x:Name="comboBoxFit" SelectionChanged="ComboBoxFit_SelectionChanged">
                    <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
@@ -136,7 +136,7 @@
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="50" Margin="6,0,6,0" Click="saveButton_Click" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
             </Button>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="50" Margin="6,0,6,0" >
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="50" Margin="6,0,6,0" Click="openButton_Click" >
                 <Image Source="/Pages/OpenIcon.png" Width="30" Height="30"/>
             </Button>
         </Grid>

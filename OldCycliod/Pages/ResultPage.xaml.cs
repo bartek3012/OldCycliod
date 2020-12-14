@@ -1,5 +1,6 @@
 ﻿using Backend.Entity;
 using Backend.Results;
+using Backend.Serivce;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +21,7 @@ namespace OldCycliod
     /// </summary>
     public partial class ResultPage : Page
     {
-        public ResultPage(Calculations calculations, Page page)
+        public ResultPage(Calculations calculations, WorkingConditionsPage page)
         {
             InitializeComponent();
             allData = calculations;
@@ -32,7 +33,7 @@ namespace OldCycliod
         private Calculations allData;
         private List<DataValue> input;
         private List<DataValue> output;
-        private Page earlierPage;
+        private WorkingConditionsPage earlierPage;
 
         private void SetAllText()
         {
@@ -94,6 +95,12 @@ namespace OldCycliod
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void saveButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            FileService.SaveFile(earlierPage.GetTextToSave());
+            
         }
     }
 }

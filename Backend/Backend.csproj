@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
   </ItemGroup>
 
