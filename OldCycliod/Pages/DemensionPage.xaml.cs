@@ -156,5 +156,13 @@ namespace OldCycliod
             checkBoxServiceDelta.SetValue(delta);
             }
         }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            string result ="";
+            result += $"{textBoxDOut.Text}\n";
+            result += $"{textBoxDOut.Text}\n";
+
+        }
     }
 }
