@@ -71,7 +71,7 @@
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockBError" Grid.Row="11"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Separator Background="Black" Height="10"/>
-        <TextBlock Text="Właściwości geomatryczne" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 15 0 15" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+        <TextBlock Text="Pasowanie i luz" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 15 0 15" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -128,11 +128,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2.4*"/>
+                <ColumnDefinition Width="2.4*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Wyczyść" Click="clearButtonClick" Width="120"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="3" Content="Dalej" Height="Auto" Margin="0,0,0,0" Width="120" Click="nextButtonClick"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Wyczyść" Click="clearButtonClick" />
+            <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="3" Content="Dalej" Height="Auto" Margin="0,0,0,0" Click="nextButtonClick"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="50" Margin="6,0,6,0" Click="saveButton_Click" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
             </Button>

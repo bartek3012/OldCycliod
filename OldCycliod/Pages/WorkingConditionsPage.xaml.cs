@@ -79,6 +79,11 @@ namespace OldCycliod
             {
                 MaterialsMenager materialsMenager = new MaterialsMenager();
                 selectedMaterial = materialsMenager.GetMaterialByName(materialName);
+                if(selectedMaterial == null)
+                {
+                    isMaterialFromFile = false;
+                    textBoxMat.Text = "";
+                }
                 isMaterialFromFile = true;
             }
         }
