@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Materials xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BaseEntity Value="100">
+    <Content>S185</Content>
+    <Type>Stal niestopowa</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="130">
+    <Content>S235</Content>
+    <Type>Stal niestopowa</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="145">
+    <Content>E295</Content>
+    <Type>Stal niestopowa</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="160">
+    <Content>E335</Content>
+    <Type>Stal niestopowa</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="175">
+    <Content>E360</Content>
+    <Type>Stal niestopowa</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="105">
+    <Content>C10E</Content>
+    <Type>Stal niestopowa (normalizowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="125">
+    <Content>C22</Content>
+    <Type>Stal niestopowa (normalizowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="155">
+    <Content>C35</Content>
+    <Type>Stal niestopowa (normalizowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="185">
+    <Content>C55</Content>
+    <Type>Stal niestopowa (normalizowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="150">
+    <Content>C25</Content>
+    <Type>Stal niestopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="180">
+    <Content>C35</Content>
+    <Type>Stal niestopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="225">
+    <Content>C55</Content>
+    <Type>Stal niestopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="250">
+    <Content>17Cr3</Content>
+    <Type>Stal stopowa (nawęglana i hartowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="325">
+    <Content>20Cr4</Content>
+    <Type>Stal stopowa (nawęglana i hartowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="375">
+    <Content>20MNCr5</Content>
+    <Type>Stal stopowa (nawęglana i hartowana)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="260">
+    <Content>28Mn7</Content>
+    <Type>Stal stopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="355">
+    <Content>34Cr4</Content>
+    <Type>Stal stopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="380">
+    <Content>41Cr4</Content>
+    <Type>Stal stopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="430">
+    <Content>42CrMo4</Content>
+    <Type>Stal stopowa (ulepszana cieplnie)</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="125">
+    <Content>L400</Content>
+    <Type>Staliwo węglowe</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="150">
+    <Content>L500</Content>
+    <Type>Staliwo węglowe</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="170">
+    <Content>L600</Content>
+    <Type>Staliwo węglowe</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="180">
+    <Content>L650</Content>
+    <Type>Staliwo węglowe</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="145">
+    <Content>EN-GJL-150</Content>
+    <Type>Żeliwo szare</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="195">
+    <Content>EN-GJL-200</Content>
+    <Type>Żeliwo szare</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="245">
+    <Content>EN-GJL-250</Content>
+    <Type>Żeliwo szare</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="290">
+    <Content>EN-GJL-300</Content>
+    <Type>Żeliwo szare</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+  <BaseEntity Value="340">
+    <Content>EN-GJL-350</Content>
+    <Type>Żeliwo szare</Type>
+    <Unit>MPa</Unit>
+  </BaseEntity>
+</Materials>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Backend
 {
@@ -26,10 +27,13 @@ namespace Backend
         {
 
         }
-
+        [XmlAttribute("Value")]
         public double Value { get; set; }
+        [XmlElement("Content")]
         public string Content { get; set; }
+        [XmlElement("Type")]
         public string Type { get; set; }
+        [XmlElement("Unit")]
         public string Unit { get; set; }
     }
 
