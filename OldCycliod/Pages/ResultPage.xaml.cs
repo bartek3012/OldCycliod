@@ -30,10 +30,10 @@ namespace OldCycliod
             earlierPage = page;
             SetAllText();
         }
-        private Calculations allData;
-        private List<DataValue> input;
-        private List<DataValue> output;
-        private WorkingConditionsPage earlierPage;
+        private readonly Calculations allData;
+        private readonly List<DataValue> input;
+        private readonly List<DataValue> output;
+        private readonly WorkingConditionsPage earlierPage;
 
         private void SetAllText()
         {
@@ -44,15 +44,15 @@ namespace OldCycliod
                 UnitIn.Text += element.Unit + "\r\n";
             }
             NameIn.Text += "Naprężenia dop na ściskanie kc" + "\r\n";
-            ValueIn.Text += allData.selectedMaterial.Value.ToString() + "\r\n";
-            UnitIn.Text += allData.selectedMaterial.Unit + "\r\n";
+            ValueIn.Text += allData.SelectedMaterial.Value.ToString() + "\r\n";
+            UnitIn.Text += allData.SelectedMaterial.Unit + "\r\n";
 
-            NameIn.Text += allData.selectedMaterial.Type + "\r\n";
-            ValueIn.Text += allData.selectedMaterial.Content + "\r\n";
+            NameIn.Text += allData.SelectedMaterial.Type + "\r\n";
+            ValueIn.Text += allData.SelectedMaterial.Content + "\r\n";
             UnitIn.Text +=  "(materiał)"+"\r\n";
 
-            NameIn.Text += allData.selectedWorkCondition.Content+ "\r\n";
-            ValueIn.Text += $"{allData.selectedWorkCondition.EnWorkCondition.ToString()} ({allData.selectedWorkCondition.Value}) \r\n";
+            NameIn.Text += allData.SelectedWorkCondition.Content+ "\r\n";
+            ValueIn.Text += $"{allData.SelectedWorkCondition.EnWorkCondition.ToString()} ({allData.SelectedWorkCondition.Value}) \r\n";
 
             foreach (DataValue element in output)
             {
@@ -60,7 +60,7 @@ namespace OldCycliod
                 ValueOut.Text += element.Value.ToString() + "\r\n";
                 UnitOut.Text += element.Unit + "\r\n";
             }
-            if(allData.allDataValue.GetValueByEnumName(EnumName.Mout)> allData.allDataValue.GetValueByEnumName(EnumName.Mmax))
+            if(allData.AllDataValue.GetValueByEnumName(EnumName.Mout)> allData.AllDataValue.GetValueByEnumName(EnumName.Mmax))
             {
                 TextBlockCheckTorque.Text = "Wartość zadanego momentu jest większa od wartości maksymalnej!";
                 TextBlockCheckTorque.Foreground = Brushes.DarkRed;
@@ -72,17 +72,12 @@ namespace OldCycliod
             }
         }
 
-        private void NameIn_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-
-        }
-
         private void newCalculationButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new DemensionPage());
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        private void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -92,7 +87,7 @@ namespace OldCycliod
             new Backend.Serivce.PdfService(allData);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void backButton_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

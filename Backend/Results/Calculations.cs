@@ -12,15 +12,15 @@ namespace Backend.Results
     {
         public Calculations(DataValueMenager dataValueMenager, BaseEntity selectedMaterialEntity, SelectedWorkCondition selectedCondition)
         {
-            allDataValue = dataValueMenager;
-            selectedMaterial = selectedMaterialEntity;
-            selectedWorkCondition = selectedCondition;
+            AllDataValue = dataValueMenager;
+            SelectedMaterial = selectedMaterialEntity;
+            SelectedWorkCondition = selectedCondition;
             Calculate();
 
         }
-        public DataValueMenager allDataValue { get; private set; }
-        public BaseEntity selectedMaterial { get; private set; }
-        public SelectedWorkCondition selectedWorkCondition { get; private set; }
+        public DataValueMenager AllDataValue { get; private set; }
+        public BaseEntity SelectedMaterial { get; private set; }
+        public SelectedWorkCondition SelectedWorkCondition { get; private set; }
 
         private double p;
         private double deformation;
@@ -46,7 +46,7 @@ namespace Backend.Results
                     "\nCzy pominąć wartość pasowania w obliczeniach?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if(answer == MessageBoxResult.Yes)
                 {
-                allDataValue.SetValueByEnumName(EnumName.delta, 0);
+                AllDataValue.SetValueByEnumName(EnumName.delta, 0);
                 MakeClaclultion();
                 }
             }
@@ -71,16 +71,16 @@ namespace Backend.Results
         }
         private void SetP()
         {
-            p = selectedMaterial.Value * selectedWorkCondition.Value; //MPa
+            p = SelectedMaterial.Value * SelectedWorkCondition.Value; //MPa
         }
         private void SetDeformation()
         {
-            deformation = p * allDataValue.GetValueByEnumName(EnumName.k); //𝜇𝑚
+            deformation = p * AllDataValue.GetValueByEnumName(EnumName.k); //𝜇𝑚
         }
         private void SetL()
         {
-            double numerator = (allDataValue.GetValueByEnumName(EnumName.D)- allDataValue.GetValueByEnumName(EnumName.e)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
-            double denumerator = deformation + (allDataValue.GetValueByEnumName(EnumName.delta) / 2); //mianownik
+            double numerator = (AllDataValue.GetValueByEnumName(EnumName.D)- AllDataValue.GetValueByEnumName(EnumName.e)) * deformation / 2000; //licznik, podzielenie przez 1000 aby otrzymać wynik w metrach
+            double denumerator = deformation + (AllDataValue.GetValueByEnumName(EnumName.delta) / 2); //mianownik
             l = numerator / denumerator;  // [m]
         }
         private void SetLPrim()
@@ -88,7 +88,7 @@ namespace Backend.Results
             //double secondPart = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.d)) / 2000;
             //double thirdPart = allDataValue.GetValueByEnumName(EnumName.e)/ 1000;
             //lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
-            lPrim = l*(allDataValue.GetValueByEnumName(EnumName.d)+ allDataValue.GetValueByEnumName(EnumName.e))/(allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e));
+            lPrim = l*(AllDataValue.GetValueByEnumName(EnumName.d)+ AllDataValue.GetValueByEnumName(EnumName.e))/(AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e));
             if (lPrim <= 0)
             {
                 isMinus = true;
@@ -100,24 +100,24 @@ namespace Backend.Results
         }
         private void SetF()
         {
-            F = (p * l * allDataValue.GetValueByEnumName(EnumName.h))/2; //[kN]
+            F = (p * l * AllDataValue.GetValueByEnumName(EnumName.h))/2; //[kN]
         }
         private void SetFPrim()
         {
-            FPrim = (pPrim * lPrim * allDataValue.GetValueByEnumName(EnumName.h)) / 2; //[kN]
+            FPrim = (pPrim * lPrim * AllDataValue.GetValueByEnumName(EnumName.h)) / 2; //[kN]
         }
         private void SetX()
         {
-            x = ((allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e)) / 2000) - (l / 3);
+            x = ((AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e)) / 2000) - (l / 3);
         }
         private void SetXPrim()
         {
-            xPrim = ((allDataValue.GetValueByEnumName(EnumName.d) - allDataValue.GetValueByEnumName(EnumName.e)) / 2000) - (lPrim / 3);
+            xPrim = ((AllDataValue.GetValueByEnumName(EnumName.d) - AllDataValue.GetValueByEnumName(EnumName.e)) / 2000) - (lPrim / 3);
         }
         private void SetM()
         {
             M = 2000 * (F * x - FPrim * xPrim); //Nm
-            allDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
+            AllDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
         }
         //private void SetV()
         //{
@@ -125,40 +125,40 @@ namespace Backend.Results
         //}
         private void SetPlost()
         {
-            double wk = 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nOut)/60;
-            Plost = 8 * wk * F * allDataValue.GetValueByEnumName(EnumName.friction) * allDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/Math.PI;
+            double wk = 2 * Math.PI * AllDataValue.GetValueByEnumName(EnumName.nOut)/60;
+            Plost = 8 * wk * F * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/Math.PI;
             //Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
-            allDataValue.SetValueByEnumName(EnumName.PLost, Math.Round(Plost,2));
+            AllDataValue.SetValueByEnumName(EnumName.PLost, Math.Round(Plost,2));
         }
         private void SetPin()
         {
-            double w0 = 2 * Math.PI * allDataValue.GetValueByEnumName(EnumName.nIn) / 60;
-            Pin = allDataValue.GetValueByEnumName(EnumName.Min) * w0;
-            allDataValue.SetValueByEnumName(EnumName.PAll, Math.Round(Pin,2));
+            double w0 = 2 * Math.PI * AllDataValue.GetValueByEnumName(EnumName.nIn) / 60;
+            Pin = AllDataValue.GetValueByEnumName(EnumName.Min) * w0;
+            AllDataValue.SetValueByEnumName(EnumName.PAll, Math.Round(Pin,2));
         }
         private void SetMi()
         {
             mi = (1 - (Plost / Pin))*100; //%
-            allDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
+            AllDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
         }
 
         private void SetpminANDpmax()
         {
-            double secondPartDeminator = (allDataValue.GetValueByEnumName(EnumName.d) + allDataValue.GetValueByEnumName(EnumName.e)) / (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e)) * allDataValue.GetValueByEnumName(EnumName.d) / 2;
-            double pmin = allDataValue.GetValueByEnumName(EnumName.Mout) / (allDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
-            allDataValue.SetValueByEnumName(EnumName.pmin, Math.Round(pmin, 2));
+            double secondPartDeminator = (AllDataValue.GetValueByEnumName(EnumName.d) + AllDataValue.GetValueByEnumName(EnumName.e)) / (AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e)) * AllDataValue.GetValueByEnumName(EnumName.d) / 2;
+            double pmin = AllDataValue.GetValueByEnumName(EnumName.Mout) / (AllDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
+            AllDataValue.SetValueByEnumName(EnumName.pmin, Math.Round(pmin, 2));
 
-            secondPartDeminator = (allDataValue.GetValueByEnumName(EnumName.D)/2000)+(allDataValue.GetValueByEnumName(EnumName.d) + allDataValue.GetValueByEnumName(EnumName.e)) / (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.e));
-            double pmax = allDataValue.GetValueByEnumName(EnumName.Mout) / (allDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
-            allDataValue.SetValueByEnumName(EnumName.pmax, Math.Round(pmax, 2));
+            secondPartDeminator = (AllDataValue.GetValueByEnumName(EnumName.D)/2000)+(AllDataValue.GetValueByEnumName(EnumName.d) + AllDataValue.GetValueByEnumName(EnumName.e)) / (AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e));
+            double pmax = AllDataValue.GetValueByEnumName(EnumName.Mout) / (AllDataValue.GetValueByEnumName(EnumName.h) * l * secondPartDeminator);
+            AllDataValue.SetValueByEnumName(EnumName.pmax, Math.Round(pmax, 2));
         }
         public List<DataValue> GetInputElements()
         {
-            return allDataValue.GetValuesByType("input");
+            return AllDataValue.GetValuesByType("input");
         }
         public List<DataValue> GetOutputElements()
         {
-            return allDataValue.GetValuesByType("output");
+            return AllDataValue.GetValuesByType("output");
         }
 
     }

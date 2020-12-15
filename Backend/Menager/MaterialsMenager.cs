@@ -11,7 +11,7 @@ namespace Backend.Menager
 {
     public class MaterialsMenager : BaseMenager<BaseEntity>
     {
-        private string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MaterialsBase.xml");
+        private readonly string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MaterialsBase.xml");
         protected override void Initialize()
         {
             TakeFileToList();
@@ -49,13 +49,11 @@ namespace Backend.Menager
             //Elements.Add(new BaseEntity("EN-GJL-250", "Żeliwo szare", 245));
             //Elements.Add(new BaseEntity("EN-GJL-300", "Żeliwo szare", 290));
             //Elements.Add(new BaseEntity("EN-GJL-350", "Żeliwo szare", 340));
-
-            //TakeListToFile();
         }
 
         public void DeleteMaterial(BaseEntity selectedMat)
         {
-            bool x = Elements.Remove(selectedMat);
+            Elements.Remove(selectedMat);
             TakeListToFile();
         }
 

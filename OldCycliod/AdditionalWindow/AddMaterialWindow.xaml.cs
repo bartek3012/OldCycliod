@@ -17,7 +17,7 @@ namespace OldCycliod
     /// </summary>
     public partial class AddMaterialWindow : Window
     {
-        private ListMaterialWindow listWindow;
+        private readonly ListMaterialWindow listWindow;
         public AddMaterialWindow(ListMaterialWindow listMaterialWindow)
         {
             InitializeComponent();
@@ -29,8 +29,7 @@ namespace OldCycliod
             string type = textBoxNewType.Text;
             string name = textBoxNewName.Text;
             string presureString = textBoxPresure.Text;
-            double presure;
-            if(Double.TryParse(presureString, out presure) == false)
+            if (Double.TryParse(presureString, out double presure) == false)
             {
                 textBlockPresureError.Background = Brushes.LightPink;
                 textBlockPresureError.Text = "Nie podano poprawnie liczby";

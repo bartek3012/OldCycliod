@@ -44,7 +44,7 @@
                     <ColumnDefinition Width="36*"/>
                     <ColumnDefinition Width="119*"/>
                 </Grid.ColumnDefinitions>
-                <ListBox x:Name="materialListBox" Height="180" Background="Transparent" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,8" Grid.RowSpan="2" MouseDoubleClick="MaterialListBox_MouseDoubleClick">
+                <ListBox x:Name="materialListBox" Height="180" Background="Transparent" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,8" Grid.RowSpan="2" MouseDoubleClick="selectMaterialListBox_MouseDoubleClick">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -73,8 +73,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Style="{StaticResource RoundButtonTemplate}" Content="Usuń" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Click="deleteButton_Click"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj" Grid.Row="1" Grid.Column="1" Click="selectButton_Click"  VerticalAlignment="Top"/>
-            <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Click="Button_Click_Select"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj" Grid.Row="1" Grid.Column="1" Click="addButton_Click"  VerticalAlignment="Top"/>
+            <Button Style="{StaticResource RoundButtonTemplate}" Content="Wybierz" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Click="selectButton_Click"/>
         </Grid>
     </StackPanel>
 </Window>

@@ -33,11 +33,11 @@ namespace OldCycliod
             Inicjalize();
             selectedMaterial = new BaseEntity();
         }
-        private DemensionPage demensionPage;
+        private readonly DemensionPage demensionPage;
         private CheckBoxService checkBoxKService;
         private CheckBoxService checkBoxFrictionService;
         private WorkConditionService conditionService;
-        private CheckValue[] checkValueElements;
+        private readonly CheckValue[] checkValueElements;
         private BaseEntity selectedMaterial;
         private ListMaterialWindow secondWindow;//
         private TextBox[] allTextBox;

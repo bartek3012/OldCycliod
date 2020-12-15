@@ -39,7 +39,7 @@ namespace Backend.Serivce
             gfx.DrawString("Dane wejściowe", fontMainUnderTitle, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 250, page.Width, page.Height), XStringFormats.Center);
 
-            if(calculations.allDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.allDataValue.GetValueByEnumName(EnumName.Mout))
+            if(calculations.AllDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.AllDataValue.GetValueByEnumName(EnumName.Mout))
             {
                 gfx.DrawString("Moment maksymalny jest mniejszy niż zadany", fontMainUnderTitle, XBrushes.DarkRed, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
 
@@ -51,13 +51,13 @@ namespace Backend.Serivce
             gfx.DrawString("Raport wygenerowany przez program OldCycloid", fontValue, XBrushes.Gray, new XRect(0, -10, page.Width, page.Height), XStringFormats.BottomCenter);
 
             string namesInput = GetName("input");
-            namesInput += $"Naprężenia dop na ściskanie kc\n{calculations.selectedMaterial.Type}\nWarunki pracy";
+            namesInput += $"Naprężenia dop na ściskanie kc\n{calculations.SelectedMaterial.Type}\nWarunki pracy";
 
             string valuesInput = GetValue("input");
-            valuesInput += $"{calculations.selectedMaterial.Value}\n{calculations.selectedMaterial.Content}\n{calculations.selectedWorkCondition.EnWorkCondition.ToString()} ({calculations.selectedWorkCondition.Value})";
+            valuesInput += $"{calculations.SelectedMaterial.Value}\n{calculations.SelectedMaterial.Content}\n{calculations.SelectedWorkCondition.EnWorkCondition.ToString()} ({calculations.SelectedWorkCondition.Value})";
 
             string unitsInput = GetUnit("input");
-            unitsInput += $"{calculations.selectedMaterial.Unit}\n(materiał)";
+            unitsInput += $"{calculations.SelectedMaterial.Unit}\n(materiał)";
 
             string namesOutput = GetName("output");
             string valuesOutput = GetValue("output");
@@ -108,7 +108,7 @@ namespace Backend.Serivce
 
         private string GetName(string type)
         {
-            List<DataValue> names = calculations.allDataValue.GetValuesByType(type);
+            List<DataValue> names = calculations.AllDataValue.GetValuesByType(type);
             string result = "";
             foreach (DataValue name in names)
             {
@@ -118,7 +118,7 @@ namespace Backend.Serivce
         }
         private string GetValue(string type)
         {
-            List<DataValue> values = calculations.allDataValue.GetValuesByType(type);
+            List<DataValue> values = calculations.AllDataValue.GetValuesByType(type);
             string result = "";
             foreach (DataValue value in values)
             {
@@ -128,7 +128,7 @@ namespace Backend.Serivce
         }
         private string GetUnit(string type)
         {
-            List<DataValue> units = calculations.allDataValue.GetValuesByType(type);
+            List<DataValue> units = calculations.AllDataValue.GetValuesByType(type);
             string result = "";
             foreach (DataValue unit in units)
             {

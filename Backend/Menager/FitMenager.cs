@@ -36,7 +36,7 @@ namespace Backend.Menager
             FitElemets.Add(new Fit(EnumFit.H11_h11));
         }
 
-        public List<Fit> FitElemets;
+        public List<Fit> FitElemets { get; private set; }
         public int CheckFitValue(EnumFit enumFit, double widthB)
         {
             string secondPartPath = enumFit.ToString() + ".xml";

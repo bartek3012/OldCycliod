@@ -15,6 +15,5 @@ namespace Backend.Entity
         public string  Name { get; set; }
         public EnumFit FitEnum { get; set; }
 
-        //metoda do yznaczanenia luzu
     }
 }

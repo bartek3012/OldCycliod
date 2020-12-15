@@ -7,7 +7,6 @@ namespace Backend.Menager
 {
     public class DataValueMenager : BaseMenager<DataValue>
     {
-        //public Enum MyProperty { get; set; }
         protected override void Initialize()
         {
             Add(new DataValue("Średnica zewnętrzna D", EnumName.D, "[mm]", "input"));

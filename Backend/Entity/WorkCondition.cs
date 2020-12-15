@@ -10,7 +10,6 @@ namespace Backend.Entity
         public WorkCondition() : base("Warunki pracy: ", "input", "")
         {
         }
-
         public EnumWorkCondition EnWorkCondition { get; set; }
     }
 }

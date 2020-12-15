@@ -29,26 +29,26 @@ namespace OldCycliod
             textBoxMat = textBoxMaterial;
             selectedMat = new BaseEntity();
         }
-        private MaterialsMenager materials;
+        private readonly MaterialsMenager materials;
         public BaseEntity selectedMat { get; set; }
-        private TextBox textBoxMat;
-        private void selectButton_Click(object sender, RoutedEventArgs e)
+        private readonly TextBox textBoxMat;
+        private void addButton_Click(object sender, RoutedEventArgs e)
         {
             AddMaterialWindow addMaterialWindow = new AddMaterialWindow(this);
             addMaterialWindow.Show();
         }
 
-        private void Button_Click_Select(object sender, RoutedEventArgs e)
+        private void selectButton_Click(object sender, RoutedEventArgs e)
         {
-            select();
+            Select();
         }
 
-        private void MaterialListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void selectMaterialListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            select();
+            Select();
         }
 
-        private void select()
+        private void Select()
         {
             selectedMat = (materialListBox.SelectedItem as BaseEntity);
             if(selectedMat != null)

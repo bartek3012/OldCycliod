@@ -10,11 +10,6 @@ namespace Backend.FitDataBase
         public ValueFit()
         {
         }
-        public ValueFit(int id, int value)
-        {
-            Id = id;
-            Value = value;
-        }
         [XmlAttribute ("Id")]
         public int Id { get; set; }
         [XmlElement("Value")]
