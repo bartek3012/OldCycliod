@@ -189,11 +189,19 @@ namespace OldCycliod
                 item.Text = data[i];
                 i++;
             }
+            try
+            {
             if(data.Length>(int)EnumName.delta+1)
             {
                 dataFromFile = data;
             }
             comboBoxFit.SelectedIndex = Int32.Parse(data[(int)EnumName.delta+1]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Plik do ptwarcia jest nie poprawny", "Niepoprawny plik", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
     }
 }

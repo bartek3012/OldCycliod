@@ -13,6 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="BackendClassDiagram.cs" />
+    <Compile Remove="BackendClassDiagram.Designer.cs" />
     <Compile Remove="Entity\EnumName.cs" />
     <Compile Remove="Entity\EnumWorkCondition.cs" />
     <Compile Remove="Entity\Material.cs" />

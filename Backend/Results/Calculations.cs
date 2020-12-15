@@ -36,6 +36,8 @@ namespace Backend.Results
         private double Pin;
         private double mi;
         private bool isMinus;
+
+        private double v;//
         public void Calculate()
         {
             
@@ -119,15 +121,17 @@ namespace Backend.Results
             M = 2000 * (F * x - FPrim * xPrim); //Nm
             AllDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
         }
-        //private void SetV()
-        //{
-        //    v = (4 * allDataValue.GetValueByEnumName(EnumName.e) * allDataValue.GetValueByEnumName(EnumName.nOut))/60000;
-        //}
+        private void SetV()
+        {
+            v = (4 * AllDataValue.GetValueByEnumName(EnumName.e) * AllDataValue.GetValueByEnumName(EnumName.nOut)) / 60000;
+        }
         private void SetPlost()
         {
             double wk = 2 * Math.PI * AllDataValue.GetValueByEnumName(EnumName.nOut)/60;
             Plost = 8 * wk * F * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/Math.PI;
-            //Plost = 4000 * allDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
+
+            //SetV();
+            //Plost = 4000 * AllDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
             AllDataValue.SetValueByEnumName(EnumName.PLost, Math.Round(Plost,2));
         }
         private void SetPin()

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Backend.Entity.DataValue" Collapsed="true">
+    <Position X="6" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\DataValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Entity.Fit" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\Fit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Entity.WorkCondition" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\WorkCondition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Backend.Entity.EnumName" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAgAAAAQQQAAAEAAAAAABAQAAAAIGwQIABEAAACA=</HashCode>
+      <FileName>Enum\EnumName.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Backend.Entity.EnumWorkCondition" Collapsed="true">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgA=</HashCode>
+      <FileName>Enum\EnumWorkCondition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
