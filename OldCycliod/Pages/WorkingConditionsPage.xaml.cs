@@ -88,11 +88,6 @@ namespace OldCycliod
             }
         }
 
-        //public TextBox TextBoxMaterial
-        //{
-        //    set { textBoxMat = value; }
-        //}
-
         private void SetMaterialButtonClick(object sender, RoutedEventArgs e)
         {
             secondWindow = new ListMaterialWindow(textBoxMat);

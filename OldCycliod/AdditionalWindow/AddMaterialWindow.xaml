@@ -44,7 +44,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource RoundButtonTemplate}"  Content="Anuluj"  Grid.Column="0" FontSize="13"/>
+            <Button Style="{StaticResource RoundButtonTemplate}"  Content="Anuluj"  Grid.Column="0" FontSize="13" Click="Button_Click_1"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Content="Dodaj" Grid.Row="1" Grid.Column="1" FontSize="13" Click="Button_Click"/>
         </Grid>
 
