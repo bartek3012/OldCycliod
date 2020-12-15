@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FitDataBase\XmlFiles\**" />
+    <EmbeddedResource Remove="FitDataBase\XmlFiles\**" />
+    <None Remove="FitDataBase\XmlFiles\**" />
+    <Page Remove="FitDataBase\XmlFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Entity\EnumName.cs" />
     <Compile Remove="Entity\EnumWorkCondition.cs" />
     <Compile Remove="Entity\Material.cs" />
@@ -14,15 +21,9 @@
 
   <ItemGroup>
     <None Remove="FitDataBase\H8_e8.xml" />
-    <None Remove="FitDataBase\XmlFiles\H8_e8.xml" />
+    <None Remove="FitDataBase\test.xml" />
+    <None Remove="Menager\test3.xml" />
     <None Remove="test2.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="FitDataBase\XmlFiles\H8_e8.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test2.xml" />
   </ItemGroup>
 
   <ItemGroup>

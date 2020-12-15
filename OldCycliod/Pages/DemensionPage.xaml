@@ -9,7 +9,7 @@
       Title="InputMaterialPage">
 
     <StackPanel>
-        <TextBlock Text="Właściwości geomatryczne" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 25 0 15" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+        <TextBlock Text="Właściwości geomatryczne" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 25 0 10" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
         <Grid Margin="0 0 0 0">
 
 
@@ -71,7 +71,7 @@
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockBError" Grid.Row="11"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
         <Separator Background="Black" Height="10"/>
-        <TextBlock Text="Pasowanie i luz" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 15 0 15" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+        <TextBlock Text="Pasowanie i luz" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 10 0 10" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -135,9 +135,15 @@
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="3" Content="Dalej" Height="Auto" Margin="0,0,0,0" Click="nextButtonClick"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="50" Margin="6,0,6,0" Click="saveButton_Click" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Zapisz obliczenia" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
             </Button>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="50" Margin="6,0,6,0" Click="openButton_Click" >
                 <Image Source="/Pages/OpenIcon.png" Width="30" Height="30"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Otwórz plik z obliczeniami" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
             </Button>
         </Grid>
     </StackPanel>

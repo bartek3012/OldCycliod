@@ -57,9 +57,15 @@
             </Grid.ColumnDefinitions>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="40" Margin="6,0,6,0" Click="saveButton_Click_1" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Zapisz obliczenia" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
             </Button>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="1" Width="40" Margin="6,0,6,0" Click="pdfButton_Click">
                 <Image Source="/Pages/IconExportPdf.png" Width="30" Height="30"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Eksportuj wyniki do PDF" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
             </Button>
             <Button Style="{StaticResource RoundButtonTemplate}" Width="90" Grid.Column="2"  Content="Wróc" Height="30" Margin="5,0,5,0" VerticalAlignment="Top" Click="backButton_Click"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Width="90" Grid.Column="3" Content="Nowy" Click="newCalculationButton_Click"/>

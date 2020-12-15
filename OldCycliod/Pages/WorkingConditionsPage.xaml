@@ -147,6 +147,9 @@
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="2" Content="Dalej" Height="Auto" Margin="6,0,6,0" Click="nextButtonClick"/>
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Column="0" Width="60" Margin="6,0,6,0" Click="saveButton_Click" >
                 <Image Source="/Pages/IconSave.png" Width="30" Height="30"/>
+                <Button.ToolTip>
+                    <ToolTip Content="Zapisz obliczenia" Style="{StaticResource ToolTipStyle}"/>
+                </Button.ToolTip>
             </Button>
         </Grid>
     </StackPanel>

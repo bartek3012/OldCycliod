@@ -8,8 +8,8 @@ namespace OldCycliod.Pages.Service
 {
     public class CheckBoxService
     {
-        private CheckBox checkBox;
-        private TextBox textBox;
+        private readonly CheckBox checkBox;
+        private readonly TextBox textBox;
        public CheckBoxService(CheckBox check, TextBox text)
         {
             checkBox = check;
