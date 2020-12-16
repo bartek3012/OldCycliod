@@ -1,38 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Backend.Entity.DataValue" Collapsed="true">
-    <Position X="6" Y="2.75" Width="1.5" />
+  <Class Name="Backend.Entity.DataValue">
+    <Position X="4" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\DataValue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Backend.Entity.Fit" Collapsed="true">
-    <Position X="8" Y="3.5" Width="1.5" />
+    <Position X="11" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\Fit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Backend.Entity.WorkCondition" Collapsed="true">
-    <Position X="4" Y="4" Width="1.5" />
+  <Class Name="Backend.Entity.WorkCondition">
+    <Position X="2" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\WorkCondition.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Backend.BaseEntity">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>Entity\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.FitDataBase.ValueFit" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>FitDataBase\ValueFit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Menager.BaseMenager&lt;T&gt;">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAQAAQAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract\BaseMenager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Menager.DataValueMenager" Collapsed="true">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAAAAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menager\DataValueMenager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Menager.FitMenager" Collapsed="true">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAIABAAAAAAAAAA=</HashCode>
+      <FileName>Menager\FitMenager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Menager.MaterialsMenager" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAAQAACAACAAAAAIAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menager\MaterialsMenager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Results.Calculations" Collapsed="true">
+    <Position X="14" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAIAADABBwGAUFASEGAAAgQCAAAAAABFBAEAIQEAI=</HashCode>
+      <FileName>Results\Calculations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Serivce.FileService" Collapsed="true">
+    <Position X="6.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAAAA=</HashCode>
+      <FileName>Serivce\FileService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Serivce.PdfService" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAoAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAQ=</HashCode>
+      <FileName>Serivce\PdfService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Backend.Serivce.SelectedWorkCondition">
+    <Position X="3.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Serivce\SelectedWorkCondition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="Backend.Entity.EnumName" Collapsed="true">
-    <Position X="6.75" Y="1.5" Width="1.5" />
+    <Position X="6.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgIAgAAAAQQQAAAEAAAAAABAQAAAAIGwQIABEAAACA=</HashCode>
       <FileName>Enum\EnumName.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="Backend.Entity.EnumWorkCondition" Collapsed="true">
-    <Position X="3.25" Y="2.75" Width="1.5" />
+  <Enum Name="Backend.Entity.EnumWorkCondition">
+    <Position X="1.25" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgA=</HashCode>
       <FileName>Enum\EnumWorkCondition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Backend.Enum.EnumFit" Collapsed="true">
+    <Position X="11" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAQAAAQAAAgAAAAAIAQAAAAAAAAQAACAQgAAAgA=</HashCode>
+      <FileName>Enum\EnumFit.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

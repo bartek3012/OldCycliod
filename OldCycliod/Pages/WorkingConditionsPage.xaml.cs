@@ -65,7 +65,7 @@ namespace OldCycliod
             int i = (int)EnumName.Min + 1;
             foreach (TextBox textBox in allTextBox)
             {
-                textBox.Text = demensionPage.dataFromFile[i];
+                textBox.Text = demensionPage.dataFromFile[i];///
                 i++;
             }
             int lastElement = demensionPage.dataFromFile.Length - 1;
@@ -92,10 +92,8 @@ namespace OldCycliod
         {
             secondWindow = new ListMaterialWindow(textBoxMat);
             secondWindow.Show();
-            selectedMaterial = secondWindow.selectedMat;
             textBlockMatError.Text = "";
             textBoxMat.Background = Brushes.LightGray;
-            isMaterialFromFile = false;
         }
 
         private void nextButtonClick(object sender, RoutedEventArgs e)
@@ -193,6 +191,11 @@ namespace OldCycliod
                 SetDataFromFile();
             }
 
+        }
+
+        private void textBoxMat_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            isMaterialFromFile = false;
         }
     }
 }

@@ -87,10 +87,10 @@ namespace Backend.Results
         }
         private void SetLPrim()
         {
-            //double secondPart = (allDataValue.GetValueByEnumName(EnumName.D) - allDataValue.GetValueByEnumName(EnumName.d)) / 2000;
-            //double thirdPart = allDataValue.GetValueByEnumName(EnumName.e)/ 1000;
-            //lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
-            lPrim = l*(AllDataValue.GetValueByEnumName(EnumName.d)+ AllDataValue.GetValueByEnumName(EnumName.e))/(AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e));
+            double secondPart = (AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.d)) / 2000;
+            double thirdPart = AllDataValue.GetValueByEnumName(EnumName.e)/ 1000;
+            lPrim = l - secondPart + thirdPart; //przez 1000 przejście na metry         [m]
+            //lPrim = l*(AllDataValue.GetValueByEnumName(EnumName.d)+ AllDataValue.GetValueByEnumName(EnumName.e))/(AllDataValue.GetValueByEnumName(EnumName.D) - AllDataValue.GetValueByEnumName(EnumName.e));
             if (lPrim <= 0)
             {
                 isMinus = true;

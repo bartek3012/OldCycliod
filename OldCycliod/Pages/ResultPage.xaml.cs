@@ -67,7 +67,7 @@ namespace OldCycliod
             }
             else
             {
-                TextBlockCheckTorque.Text = "Przekładnia jest w stanie przenieść zadany moment obrotowy";
+                TextBlockCheckTorque.Text = "Mechanizm wyjściowy jest w stanie przenieść zadany moment obrotowy";
                 TextBlockCheckTorque.Foreground = Brushes.DarkGreen;
             }
         }

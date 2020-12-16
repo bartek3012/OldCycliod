@@ -46,7 +46,7 @@ namespace Backend.Serivce
             }
             else
             {
-                gfx.DrawString("Przekładnia jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
+                gfx.DrawString("Mechanizm wyjściowy jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
             }
             gfx.DrawString("Raport wygenerowany przez program OldCycloid", fontValue, XBrushes.Gray, new XRect(0, -10, page.Width, page.Height), XStringFormats.BottomCenter);
 

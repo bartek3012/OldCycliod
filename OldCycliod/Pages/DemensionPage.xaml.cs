@@ -191,7 +191,7 @@ namespace OldCycliod
             }
             try
             {
-            if(data.Length>(int)EnumName.delta+1)
+            if(data.Length>(int)EnumName.delta+2)
             {
                 dataFromFile = data;
             }

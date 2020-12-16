@@ -132,7 +132,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Materiał wkładki " Grid.Column="0" Grid.Row="0" Margin="30 5 0 5" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxMat" Text=""  Grid.Column ="1" Grid.Row="0"  Margin="5" Background="LightGray" IsReadOnly="True" />
+            <TextBox x:Name="textBoxMat" Text=""  Grid.Column ="1" Grid.Row="0"  Margin="5" Background="LightGray" IsReadOnly="True" TextChanged="textBoxMat_TextChanged" />
             <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="0" Height="20" Width="130" Grid.Column="2" HorizontalAlignment="Center" FontSize="12" Content="Wybierz materiał" Click="SetMaterialButtonClick"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockMatError" Grid.Row="1"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>

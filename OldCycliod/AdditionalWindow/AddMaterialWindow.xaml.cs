@@ -31,7 +31,7 @@ namespace OldCycliod
             string presureString = textBoxPresure.Text;
             if (Double.TryParse(presureString, out double presure) == false)
             {
-                textBlockPresureError.Background = Brushes.LightPink;
+                textBoxPresure.Background = Brushes.LightPink;
                 textBlockPresureError.Text = "Nie podano poprawnie liczby";
             }
             else
