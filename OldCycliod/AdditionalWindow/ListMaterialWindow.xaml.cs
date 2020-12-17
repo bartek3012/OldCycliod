@@ -70,8 +70,13 @@ namespace OldCycliod
             BaseEntity selectedMaterial = (materialListBox.SelectedItem as BaseEntity);
             if (selectedMaterial != null)
             {
+                var answer = MessageBox.Show("Czy chcesz trwale usunąć materiał z programu?", "Trwałe usunięcie", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if(answer == MessageBoxResult.Yes)
+                {
                 materials.DeleteMaterial(selectedMaterial);
                 materialListBox.Items.Refresh();
+                }
+
 
             }
         }

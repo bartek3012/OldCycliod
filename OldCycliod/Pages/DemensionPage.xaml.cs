@@ -27,27 +27,27 @@ namespace OldCycliod
         public DemensionPage()
         {
             InitializeComponent();
-            checkValueElements = new CheckValue[(int)EnumName.Mmax]; //Mmax is first user input element 
+            CheckValueElements = new CheckValue[(int)EnumName.Mmax]; //Mmax is first user input element 
             Initialize();
         }
         private WorkingConditionsPage workingCondPage;
-        public CheckValue[] checkValueElements { get; set; } //czy nie priv?
+        public CheckValue[] CheckValueElements { get; private set; } //czy nie priv?
         private CheckBoxService checkBoxServiceH;
         private CheckBoxService checkBoxServiceB;
         private CheckBoxService checkBoxServiceDelta;
         private FitMenager fitMenager;
         private bool setComboBox = false;
         private TextBox[] allTextBox;
-        public string []dataFromFile { get; private set; }
+        public string []dataFromFile { get; set; }
         public DataValueMenager AllDataValue { get; set; }
         private void Initialize()
         {
-            checkValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 3000, 15);
-            checkValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
-            checkValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
-            checkValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 1.1);
-            checkValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500, 1.1);
-            checkValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 5000);
+            CheckValueElements[(int)EnumName.D] = new CheckValue(textBlockDOutError, textBoxDOut, 3000, 15);
+            CheckValueElements[(int)EnumName.d] = new CheckValue(textBlockDInError, textBoxDIn, 500);
+            CheckValueElements[(int)EnumName.e] = new CheckValue(textBlockEError, textBoxE, 500);
+            CheckValueElements[(int)EnumName.h] = new CheckValue(textBlockHError, textBoxH, 500, 1.1);
+            CheckValueElements[(int)EnumName.b] = new CheckValue(textBlockBError, textBoxB, 500, 1.1);
+            CheckValueElements[(int)EnumName.delta] = new CheckValue(textBlockDeltaError, textBoxDelta, 5000);
 
             checkBoxServiceH = new CheckBoxService(checkBoxH, textBoxH);
             checkBoxServiceB = new CheckBoxService(checkBoxB, textBoxB);
@@ -74,8 +74,8 @@ namespace OldCycliod
 
         private void textBoxDOut_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
-            double D = checkValueElements[(int)EnumName.D].Cheack();
-            if(checkValueElements[(int)EnumName.D].Error == false)
+            double D = CheckValueElements[(int)EnumName.D].Cheack();
+            if(CheckValueElements[(int)EnumName.D].Error == false)
             {
             double H = Math.Round((D / 3.5)*0.3, 0);
             double B = Math.Round((D / 3.5) * 0.5, 0);
@@ -84,11 +84,10 @@ namespace OldCycliod
             if(setComboBox == true)
             {
                 EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
-                int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.D].Cheack());
+                int delta = fitMenager.CheckFitValue(id, CheckValueElements[(int)EnumName.D].Cheack());
                 checkBoxServiceDelta.SetValue(delta);
             }
             }
-
         }
 
         private void checkBoxDelta_Checked(object sender, RoutedEventArgs e)
@@ -99,8 +98,8 @@ namespace OldCycliod
         private void ComboBoxFit_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
-            double B = checkValueElements[(int)EnumName.b].Cheack();
-            if(B>1)
+            double B = CheckValueElements[(int)EnumName.b].Cheack();
+            if(B>1 && (int)id!=-1)
             {
             int delta = fitMenager.CheckFitValue(id, B);
             checkBoxServiceDelta.SetValue(delta);
@@ -114,28 +113,28 @@ namespace OldCycliod
         private void nextButtonClick(object sender, RoutedEventArgs e)
         {
             bool error = false;
-            AllDataValue.Elements[(int)EnumName.D].Value = checkValueElements[(int)EnumName.D].Cheack();
-            if (checkValueElements[(int)EnumName.D].Error == false)
+            AllDataValue.Elements[(int)EnumName.D].Value = CheckValueElements[(int)EnumName.D].Cheack();
+            if (CheckValueElements[(int)EnumName.D].Error == false)
             {
-                checkValueElements[(int)EnumName.d].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.75, 2);
-                checkValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
+                CheckValueElements[(int)EnumName.d].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.75, 2);
+                CheckValueElements[(int)EnumName.e].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value * 0.1, 1);
 
-                AllDataValue.Elements[(int)EnumName.d].Value = checkValueElements[(int)EnumName.d].Cheack();
-                if (checkValueElements[(int)EnumName.d].Error == false)
+                AllDataValue.Elements[(int)EnumName.d].Value = CheckValueElements[(int)EnumName.d].Cheack();
+                if (CheckValueElements[(int)EnumName.d].Error == false)
                 {
-                    checkValueElements[(int)EnumName.b].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
-                    checkValueElements[(int)EnumName.h].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
+                    CheckValueElements[(int)EnumName.b].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
+                    CheckValueElements[(int)EnumName.h].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
                 }
             }
 
             for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
             {
-                checkValueElements[i].ClearError();
-                AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
+                CheckValueElements[i].ClearError();
+                AllDataValue.Elements[i].Value = CheckValueElements[i].Cheack();
             }
             for (int i = 0; i <= (int)EnumName.delta; i++)
             {
-                if (checkValueElements[i].Error == true)
+                if (CheckValueElements[i].Error == true)
                 {
                     error = true;
                 }
@@ -150,7 +149,7 @@ namespace OldCycliod
         {
             for(int i = 0; i<=(int)EnumName.delta; i++)
             {
-                checkValueElements[i].Clear();
+                CheckValueElements[i].Clear();
             }
 
         }
@@ -160,7 +159,7 @@ namespace OldCycliod
             if(setComboBox == true)
             {
             EnumFit id = (EnumFit)comboBoxFit.SelectedIndex;
-            int delta = fitMenager.CheckFitValue(id, checkValueElements[(int)EnumName.b].Cheack());
+            int delta = fitMenager.CheckFitValue(id, CheckValueElements[(int)EnumName.b].Cheack());
             checkBoxServiceDelta.SetValue(delta);
             }
         }
@@ -178,6 +177,7 @@ namespace OldCycliod
 
         private void openButton_Click(object sender, RoutedEventArgs e)
         {
+            comboBoxFit.SelectedIndex = -1;
             string[] data  = FileService.OpenFile();
             if(data==null)
             {
@@ -199,7 +199,7 @@ namespace OldCycliod
             }
             catch (Exception)
             {
-                MessageBox.Show("Plik do ptwarcia jest nie poprawny", "Niepoprawny plik", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Plik do otwarcia jest nie poprawny", "Niepoprawny plik", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
         }

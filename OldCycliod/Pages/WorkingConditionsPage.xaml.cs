@@ -29,7 +29,7 @@ namespace OldCycliod
         {
             InitializeComponent();
             demensionPage = _demensionPage;
-            checkValueElements = demensionPage.checkValueElements;
+            checkValueElements = demensionPage.CheckValueElements;
             Inicjalize();
             selectedMaterial = new BaseEntity();
         }
@@ -129,7 +129,27 @@ namespace OldCycliod
                     MessageBox.Show("Iloczyn prędkości obrotowej i momentu wyjściowego musi być mniejszy od wejściowego", "Błędna wartość", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
-               NavigationService.Navigate(new ResultPage(new Calculations(demensionPage.AllDataValue, selectedMaterial, new SelectedWorkCondition(conditionService.EnumWork)), this));
+                else if (demensionPage.AllDataValue.GetValueByEnumName(EnumName.Min) >= demensionPage.AllDataValue.GetValueByEnumName(EnumName.Mout))
+                {
+                    MessageBox.Show("Podany moment wyjściowy musi być większy od wejściowego.", "Błędne wartości momentów", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                else if (demensionPage.AllDataValue.GetValueByEnumName(EnumName.nIn) <= demensionPage.AllDataValue.GetValueByEnumName(EnumName.nOut))
+                {
+                    MessageBox.Show("Podana prędkość obrotowa wejściowa musi być większa do wyjściowej.", "Błędne wartości prędkości kątowych", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                Calculations calculations = new Calculations(demensionPage.AllDataValue, selectedMaterial, new SelectedWorkCondition(conditionService.EnumWork));
+                if(calculations.Calculate() == true)
+                {
+                    NavigationService.Navigate(new ResultPage(calculations, this));
+                }
+                else
+                {
+                    MessageBox.Show("Dla podanych wartosci momentów i prędkości kątowych sprawność nie jest liczbą dodatnią\n" +
+                        "Sprawdź poprawność wprowadzonych danych.", "Błędna wartość sprawności", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
             }
             
         }
@@ -191,6 +211,11 @@ namespace OldCycliod
                 SetDataFromFile();
             }
 
+        }
+
+        public void SetNullDataFromFile()
+        {
+            demensionPage.dataFromFile = null;
         }
 
         private void textBoxMat_TextChanged(object sender, TextChangedEventArgs e)

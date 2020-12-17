@@ -43,7 +43,7 @@ namespace OldCycliod
                 ValueIn.Text += element.Value.ToString() + "\r\n";
                 UnitIn.Text += element.Unit + "\r\n";
             }
-            NameIn.Text += "Naprężenia dop na ściskanie kc" + "\r\n";
+            NameIn.Text += "Naprężenia dop. na ściskanie kc" + "\r\n";
             ValueIn.Text += allData.SelectedMaterial.Value.ToString() + "\r\n";
             UnitIn.Text += allData.SelectedMaterial.Unit + "\r\n";
 
@@ -89,7 +89,8 @@ namespace OldCycliod
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            earlierPage.SetNullDataFromFile();
+            NavigationService.Navigate(earlierPage);
         }
 
         private void saveButton_Click_1(object sender, RoutedEventArgs e)

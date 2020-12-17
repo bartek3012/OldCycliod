@@ -46,7 +46,7 @@ namespace Backend.Serivce
             }
             else
             {
-                gfx.DrawString("Mechanizm wyjściowy jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 380, page.Width, page.Height), XStringFormats.Center);
+                gfx.DrawString("Mechanizm wyjściowy jest w stanie przenieść zaplanowany moment obrotowy", fontMainUnderTitle, XBrushes.Green, new XRect(0, 370, page.Width, page.Height), XStringFormats.Center);
             }
             gfx.DrawString("Raport wygenerowany przez program OldCycloid", fontValue, XBrushes.Gray, new XRect(0, -10, page.Width, page.Height), XStringFormats.BottomCenter);
 
@@ -76,15 +76,15 @@ namespace Backend.Serivce
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect1 = new XRect(100, 690, 230, 85);
+            rect1 = new XRect(100, 690, 230, 65);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesOutput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            rect = new XRect(330, 690, 90, 85);
+            rect = new XRect(330, 690, 90, 65);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesOutput, fontValueBold, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 690, 70, 85);
+            rect = new XRect(420, 690, 70, 65);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsOutput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
@@ -99,7 +99,7 @@ namespace Backend.Serivce
                 document.Save(fileDialog.FileName);
             }
             }
-            catch (IOException e)
+            catch (IOException)
             {
                 MessageBox.Show("Plik nie może być nadpisany, ponieważ jest teraz otwarty.\nZamknij plik i powtórz operacje", "Zamknij nadpisywany plik", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
