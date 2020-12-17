@@ -209,6 +209,7 @@ namespace OldCycliod
             if (demensionPage.dataFromFile != null)
             {
                 SetDataFromFile();
+                SetNullDataFromFile();
             }
 
         }

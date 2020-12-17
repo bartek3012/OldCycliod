@@ -76,15 +76,15 @@ namespace Backend.Serivce
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect1 = new XRect(100, 690, 230, 65);
+            rect1 = new XRect(100, 690, 230, 55);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesOutput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            rect = new XRect(330, 690, 90, 65);
+            rect = new XRect(330, 690, 90, 55);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesOutput, fontValueBold, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 690, 70, 65);
+            rect = new XRect(420, 690, 70, 55);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsOutput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
