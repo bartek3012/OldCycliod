@@ -177,6 +177,8 @@ namespace OldCycliod
 
         private void openButton_Click(object sender, RoutedEventArgs e)
         {
+            textBlockDOutError.Text = "";
+            textBoxDOut.Background = Brushes.White;
             comboBoxFit.SelectedIndex = -1;
             string[] data  = FileService.OpenFile();
             if(data==null)
