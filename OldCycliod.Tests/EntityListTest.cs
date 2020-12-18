@@ -27,21 +27,6 @@ namespace OldCycliod.Tests
 
 
         [Fact]
-        public void GetEntityByType()
-        {
-            //Arrange
-            DataValueMenager dataValueMenager = new DataValueMenager();
-
-            //Act
-            BaseEntity baseEntity = dataValueMenager.GetByType("wrongType");
-            BaseEntity baseEntity2 = dataValueMenager.GetByType("output");
-
-            //Assert
-            Assert.Null(baseEntity);
-            Assert.Equal(dataValueMenager.Elements[(int)EnumName.Mmax], baseEntity2);
-        }
-
-        [Fact]
         public void FitEntity()
         {
             //Arrange+Act

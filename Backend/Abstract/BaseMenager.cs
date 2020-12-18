@@ -20,20 +20,5 @@ namespace Backend.Menager
         {
             Elements.Add(entity as T);
         }
-        public BaseEntity GetByType(string type)
-        {
-            try
-            {
-                return Elements.First(p => p.Type == type);
-            }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Błąd wyszukiwania atrybutu z listy o nazwie!");
-                return null;
-            }
-        }
-
-
-
     }
 }

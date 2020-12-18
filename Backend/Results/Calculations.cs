@@ -15,8 +15,6 @@ namespace Backend.Results
             AllDataValue = dataValueMenager;
             SelectedMaterial = selectedMaterialEntity;
             SelectedWorkCondition = selectedCondition;
-            Calculate();
-
         }
         public DataValueMenager AllDataValue { get; private set; }
         public BaseEntity SelectedMaterial { get; private set; }
