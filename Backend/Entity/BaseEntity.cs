@@ -20,7 +20,7 @@ namespace Backend
             Value = value;
             Content = content;
             Type = type;
-            Unit = "MPa";
+            Unit = "[MPa]";
         }
 
         public BaseEntity()

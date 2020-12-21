@@ -142,7 +142,8 @@ namespace Backend.Results
         }
         private void SetMi()
         {
-            mi = (1 - (Plost / Pin))*100; //%
+            //mi = (1 - (Plost / Pin))*100; //%
+            mi = (1 - (4 * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e)) / (Math.PI * 1000 * (x + xPrim)))*100;
             AllDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
             if(mi<=0)
             {

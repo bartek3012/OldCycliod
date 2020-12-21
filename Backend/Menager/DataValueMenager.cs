@@ -26,7 +26,7 @@ namespace Backend.Menager
             //Add(new DataValue("Nacisk minimalny", EnumName.pmin, "[MPa]", "output"));
             //Add(new DataValue("Nacisk maksymalny", EnumName.pmax, "[MPa]", "output"));
             Add(new DataValue("Moc całkowita", EnumName.PAll, "[W]", "output"));
-            Add(new DataValue("Straty mocy", EnumName.PLost, "[W]", "output"));
+            Add(new DataValue("Straty mocy dla siły maksymalnej", EnumName.PLost, "[W]", "output"));
             Add(new DataValue("Sprawność μ", EnumName.mi, "[%]", "output"));
         }
 

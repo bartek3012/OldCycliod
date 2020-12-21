@@ -115,7 +115,7 @@
             <TextBlock Text="Materiał" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3"  FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
             <!--k-->
             <CheckBox x:Name="checkBoxK" Margin="28 10 0 -10" Grid.Row ="1" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom" Checked="checkBoxK_Checked"/>
-            <TextBlock Text="Wsp sztywności kontaktowej k = " Grid.Row="2" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="Wsp. sztywności kontaktowej k = " Grid.Row="2" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxK" Text="3"  Grid.Column ="1" Grid.Row="2"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
             <TextBlock Text="[MPa/𝜇m]" FontSize="10" Grid.Column ="2" Grid.Row="2"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockKError" Grid.Row="3"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
