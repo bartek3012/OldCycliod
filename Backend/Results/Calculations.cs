@@ -127,11 +127,12 @@ namespace Backend.Results
         }
         private void SetPlost()
         {
-            //double wk = 2 * Math.PI * AllDataValue.GetValueByEnumName(EnumName.nOut)/60;
-            //Plost = 8 * wk * F * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/Math.PI;
+            double F = AllDataValue.GetValueByEnumName(EnumName.Mout) / (2 * (x - (xPrim * xPrim / x)));
+            double wk = 2 * Math.PI * AllDataValue.GetValueByEnumName(EnumName.nOut)/60;
+            Plost = 8 * wk * F * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e) * (1 - (xPrim / x))/(Math.PI * 1000);
 
-            SetV();
-            Plost = 4000 * AllDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
+            //SetV();
+            //Plost = 4000 * AllDataValue.GetValueByEnumName(EnumName.friction) * (F - FPrim) * v; //W
             AllDataValue.SetValueByEnumName(EnumName.PLost, Math.Round(Plost,2));
         }
         private void SetPin()
@@ -142,9 +143,9 @@ namespace Backend.Results
         }
         private void SetMi()
         {
-            //mi = (1 - (Plost / Pin))*100; //%
-            mi = (1 - (4 * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e)) / (Math.PI * 1000 * (x + xPrim)))*100;
-            AllDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,3));
+            mi = (1 - (Plost / Pin))*100; //%
+            //mi = (1 - (4 * AllDataValue.GetValueByEnumName(EnumName.friction) * AllDataValue.GetValueByEnumName(EnumName.e)) / (Math.PI * 1000 * (x + xPrim)))*100;
+            AllDataValue.SetValueByEnumName(EnumName.mi, Math.Round(mi,2));
             if(mi<=0)
             {
                 efficiecyIsPositive = false;
