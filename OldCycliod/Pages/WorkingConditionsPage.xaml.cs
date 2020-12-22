@@ -124,9 +124,9 @@ namespace OldCycliod
             }
             if (error == false)
             {
-                if(demensionPage.AllDataValue.GetValueByEnumName(EnumName.Min)*demensionPage.AllDataValue.GetValueByEnumName(EnumName.nIn)<= demensionPage.AllDataValue.GetValueByEnumName(EnumName.Mout) * demensionPage.AllDataValue.GetValueByEnumName(EnumName.nOut))
+                if(demensionPage.AllDataValue.GetValueByEnumName(EnumName.Min)*demensionPage.AllDataValue.GetValueByEnumName(EnumName.nIn)< demensionPage.AllDataValue.GetValueByEnumName(EnumName.Mout) * demensionPage.AllDataValue.GetValueByEnumName(EnumName.nOut))
                 {
-                    MessageBox.Show("Iloczyn prędkości obrotowej i momentu wyjściowego musi być mniejszy od wejściowego", "Błędna wartość", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Iloczyn prędkości obrotowej i momentu wejściowego nie może być mniejszy od wejściowego", "Błędna wartość", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
                 else if (demensionPage.AllDataValue.GetValueByEnumName(EnumName.Min) >= demensionPage.AllDataValue.GetValueByEnumName(EnumName.Mout))

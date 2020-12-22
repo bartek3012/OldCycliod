@@ -36,7 +36,6 @@ namespace Backend.Results
         private bool isMinus;
         private bool efficiecyIsPositive = true;
 
-        private double v;//
         public bool Calculate()
         {
             
@@ -121,10 +120,7 @@ namespace Backend.Results
             M = 2000 * (F * x - FPrim * xPrim); //Nm
             AllDataValue.SetValueByEnumName(EnumName.Mmax, Math.Round(M,2));
         }
-        private void SetV()
-        {
-            v = (4 * AllDataValue.GetValueByEnumName(EnumName.e) * AllDataValue.GetValueByEnumName(EnumName.nOut)) / 60000;
-        }
+
         private void SetPlost()
         {
             double F = AllDataValue.GetValueByEnumName(EnumName.Mout) / (2 * (x - (xPrim * xPrim / x)));
