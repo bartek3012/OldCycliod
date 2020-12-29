@@ -20,6 +20,6 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Column="2" Margin="228,-30,-30,-30"  Source="/Images/GearDraw.png" RenderOptions.BitmapScalingMode="HighQuality" Grid.ColumnSpan="2" />
 
-        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="525" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="3"/>
+        <Frame VerticalAlignment="Top" x:Name="InputOutputPages" Grid.Column="0" Height="529" Width="420" NavigationUIVisibility="Hidden" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

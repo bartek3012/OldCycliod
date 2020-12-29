@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OldCycliod"
       mc:Ignorable="d" 
-      d:DesignHeight="525" d:DesignWidth="420"
+      d:DesignHeight="529" d:DesignWidth="420"
       Title="InputPage">
 
 
@@ -20,6 +20,9 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
@@ -27,29 +30,36 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Warunki pracy " Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 7 0 5" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+            <TextBlock Text="Warunki pracy " Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3" Margin="0 3 0 0" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+            <!--Pin-->
+            <TextBlock Text="Moc silnika" Grid.Row="1" Grid.Column ="0" Margin="30 5 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="textBoxP" Text=""  Grid.Column ="1" Grid.Row="1"  Margin="10 5 0 0"/>
+            <TextBlock Text="[kW]" FontSize="10" Grid.Column ="2" Grid.Row="1"  Margin="5 7 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockPError" Grid.Row="2"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+
+            <CheckBox x:Name="checkBoxForM" Margin="28 0 0 0" Grid.Row ="3" Grid.ColumnSpan="3" Content="Podaj moment wejściowy zamiast mocy silnika"  VerticalAlignment="Bottom"/>
             <!--Min-->
-            <TextBlock Text="Moment wejściowy (silnika)" Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxMin" Text=""  Grid.Column ="1" Grid.Row="1"  Margin="10 10 0 0"/>
-            <TextBlock Text="[Nm]" FontSize="10" Grid.Column ="2" Grid.Row="1"  Margin="5 12 0 0"/>
-            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockMinError" Grid.Row="2"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+            <TextBlock Text="Moment wejściowy (silnika)" Grid.Row="4" Grid.Column ="0" Margin="30 0 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="textBoxMin" Text=""  Grid.Column ="1" Grid.Row="4"  Margin="10 0 0 0"/>
+            <TextBlock Text="[Nm]" FontSize="10" Grid.Column ="2" Grid.Row="4"  Margin="5 2 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockMinError" Grid.Row="5"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
             <!--Mout-->
-            <TextBlock Text="Moment wyjściowy " Grid.Row="3" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxMout" Text=""  Grid.Column ="1" Grid.Row="3"  Margin="10 10 0 0"/>
-            <TextBlock Text="[Nm]" FontSize="10" Grid.Column ="2" Grid.Row="3"  Margin="5 12 0 0"/>
-            <TextBlock Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" x:Name="textBlockMoutError" Grid.Row="4"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+            <TextBlock Text="Moment wyjściowy " Grid.Row="8" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="textBoxMout" Text=""  Grid.Column ="1" Grid.Row="8"  Margin="10 10 0 0"/>
+            <TextBlock Text="[Nm]" FontSize="10" Grid.Column ="2" Grid.Row="8"  Margin="5 12 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Right" x:Name="textBlockMoutError" Grid.Row="9"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
             <!--w-->
-            <TextBlock Text="Prędkość obrotowa  wejściowa nk = " Grid.Row="5" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxNin" Text=""  Grid.Column ="1" Grid.Row="5"  Margin="10 10 0 0"/>
-            <TextBlock Text="[obr/min]" FontSize="10" Grid.Column ="2" Grid.Row="5"  Margin="5 12 0 0"/>
-            <TextBlock Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Right" x:Name="textBlockNinError" Grid.Row="6"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+            <TextBlock Text="Prędkość obrotowa  wejściowa nk = " Grid.Row="6" Grid.Column ="0" Margin="30 0 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="textBoxNin" Text=""  Grid.Column ="1" Grid.Row="6"  Margin="10 5 0 0"/>
+            <TextBlock Text="[obr/min]" FontSize="10" Grid.Column ="2" Grid.Row="6"  Margin="5 2 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="6" HorizontalAlignment="Right" x:Name="textBlockNinError" Grid.Row="7"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
 
-            <TextBlock Text="Prędkość obrotowa  wyjściowa" Grid.Row="7" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
-            <TextBox x:Name="textBoxNout" Text=""  Grid.Column ="1" Grid.Row="7"  Margin="10 10 0 0"/>
-            <TextBlock Text="[obr/min]" FontSize="10" Grid.Column ="2" Grid.Row="7"  Margin="5 12 0 0"/>
-            <TextBlock Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Right" x:Name="textBlockNoutError" Grid.Row="8"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
+            <TextBlock Text="Prędkość obrotowa  wyjściowa" Grid.Row="10" Grid.Column ="0" Margin="30 5 0 0" FontWeight="Bold" FontSize="14"/>
+            <TextBox x:Name="textBoxNout" Text=""  Grid.Column ="1" Grid.Row="10"  Margin="10 5 0 0"/>
+            <TextBlock Text="[obr/min]" FontSize="10" Grid.Column ="2" Grid.Row="10"  Margin="5 7 0 0"/>
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Right" x:Name="textBlockNoutError" Grid.Row="11"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
 
         <Grid Margin="0 10 0 0">
@@ -94,12 +104,12 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <!--k-->
-            <CheckBox x:Name="checkBoxFriction" Margin="28 10 0 -10" Grid.Row ="0" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali pokrytych olejem"  VerticalAlignment="Bottom" Checked="checkBoxFriction_Checked"/>
+            <CheckBox x:Name="checkBoxFriction" Margin="28 0 0 -10" Grid.Row ="0" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali pokrytych olejem"  VerticalAlignment="Bottom" Checked="checkBoxFriction_Checked"/>
             <TextBlock Text="Wsp. tarcia kinetycznego μ = " Grid.Row="1" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxFriction" Text="0,17"  Grid.Column ="1" Grid.Row="1"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockFrictionError" Grid.Row="2"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
-        <Separator Background="Black" Height="10"/>
+        <Separator Background="Black" Height="5"/>
         <Grid>
             <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
@@ -114,13 +124,13 @@
         </Grid.RowDefinitions>
             <TextBlock Text="Materiał" Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="3"  FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
             <!--k-->
-            <CheckBox x:Name="checkBoxK" Margin="28 10 0 -10" Grid.Row ="1" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom" Checked="checkBoxK_Checked"/>
+            <CheckBox x:Name="checkBoxK" Margin="28 5 0 -10" Grid.Row ="1" Grid.ColumnSpan="3" Content="Podaj inny współczynnik niż dla stali po stali"  VerticalAlignment="Bottom" Checked="checkBoxK_Checked"/>
             <TextBlock Text="Wsp. sztywności kontaktowej k = " Grid.Row="2" Grid.Column ="0" Margin="30 10 0 0" FontWeight="Bold" FontSize="14"/>
             <TextBox x:Name="textBoxK" Text="3"  Grid.Column ="1" Grid.Row="2"  Margin="10 10 0 0" Background="LightGray" IsReadOnly="True"/>
             <TextBlock Text="[MPa/𝜇m]" FontSize="10" Grid.Column ="2" Grid.Row="2"  Margin="5 12 0 0"/>
             <TextBlock Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" x:Name="textBlockKError" Grid.Row="3"  Text="" Foreground="#FFE40000" FontStyle="Italic"/>
         </Grid>
-        <Grid Margin="0 10 0 0">
+        <Grid Margin="0 5 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="4*"/>
