@@ -44,7 +44,7 @@ namespace OldCycliod
         private bool isMaterialFromFile = false;
         private void Inicjalize()
         {
-            checkValueElements[(int)EnumName.Pin] = new CheckValue(textBlockPError, textBoxP, 100000, 0.1);
+            checkValueElements[(int)EnumName.Pin] = new CheckValue(textBlockPError, textBoxP, 100000, 0.001);
             checkValueElements[(int)EnumName.Min] = new CheckValue(textBlockMinError, textBoxMin, 100000, 0.1);
             checkValueElements[(int)EnumName.nIn] = new CheckValue(textBlockNinError, textBoxNin, 100000, 0.1);
             checkValueElements[(int)EnumName.Mout] = new CheckValue(textBlockMoutError, textBoxMout, 100000, 0.1);
@@ -101,6 +101,14 @@ namespace OldCycliod
         {
             
             bool error = false;
+            if(textBoxP.Text == "")
+            {
+                SetP();
+            }
+            if(textBoxMin.Text == "")
+            {
+                SetMin();
+            } 
             for(int i = (int)EnumName.Pin; i<= (int)EnumName.k; i++)
             {
                 demensionPage.AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
@@ -231,7 +239,53 @@ namespace OldCycliod
             {
                 return;
             }
-            if(checkBoxPorM.IsChecked == false)
+            SetMin();
+        }
+
+        private void checkBoxPorM_Click(object sender, RoutedEventArgs e)
+        {
+            if (checkBoxPorM.IsChecked == true)
+            {
+                textBoxMin.IsReadOnly = false;
+                textBoxP.IsReadOnly = true;
+                textBoxMin.Background = Brushes.White;
+                textBoxP.Background = Brushes.LightGray;
+            }
+            else
+            {
+                textBoxMin.IsReadOnly = true;
+                textBoxP.IsReadOnly = false;
+                textBoxMin.Background = Brushes.LightGray;
+                textBoxP.Background = Brushes.White;
+            }
+        }
+
+        private void textBoxMin_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (textBoxNin.Text == "" || textBoxMin.Text == "")
+            {
+                return;
+            }
+            SetP();
+        }
+
+        private void SetP()
+        {
+            if (checkBoxPorM.IsChecked == true)
+            {
+                double torque = checkValueElements[(int)EnumName.Min].Cheack();
+                double velocity = checkValueElements[(int)EnumName.nIn].Cheack();
+                if (checkValueElements[(int)EnumName.Min].Error == false && checkValueElements[(int)EnumName.nIn].Error == false)
+                {
+                    double power = (torque * velocity) / 9550;
+                    textBoxP.Text = Math.Round(power, 2).ToString();
+                }
+            }
+        }
+
+        private void SetMin()
+        {
+            if (checkBoxPorM.IsChecked == false)
             {
                 double power = checkValueElements[(int)EnumName.Pin].Cheack();
                 double velocity = checkValueElements[(int)EnumName.nIn].Cheack();
@@ -241,11 +295,6 @@ namespace OldCycliod
                     textBoxMin.Text = Math.Round(torque, 2).ToString();
                 }
             }
-        }
-
-        private void checkBoxPorM_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
