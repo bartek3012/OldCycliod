@@ -37,7 +37,7 @@ namespace Backend.Serivce
             gfx.DrawImage(XImage.FromFile(pathGrfphic), 140, 60, 297.9, 329.9);
             gfx.DrawString("Raport z programu OldCyclodi", fontMainTitle, XBrushes.Black, new XRect(0, -380, page.Width, page.Height), XStringFormats.Center);
             gfx.DrawString("Dane wejściowe", fontMainUnderTitle, XBrushes.Black, new XRect(0, 0, page.Width, page.Height), XStringFormats.Center);
-            gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 250, page.Width, page.Height), XStringFormats.Center);
+            gfx.DrawString("Dane obliczone", fontMainUnderTitle, XBrushes.Black, new XRect(0, 260, page.Width, page.Height), XStringFormats.Center);
 
             if(calculations.AllDataValue.GetValueByEnumName(EnumName.Mmax)< calculations.AllDataValue.GetValueByEnumName(EnumName.Mout))
             {
@@ -64,27 +64,27 @@ namespace Backend.Serivce
             string unitsOutput = GetUnit("output");
 
             XTextFormatter tf = new XTextFormatter(gfx);
-            XRect rect1 = new XRect(100, 440, 230, 205);
+            XRect rect1 = new XRect(100, 440, 230, 215);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesInput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            XRect rect = new XRect(330, 440, 90, 205);
+            XRect rect = new XRect(330, 440, 90, 215);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 440, 70, 205);
+            rect = new XRect(420, 440, 70, 215);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsInput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect1 = new XRect(100, 690, 230, 55);
+            rect1 = new XRect(100, 700, 230, 55);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect1);
             tf.DrawString(namesOutput, fontValue, XBrushes.Black, rect1, XStringFormats.TopLeft);
 
-            rect = new XRect(330, 690, 90, 55);
+            rect = new XRect(330, 700, 90, 55);
             gfx.DrawRectangle(XBrushes.LightGray, rect);
             tf.DrawString(valuesOutput, fontValueBold, XBrushes.Black, rect, XStringFormats.TopLeft);
 
-            rect = new XRect(420, 690, 70, 55);
+            rect = new XRect(420, 700, 70, 55);
             gfx.DrawRectangle(XBrushes.WhiteSmoke, rect);
             tf.DrawString(unitsOutput, fontValue, XBrushes.Black, rect, XStringFormats.TopLeft);
 

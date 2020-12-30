@@ -44,9 +44,10 @@ namespace OldCycliod
         private bool isMaterialFromFile = false;
         private void Inicjalize()
         {
+            checkValueElements[(int)EnumName.Pin] = new CheckValue(textBlockPError, textBoxP, 100000, 0.1);
             checkValueElements[(int)EnumName.Min] = new CheckValue(textBlockMinError, textBoxMin, 100000, 0.1);
-            checkValueElements[(int)EnumName.Mout] = new CheckValue(textBlockMoutError, textBoxMout, 100000, 0.1);
             checkValueElements[(int)EnumName.nIn] = new CheckValue(textBlockNinError, textBoxNin, 100000, 0.1);
+            checkValueElements[(int)EnumName.Mout] = new CheckValue(textBlockMoutError, textBoxMout, 100000, 0.1);
             checkValueElements[(int)EnumName.nOut] = new CheckValue(textBlockNoutError, textBoxNout, 100000, 0.1);
             checkValueElements[(int)EnumName.friction] = new CheckValue(textBlockFrictionError, textBoxFriction, 0.99, 0.001);
             checkValueElements[(int)EnumName.k] = new CheckValue(textBlockKError, textBoxK, 1000, 0.001);
@@ -56,13 +57,13 @@ namespace OldCycliod
             Button[] ConditionButtons = new Button[] {LekkieButton, SrednieButton, CiezkieButton};
             conditionService = new WorkConditionService(textBlockWorkCaseError, ConditionButtons);
 
-            allTextBox = new TextBox[] { textBoxMin, textBoxMout, textBoxNin, textBoxNout, textBoxFriction, textBoxK, textBoxMat };
+            allTextBox = new TextBox[] { textBoxP, textBoxMin, textBoxNin, textBoxMout,  textBoxNout, textBoxFriction, textBoxK, textBoxMat };
 
         }
 
         private void SetDataFromFile()
         {
-            int i = (int)EnumName.Min + 1;
+            int i = (int)EnumName.Pin + 1;
             foreach (TextBox textBox in allTextBox)
             {
                 textBox.Text = demensionPage.dataFromFile[i];///
@@ -100,7 +101,7 @@ namespace OldCycliod
         {
             
             bool error = false;
-            for(int i = (int)EnumName.Min; i<= (int)EnumName.k; i++)
+            for(int i = (int)EnumName.Pin; i<= (int)EnumName.k; i++)
             {
                 demensionPage.AllDataValue.Elements[i].Value = checkValueElements[i].Cheack();
                 if(checkValueElements[i].Error == true)
@@ -222,6 +223,29 @@ namespace OldCycliod
         private void textBoxMat_TextChanged(object sender, TextChangedEventArgs e)
         {
             isMaterialFromFile = false;
+        }
+
+        private void textBoxP_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if(textBoxNin.Text == "" || textBoxP.Text == "")
+            {
+                return;
+            }
+            if(checkBoxPorM.IsChecked == false)
+            {
+                double power = checkValueElements[(int)EnumName.Pin].Cheack();
+                double velocity = checkValueElements[(int)EnumName.nIn].Cheack();
+                if (checkValueElements[(int)EnumName.Pin].Error == false && checkValueElements[(int)EnumName.nIn].Error == false)
+                {
+                    double torque = (9550 * power) / velocity;
+                    textBoxMin.Text = Math.Round(torque, 2).ToString();
+                }
+            }
+        }
+
+        private void checkBoxPorM_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

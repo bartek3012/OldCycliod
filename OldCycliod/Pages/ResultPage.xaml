@@ -23,7 +23,7 @@
         <Button Style="{StaticResource RoundButtonTemplate}" Grid.Row="3" Content="Wyjdź"/>
     </Grid>-->
     <StackPanel>
-        <TextBlock Margin="0 15 0 5" Text="Dane wejściowe" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+        <TextBlock Margin="0 10 0 0" Text="Dane wejściowe" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
         <Grid Margin="10 0 10 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
@@ -35,7 +35,7 @@
             <TextBlock Text="" x:Name="UnitIn" FontSize="13" Grid.Column="2"/>
         </Grid>
 
-            <TextBlock Margin="0 10 0 5" Text="Dane obliczone" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
+            <TextBlock Margin="0 10 0 0" Text="Dane obliczone" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
             <Grid Margin="10 0 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"/>
