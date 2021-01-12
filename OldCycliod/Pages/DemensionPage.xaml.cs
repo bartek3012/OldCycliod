@@ -126,6 +126,10 @@ namespace OldCycliod
                     CheckValueElements[(int)EnumName.h].Max = Math.Round(AllDataValue.Elements[(int)EnumName.D].Value - 0.5, 3);
                 }
             }
+            else
+            {
+                AllDataValue.Elements[(int)EnumName.d].Value = CheckValueElements[(int)EnumName.d].Cheack();
+            }
 
             for (int i = 2; i <= (int)EnumName.delta; i++) //zero and first elements (D, d) have been already checked
             {
