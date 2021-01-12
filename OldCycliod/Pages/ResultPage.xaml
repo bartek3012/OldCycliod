@@ -36,7 +36,7 @@
         </Grid>
 
             <TextBlock Margin="0 10 0 0" Text="Dane obliczone" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-            <Grid Margin="10 0 0 0">
+            <Grid Margin="10 0 10 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"/>
                     <ColumnDefinition Width="2*"/>
